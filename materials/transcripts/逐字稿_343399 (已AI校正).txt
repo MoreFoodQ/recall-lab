@@ -1,0 +1,496 @@
+﻿[00:05.8]
+Okay，so this slides uh，uh，is about data preprocessing
+and the representation。Okay？So when you do the data
+preprocessing，uh，the situation like uh，gold pan，right？Why
+we need go to a river and to do the gold pan to mining the
+gold，right？But
+we will go to a river that may contain or may have a
+gold，right？We don't choice any river and go，so
+we will have the target。So that means when we do the data preprocessing
+or data mining things，uh，we need to use
+some method to scan the data。Because the gold
+may appear in certain data，not everywhere。OK
+
+
+[01:18.8]
+所以我們做 data mining 或者是 data preprocessing
+就像是在挖
+挖金礦，淘金這件事情
+那淘金這件事情我們不會隨便找一個河邊就去了嘛
+對，你會去新店溪淘金嗎？
+不會嘛
+你會去基隆河淘金嗎？No。OK
+我們會去九份嘛
+為什麼？
+因為那邊有含金量比較高嘛。OK
+所以同樣的意思就是說我們在做 data science
+我們要用一些方式來去
+呃，剖析這些資料
+欸，看看哪裡含金量比較高
+並不是 blindly 都只是所有方法都套進去喔。Right。So，uh，the
+
+
+[02:08.5]
+slides show you the entire process of AI。OK。I，I
+define the three step。The first step is about data。OK。How
+to gather data and store the data，right？So it is about the data governance。OK。So，uh，I
+remember last week I give you some example，uh，about
+apply the IRB，uh，when we need to use the clinical
+data set。Right？So this is about the data。So，uh，as
+I mentioned last week，when we apply the IRB and waiting
+the IRB pass，that will take about half year，three
+to six months。Right？When you get the pass of the IRB
+and then you apply the clinical data，that will take you about three
+to six months。All right，so overall，may overall process may take
+you one year。All right。So now you are the，you
+are the freshman，the first semester you are here。All right？So when
+you，uh，when you have advisor and discuss the task
+you want to do，and then you start to apply the IRB，that will be the second
+semester，and then take one year。Right？So
+how long will you take？One half year。All right。But
+all the student，most of the student here is the master student。Right？In
+general，two year need to graduate。But you take
+one half year，you got the data。It is
+very terrible，right？OK。So how to solve this problem？
+
+
+[04:39.5]
+中文講一次
+你大概要花一點
+一點五年
+你才能拿到資料
+因為包含了申請 IRB
+臨床資料申請
+等你拿到資料
+你已經二下了
+你要兩年畢業
+不大可能
+怎麼解決這個問題？How to solve the problem？Yeah。Yes，yeah，it
+is correct。So the student
+呃，say we can use the open data。Yeah。So like，uh，last
+slide I show you use the open data。All right。So we can find
+out certain open data that can support my idea to do the research。And
+we also，meanwhile，we also apply to the clinical data for external validation。Right。OK，so
+
+
+[05:45.3]
+data is very important。All right？And second is learning。How
+to learn knowledge from the data？Or how to train your model well？Or
+how to train your model that can achieve high prediction performance？
+All right
+So our class will focus on this one
+learning
+All right?
+And next step is action
+When people or a manager have AI toolkit
+AI can help you do something
+But the last step is back to you
+You need to do some action
+You need to make decision
+For example
+AI can provide or predict the situation of patient
+but the clinical doctor need to make the decision based on all of the information
+right?
+Okay, so how to use the learned knowledge for action
+Okay, so we have three parts
+
+
+[07:09.6]
+All right, so these slides
+uh, show you we have different data type
+So I want you
+uh, to tell me each of them
+Okay
+For example
+the first one is numerical value
+All right?
+Like the lab data
+All right?
+And the text like line
+Every day we use a line
+right?
+The what data?
+Like stock
+stock data
+TSMC
+Can we buy in the TSMC today?
+Okay
+You need to do the prediction
+right?
+The last one is image
+All right
+So can you
+anyone can
+can tell me any case for each data type?
+You wanna try it
+Feifei?
+
+
+[08:27.6]
+Mm-hmm
+Okay, so input is X-ray and the
+what is the output?
+When you input a X-ray
+like a chest X-ray
+and what's the out?
+No, the, the output
+So today we want to develop a model
+So the input may be the chest X-ray
+And what is the goal of the model?
+Okay
+Okay
+What kind of disease is related to-
+Okay, good
+Any other want to try it?
+The input and output
+
+
+[09:12.4]
+Let me take an example
+all right?
+The TMS-- TSMC open price and close price today and the last
+last two days
+and I want to predict tomorrow's price
+Okay, so this is the wave data
+So this is a time series data
+What is a time series data?
+I want to predict next time period situation
+The prediction data is based on periods
+All right
+So this is a time series data
+All right
+Also, the text data is time series data
+For example
+uh, we call this as a token
+E-each token have the correlation
+So, uh
+let me show you
+So the token in the
+time t will related to periods token t minus
+one
+and
+t minus two
+For example
+today
+TMU
+uh, maybe
+maybe this
+this one is student
+And so on
+Okay, so this is a time series data
+Okay?
+numerical data
+Okay
+All right
+
+
+[11:22.0]
+So, uh, these slides I want to let you know the unstructured data
+Now, now the unstructured data is more than eighty percent
+So what is unstructured data?
+The wave data like
+uh, uh
+the speech data is a wave data
+right?
+Or from the brain data is a wave data
+EEG
+Or image is unstructured data
+Text is unstructured data
+All right?
+So this is unstructured data
+Okay?
+So- Most of the data is unstructured data
+So right-hand side show you this is a Facebook page
+right?
+So as you can see here
+thumbs up
+How many thumbs up?
+This is a numerical value
+numerical data
+And this is a video
+video content
+The series
+uh, the sequence of image and wave
+This is a video
+And this is
+uh, text data
+This is a numerical data
+And so hence
+the mixed data is everywhere
+So today, if you want to do
+uh, do some applications
+the mixed data
+is everywhere
+So that means you need to learn the skill to deal with the unstructured data
+Okay
+So
+oh, 就是大部分都是非結構化資料
+意思就是你今天要做所有事情都跟非結構化資料相關
+沒有什麼結構化資料了。Okay
+
+
+[13:19.3]
+好。Data preprocessing
+Okay
+So why we need to do data preprocessing?
+Does anyone can tell me?
+Sorry
+Clean the data
+Clean the data
+Why?
+Why?
+Why we need to clean the data?
+Machine understand and what?
+Yeah, yeah
+yeah, it's correct
+All right, the missing data
+Okay, we need to do something
+All right
+That something means clean the data
+So why need to clean the data?
+Because the data is dirty
+We call dirty
+all right
+Why dirty?
+All right
+Like it is incomplete or have a noisy
+or inconsistent
+right?
+So here is some example
+For example
+the, uh, missing value
+Yeah
+Why we have missing value of the data set?
+Okay, you can think about it
+And noisy
+The salary is minus
+right, or inconsistent
+The age forty-two
+The birthday can use this form or another form
+or maybe start from year
+We can have different form
+right?
+So if, uh, when we
+uh, when we collect the data
+from people
+if the form not fixed
+we nee-- we will have this situation
+right?
+Okay
+So
+the data is dirty
+Okay
+Incomplete
+noisy, and inconsistent
+Okay
+So data preprocessing is very important because when we have the data set
+the data have some situation we call dirty
+So the quality is very important
+right?
+If we need to train a good model
+we need to fit a good quality training data to the model
+All right
+So the quality is depends on what
+training result we
+we get, right
+So in the first step
+we need to do the data preprocessing for improving
+the data quality
+Right
+
+
+[16:22.1]
+Okay, this is very interesting picture
+but it is real
+Okay
+So, uh, when we do the machine learning
+we expect this is our expectation
+We very, uh
+closely cooperate with v-- uh
+high intelligent machines
+But the real case
+like we
+we are in the
+in the trash
+trash can, all right
+to do many, uh
+low-end, uh
+work for data preprocessing
+Okay
+好
+我們在做AI的時候
+我們會在想像說
+喔，我們是很高尚的
+我們要打造我們的model
+我們會花很多時間在tune model
+但是不要忘記
+真正的現實狀況是長得像這樣子
+其實你會有很多很多的時間在做這件事情。All right
+So this is the
+uh, the statistical result from
+uh, a journal
+And the journal to prove that
+uh, the process
+the time will be taken in the AI development process
+Most of the time is related to data preprocessing
+Okay
+Today, uh, this morning
+I just, uh, I just review this slides
+and I comment this
+What happened?
+The result is from two thousand twenty
+Now is two thousand twenty-six
+We have large language model
+So I want, I want you guys to think about can we use the large language model
+or gen AI to solve this problem?
+Yeah, I believe we can use the LLM to reduce the time we
+taken in the data preprocessing
+And then we have more time to develop the AI model
+or applications
+可以嗎？
+這張圖是二零二零
+圖跟表都是二零二零年的結果
+證明了百分之八十的AI開發時間都在
+都在資料前處理啊
+因為資料剛剛有看到嘛
+就是很dirty啊
+有很多狀況在這裡面
+那你要去做這件事情
+要花很多很多很多的時間
+但我今天早上在整理這張投影片的時候
+我下了一個comment
+其實
+我們是很有機會用這些新的AI技術來去輔助這一塊的
+減少我們在這邊花的時間
+那我們就會有更多的時間在開發模型
+或者是打造應用。OK？
+想一下吼
+想一下。All right，so uh
+
+
+[19:53.7]
+this slide I just list uh
+several data preprocessing skill。OK。It's very cute uh
+figures，for example，the data cleaning or data integration，data transformation，dimension
+reduction and so on。OK
+All right，so first is about data cleaning。OK。And we just talk about
+uh, before，right？So it's about the missing value，how to
+fill in the missing va-- or how to deal with the missing value。Right。Can
+you tell me how to do it？
+嗯哼
+嗯哼
+What, what
+what, what the situation you will remove？
+Yes。Um, firstly
+I need to observe the data and
+um, visualize in the distribution data
+and I identify the error as maybe is
+um，the missing value is maybe is so less compared to the total entire of
+the data
+Uh, and, uh
+depend on the fill or depend on the result
+I need to decide to remove it the data。And
+uh, another way is
+uh, I, I usually using the missing data based on the attribute mean of the
+two data in
+in the net tool。And
+uh, and, uh
+is the-- explain the missing
+uh, limiting the missing data and give the Bayesian for-formula and reverse
+in re-- pro-probability。Yes
+I think is
+Yeah, very good
+這個同學要不要說一下怎麼補，missing data要怎麼處理？QQ
+有沒有想法？
+還是欣惟？
+有沒有什麼想法？Missing data要怎麼處理？
+你，你怎麼處理？
+或者是好像最近有聽到用 MICE 的
+呃，通常
+通常，通常空值會補 null
+就是讓它有值
+不然就是
+呃，假設它的那個值跟旁邊的東西有關聯
+就比如說我現在有 BMI 的這個值
+然後我有 height
+但我缺了體重
+可是我，我能知道空值是什麼
+所以可以用類似 MICE 的方式去做出來這樣子
+
+
+[23:03.7]
+OK，so I, I think
+uh, two student give us very good direction that can help us to deal with
+the missing
+missing value，right？So here I give you an example uh，why
+we，why we have the missing value situation。Because when we
+uh, sometimes we
+we will give the patient to do the questionnai-questionnaire，right？So
+if certain the column we don't
+Uh, certain the column is not required，right？So yeah，you know，everyone
+don't fill it，right？So in this case，so finally
+we will get this table。Because these two column we not required patient
+to fill in。OK，so this is the missing dat-- missing value here。All right。So
+I can feedback to
+uh, two student that
+uh, just tell us how to deal with the
+uh, missing value。Yeah，sometimes we will use the very straightforward，uh，like
+we use the mean
+mean of this column。For example，the age
+A column called age
+and we will
+we will use the mean
+to fi- to fill the missing value
+All right?
+But for some case
+we can train a model to predict the missing value
+but it, uh, relies on how good the model can do
+Right
+This, uh, this is another way
+So another case is that if we have higher
+uh, population of the missing value for me
+if more than thirty percent
+I will drop this column
+So that means this column can be not used for the feature set
+All right
+Right
+So that is about the missing value
+All right
+I think it is time we need to do the questionnaire
+So I will stop here and
+uh, next week we will start from data integration
+All right
+So I prepare a data set called Titanic survival
+prediction data set
+and we will use the data set
+uh, in next month to develop a survival prediction model
+using the deep learning
+But in this case
+we will use this data set for data preprocessing
+All right?
+So when you get the data set
+you can observe it
+how many missing values in that data set
+Right
+And I will tell you how to do the missing value and
+uh, how to, mm
+normalize the data set
+Right
+Okay
+Any question?
+No?
+All right
+Thank you
+I wish you guys can do the questionnaire
+right?
+Even, uh, you are-- you just sit in here
+But yeah, I
+I want you guys can give me some feedback
+All right
+So I will leave here
+so don't, don't have pressure
+all right?
+Don't have pressure
+Uh
+sorry
+Give me three minutes because I want to upload

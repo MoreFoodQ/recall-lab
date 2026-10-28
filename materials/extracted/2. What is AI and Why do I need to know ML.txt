@@ -1,0 +1,192 @@
+--- Page 1 ---
+Yung-Chun Chang
+Deputy Chief Data Officer, Office of Data Science
+Graduate Institute of Data Science, Taipei Medical University, Taiwan.
+Email: changyc@tmu.edu.tw
+What is AI and Why do I 
+need to know ML
+
+
+--- Page 2 ---
+Computer Vision
+AI for image understanding
+
+
+--- Page 3 ---
+Can you recognize dog or fried chicken?
+3
+
+
+--- Page 4 ---
+Can you recognize dog or fried chicken? (cont.)
+4
+
+
+--- Page 5 ---
+Applications of Computer Vision
+5
+Self-driving car
+Human flow management
+Sports Tech & 
+Game Tactics 
+Analysis
+
+
+--- Page 6 ---
+Image Generation
+Edmond de Belamy 2018
+6
+
+
+--- Page 7 ---
+Deepfake
+7
+
+
+--- Page 8 ---
+Deepfake
+8
+
+
+--- Page 9 ---
+Automation in Advertising and Fashion
+9
+
+
+--- Page 10 ---
+Whole-Body Pose Estimation
+1
+0
+
+
+--- Page 11 ---
+AI for Wedding Dresses and Magazines
+11
+AI-synthesized faces are 
+indistinguishable from real 
+faces and more trustworthy
+
+
+--- Page 12 ---
+Open AI Sora
+The videos you are about to watch is not real
+Prompt: The camera directly faces colorful buildings in Burano Italy. An 
+adorable dalmation looks through a window on a building on the ground 
+floor. Many people are walking and cycling along the canal streets in front 
+of the buildings.
+Prompt: A stylish woman walks down a Tokyo street filled with warm glowing 
+neon and animated city signage. She wears a black leather jacket, a long red 
+dress, and black boots, and carries a black purse. She wears sunglasses and 
+red lipstick. She walks confidently and casually. The street is damp and 
+reflective, creating a mirror effect of the colorful lights. Many pedestrians 
+walk about.
+Prompt: The camera follows behind a white vintage SUV with a black roof rack as it
+speeds up a steep dirt road surrounded by pine trees on a steep mountain slope,
+dust kicks up from it’s tires, the sunlight shines on the SUV as it speeds along the
+dirt road, casting a warm glow over the scene. The dirt road curves gently into the
+distance, with no other cars or vehicles in sight. The trees on either side of the road
+are redwoods, with patches of greenery scattered throughout. The car is seen from
+the rear following the curve with ease, making it seem as if it is on a rugged drive
+through the rugged terrain. The dirt road itself is surrounded by steep hills and
+mountains, with a clear blue sky above with wispy clouds.
+https://openai.com/index/sora/
+12
+
+
+--- Page 13 ---
+Meta Movie Gen
+Text input summary: A red-faced monkey 
+with white fur is bathing in a natural hot 
+spring. The monkey is playing in the 
+water with a miniature sail ship in front of 
+it, made of wood with a white sail and a 
+small rudder. The hot spring is surrounded 
+by lush greenery, with rocks and trees.
+Text input summary: A fluffy koala bear surfs. 
+It has a grey and white coat and a round nose. 
+The surfboard is yellow. The koala bear is 
+holding onto the surfboard with its paws. The 
+koala bear’s facial expression is focused. The 
+sun is shining.
+https://ai.meta.com/research/movie-gen/
+13
+
+
+--- Page 14 ---
+Meta Movie Gen
+Edit video with text
+https://ai.meta.com/research/movie-gen/
+14
+
+
+--- Page 15 ---
+Natural Language Processing
+AI for text understanding
+
+
+--- Page 16 ---
+語音辨識- 聽得懂聲音的AI
+Speech Recognition
+https://play.ht/
+Me
+???
+https://www.youtube.com/watch?v=ArtqQkltlkI
+16
+
+
+--- Page 17 ---
+Everyone can make song using AI
+17
+To make lyrics using ChatGPT
+To generate a song using Suno
+Italian Brainrots
+
+
+--- Page 18 ---
+AI can change the singer of a song
+
+
+--- Page 19 ---
+Image Generation＋Text Generation＋Voice Generation
+
+
+--- Page 20 ---
+Ongoing trends
+
+
+--- Page 21 ---
+Prompt Engineer
+Tips to create effective prompts:
+- Talk to AI like you would talk to a person
+- Set the stage and provide context
+
+
+--- Page 22 ---
+LLM Hallucination
+• When used to generate text, language models are designed 
+to make things up. That’s all they do. But since they only 
+ever make things up, when the text they have extruded 
+happens to be interpretable as something we deem correct, 
+that is by chance.
+• There’s a balance between creativity and perfect accuracy, 
+and the model will need to learn when you want one or the 
+other.
+• “Hallucinations are actually an added bonus”….maybe ^^
+22
+
+
+--- Page 23 ---
+Outsourcing our brain to technology
+23
+
+
+--- Page 24 ---
+The near future…
+The National Battle Against Misinformation – 
+Starting from Education
+AI can help, and better than you
+
+
+--- Page 25 ---
+Thanks for your listening 
+Q & A

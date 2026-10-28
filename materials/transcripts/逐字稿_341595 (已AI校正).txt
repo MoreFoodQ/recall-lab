@@ -1,0 +1,1318 @@
+﻿[00:03.6] Okay, so, uh
+we switch the classroom to here
+yeah, uh, because the
+uh, original classroom
+uh, the computer don't work
+Okay, so that is the reason why we change here
+Okay
+So, uh, today
+uh, class, I
+I prepare a slides that
+uh, want to tell you how we need to learn the machine learning or
+uh, what is the large language model
+and, uh, also
+uh, what is the application that we can use the LLM to
+to do something
+Okay, so I expect
+uh, the
+the short talk will take about one hours
+Okay?
+So if, uh, any question
+you can interrupt me anytime
+okay?
+You just need to raise your hand
+Okay?
+All right
+
+[01:03.8] So, uh, as you can see
+the title is
+"The Future Is Here." Yeah
+actually, the future is here because
+uh, now we, uh
+we use the Gen AI
+Gen AI means the generative AI or large language model
+uh, every time
+everywhere
+okay?
+Um, uh, this talk will focus on the large language models
+okay?
+Right, and the
+the application is in the clinical
+uh, environment
+right?
+
+[01:42.8] Okay, so
+before start talking the detail
+uh, of today's topic
+I, I want to intro-introduce
+uh, my lab, okay
+Uh, actually
+uh, we have a TMU NLP lab
+The NLP means the natural language processing
+All right?
+Uh, as you can see here
+uh, our lab contain many NLP task
+For example
+uh
+the first one is the clinical NLP
+That means the data is from the clinical
+right?
+For example
+uh, maybe we can deal with the pathology report or
+uh, the clinical narrative from emergency department
+Okay, I will talk more about it in the later slides
+And another application is the data from biomedical or the task
+that is related to bi-biomedical
+We call this is the BioNLP
+For example
+we can, uh, collect the paper from PubMed
+and we can discuss or we can use a NLP model automatically
+extract the protein-protein interaction or drug-drug interaction
+information from the collection
+Okay?
+And then we can generate the interaction graph or
+international
+in-interaction network
+Okay, so this is about a biomedical NLP
+Or the data came from the social media
+So we call this is a social NLP
+For example
+uh, we collect lots of the data from Facebook or X or
+Twitter
+Okay, so the data
+uh, is about a social NLP
+Or sometimes we do some the financial report
+Okay, so this
+uh, the topic is related to financial NLP
+And also, uh
+our lab do some medical imaging task
+Okay?
+So, uh, I will talk about the topic more
+focused on the NLP task
+Okay?
+
+[04:24.0] So the f-first slide
+uh, you can imagine that
+in the clinical environment
+we have medical image
+also medical report
+So what is the difference?
+Let me use the Mandarin Chinese
+okay
+Yeah
+We have med-medical image
+臨床影像 or clinical report
+臨床的報告
+What is the difference between these two data type?
+有什麼樣不一樣的地方對於我們來看？
+對啊，所以有什麼不一樣？
+怎麼說？
+Okay
+Uh, the student QQ tell us the different part is the dimension
+For the med-- uh
+medical image
+the dimension is two dimension
+For the text
+it's just one dimension
+Maybe correct or not
+Maybe
+Yeah
+Depends on what represe-representation you use
+Okay
+Yeah, very good
+This, this is what I want
+want to say it
+Uh, to tell us the medical image
+when we receive the
+uh, uh, medical image
+only the people have the clinical background knowledge
+can
+recognize what happened in the image
+For example
+uh, if, uh, we give a chest X-ray and there
+is like a nodule
+right?
+So, uh, I think only clinical doctor can recognize it's a nodule
+or not
+Okay, but compared to medical image
+if today we
+we got the clinical report
+it is human readable
+Everyone can read it
+But not everyone can understand it
+Yeah, yeah
+yeah
+But I think somehow a little bit can understand it
+all right?
+So this is a different of between these two data type
+So that means the clinical report describe the
+situation of the patient by
+uh, doctor diagnosis
+And also the patient's situation can be described
+by the nurse
+like the nursing report
+Okay?
+So it is very informative
+data from the text
+Okay?
+All right
+
+[08:13.8] So
+the text data is very important
+right?
+So if today we need to deal with the text data
+what we need to face the challenge?
+What challenge we need to face?
+Okay
+So here is the example
+The first one is
+uh, chief complaint from emergency department
+All right?
+As you can see here
+what is the challenge here?
+The mixed language
+English and Mandarin Chinese
+Any others?
+中英混雜
+還有沒有什麼問題？
+嗯？
+符號。Symbol。Okay
+習慣，什麼習慣？Yeah，no diarrhea。No
+la，no diarrhea。Okay。You can use
+very different way to represent no diarrhea。No
+la or 沒拉肚子。Okay
+So it, it is
+uh, freestyle writing
+all right?
+And the chief complaint in ED is very short
+Uh, in NLP, we call this is the short text
+Short text content
+less information
+All right
+So how to use the short text like this
+only
+maybe one hundred tokens to predict something
+Okay
+It is also challenge
+Okay
+短文本，喔
+它可能會有一些挑戰
+就是你的資訊含量很少
+你要怎麼樣去訓練你的模型。Okay
+Compared to the chief complaint
+another is radiol- radiology report
+Okay
+So if today we want to check whether the patient have the metastasis
+Okay
+It is very straightforward
+Uh, we can use the keyword
+right?
+So if today we use the keyword
+this keyword
+and we can see this sentence contain this keyword
+Also, this sentence contain the keyword
+but only the first sentence is positive case
+Even both sentence contain the keyword
+So that means we cannot use the keyword spotting to recognize
+positive or negative
+Okay
+這意思是說
+假設我們要去看這個文字裡面有沒有描述骨轉
+就是轉移啊
+喔，比如說用這個轉移這件事情
+我們說轉移就是用這個關鍵字嘛
+那你會發現說這兩個句子都有轉移
+啊，但是只有上面那個句子是真的描述轉移。Okay。And
+another is the pathology report
+All right
+Pathology report is
+is, uh, compared to both
+is longer, but also have semi-structured
+Okay
+So how to, uh
+read so long text content It's also
+quite difficult。OK
+比較長，然後也有一點半結構化
+喔，那我們要做什麼？
+然後要怎麼從比較長的裡面的資訊裡面找到我們要的
+喔，這也是蠻挑戰
+喔。So here I just point three example from different applications
+呃，to let you know if we want to do clinical NLP，it is
+呃，a little bit difficult
+
+[12:49.7] Right？So in the traditional way，before everyone come here，I
+think，啊，be-before everyone join this class，I believe most of
+you will use the rule-based。For example，uh，rule-based
+approach。For example，if today we want to recognize the-the nodule size。OK，maybe
+you can see，OK，this is a number，number，a number。OK，this is the
+unit of the nodule。All right？So this is the maybe the
+phrase or the sentence to describe a nodule。OK，if
+you use this rule，you can also recognize here is another description
+for a nodule。All right。So what
+呃，what sentence or what phrase for what
+nodule？We call this is a entity linking。Because
+here we maybe
+All right，so here is a
+呃，a size，OK，a size one，a
+nodule size。Size one，size two，size three from
+a report。OK。But we also have a nodule，nodule
+one，nodule two，nodule three。But you need to
+link what size describe what nodule，or maybe
+like this。So we call this is a entity linking。All
+right。So this is a kind of NLP task。OK，we call this is a NLP linking。All
+right，so in the same way
+呃，if today you want to observe another
+呃，pathology，this is a pathology report，pathology features，so
+you will，呃，define another rule to extract the information
+from the pathology report。Right？So this is the rule-based
+approach，or sometimes we call this is a expert system。OK，so
+if you know how to use the
+呃，programming language，you can do this task，right？But
+eventually your code will look like this，because
+you will have very
+呃，complicated for loop，and this
+code is difficult
+for maintenance
+好，當你們大家來參與這個課之前
+你們一定會用很簡單的方式去把裡面的資訊給抓出來
+對啊，然後這個就寫程式嘛
+那我就用一規-- 一-一行一行的規則去寫嘛
+那我這個是-- 這個東西叫做 rule-based 規則式
+或者叫做 expert system 專家系統
+那你最終可以做到一定的程度
+你會發現你的
+你的程式碼會變得很複雜
+有很多的 for loop
+巢狀結構很複雜
+那這個很難去 maintain 啊
+很難 maintain
+你可以想像
+今天假設
+呃，你剛去公司 onboard 的時候
+你的主管就拿了一個 code 給你
+就說：「喔
+我要離職了
+然後這個 code 你去看一下
+你打開它。」打開了有一萬行
+然後裡面一大堆 if else
+這很難 maintain。OK。All right。Another pain point
+is
+you have to cooperate closely with the clinical doctor，because only
+doctor can recognize
+how to fetch the key information from the，from
+the pathology report
+好，只有醫生可以有辦法告訴你這個東西要怎麼樣去下規則。OK
+所以你沒有辦法遇到醫生的時候
+你在幹嘛？
+你就坐在辦公室裡面發呆
+然後呢，老闆就告訴你說：「哎喲
+下禮拜就要交了。」那你還是碰不到醫生
+那你就很慌了
+好，好，所以這是真實的狀況喔
+好。
+
+[18:11.0] So that's the reason why we need to learn-
+Machine learning or natural language processing
+Okay?
+As I point out here
+uh, each circle is a research task
+For example
+the sentiment analysis
+Why, what is the goal of the sentiment a-analysis?
+Given your text
+you need to develop a model
+and the model can recognize or predict
+the sentiment behind the text
+Okay
+Another is like textual entailment
+or, uh, voice assistant
+or like question answering or dialogue or summarization
+All of them
+are NLP research field
+Okay?
+So, uh
+let me give you an example
+Before, uh
+large language
+uh, large language model
+okay, before ChatGPT
+One, one circle
+uh, maybe a professor used his whole life
+to dig in the research field
+But
+when we have the ChatGPT
+all of them
+All right?
+So what will happen in the near future?
+Maybe we can discuss in the later
+Okay
+每一個圓圈圈都是一個教授花了畢生的心血。Maybe through
+twenty or thirty years
+二三十年在裡面。ChatGPT出來之後
+全部都解決了。Okay
+那我們可以再做什麼？All right。Maybe
+uh, maybe the PhD's
+PhD student will worry about what research I can
+do it or how to publish a paper
+It is so difficult
+But for me, it's a good chance because we can do a lot
+application because the foundation model is ready and computing power
+also ready
+I will talk more about it later
+All right
+So it's a good chance that we can do more research
+All right
+
+[21:18.7] Okay, so this is the
+uh
+the workflow if today we want to do the NLP
+or we can call this-- the
+the flow is related to supervised learning
+We will talk more about it in the
+um, in the October
+I think October
+yeah
+So the input
+what is the input?
+Your data, the raw data
+The raw data is the text
+What's text?
+Actually, it's a text sequence
+right?
+The token or token sequence
+Okay, maybe the
+the sequence is very long
+like a book
+Maybe the text is short
+like a news article
+Or short, like a sentence
+phrase, or even a word
+Okay
+So
+another issue is that the input can be different
+language
+English or Chinese
+Different language have different characteristic
+For example
+the English
+the token boundary is very clear because when we read the
+white space
+we can separate the token
+Right?
+But the Mandarin Chinese or Japanese language or Thai
+language
+is difficult to recognize the token boundary
+So we need to use a tokenizer or segmentation
+tool help us to do the text preprocessing
+All right, so this is we call data preprocessing
+Okay, for NLP task
+we have NLP preprocessing method
+For image task
+we have image preprocessing ta-- uh
+method
+So different data type
+we have different preprocessing approach and the preprocessing
+issue
+Okay?
+這一段我們叫做資料前處理。Preprocessing
+喔，前處理
+那不同的語言有不同的處理方式
+這個是叫做NLP
+有NLP文字
+有文字的處理方式
+今天如果是影像
+我們也有影像的前處理方式
+今天如果是數值資料，if today the data is numerical data
+also we have numerical preprocessing approach。Okay？So
+this is we, this is we call data preprocessing。All right？After
+preprocessing
+what is the next？The next step is
+representation。We call data representation。So what is the data
+representation？We need convert the raw data into the
+form that's machine readable。The machine only can read number。So
+we need to convert it to a number sequence。So we call this
+is a vector
+vector。Okay？Vector
+is one, one dimension
+one D, and two D is matrix
+matrix。For example
+the image。Image is
+All right, so this is a image
+right？Okay
+so
+smile。Okay。So
+if you bring in the image to Rejraj
+you will see
+This is a pixel。All right？So
+if here we have
+n dimension and here we have m dimension
+so we have n times m
+two D dimension。Right？So what is a pixel？It
+can from zero to two fifty-five。Okay？So if
+today it is a colorful image
+we have another dimension
+to describe the RGB。So
+this is three D
+We call three D tensor
+Tensor。And this is one D tensor
+This is two D tensor。Okay
+so you guys
+uh, you guys know the TensorFlow
+right?
+The tensor is that tensor。Okay。We all call tensor。So this is a cube。Okay。Okay
+we will talk more about it next week
+Maybe next week。Okay。So this is about
+uh, representation。So because we do
+uh, because the example is about
+uh, text, so this is a text representation。Okay？Also
+different data sets have different representation way。Okay？Okay
+so when we finish the text representation
+we will use a machine learning or deep learning or
+uh, any learning algorithm。So this is the AI algorithm that we can learn
+to do something。Right？And the goal
+is the something。Okay
+the goal, if today the goal is to output the sequence
+so this is a sequence to a sequence task。For
+example, if today the input is English
+the output is another sequence like Mandarin Chinese。So this is the
+translation。All right？So if today you input
+a prompt, the output is the ChatGPT tell you
+something。Okay
+so this is a dialogue。Right？Also
+we can say this sequence to sequence
+if today sequence is the language to another language
+we call this is the language generation task。Okay。All
+right。If today we want to generate
+a label。What's a label？Like a class。For example
+the sentiment analysis。Today I input a se-- uh
+a, a news article。The output is the reader
+emotion。For example
+today, uh, I
+I got a, a news article
+uh, and, uh
+after reading it
+what emotion
+what I feel。So happy
+sad, angry。Oh
+okay, so it's a label。Right。So given you a text
+output is a label prediction。Right Given you a clinical narrative
+maybe from the negative chief complaint from the ED output
+whether the patient need to do the CT scan or not
+Yes or no
+Two class
+It's a binary classification
+Right?
+Another is the scalar
+scalar
+output a value
+So it's a regression task
+Uh, the input maybe
+uh, is your thesis
+The output is the score of the thesis
+Okay
+可以嗎？
+輸入如果是一個 sequence
+輸出如果是一個 sequence
+它就是一個 sequence to sequence。Sometimes we will
+write down seq to seq
+Sequence to sequence
+好，比如說我剛剛講英文輸入
+中文輸出
+這叫做 translation 嘛
+對不對？
+翻譯，它也是一個 sequence 轉到另外一個 sequence
+中文 sequence
+那同樣的
+我如果前面輸入的是一個 news article
+輸出是一個 reader emotion
+就是喔，我看了這篇新聞
+我在這個看的人感受怎麼樣？
+喔，那這個就是一個 label
+喔，所以到底是開心
+難過還是生氣
+好，這就是 label
+這個 classification
+那我剛剛也舉了一個例子
+假設我們是用急診
+喔，急診的 chief complaint 輸入
+輸出就是這個病患要不要去做 CT 檢查，yes or no
+這個叫做二元分類，binary classification。OK
+那當然數值最後面再 scalar
+喔，那就是我輸入
+假設你的碩士論文
+輸出就是
+欸，你的論文的成績
+這個就是 regression 的 task。Okay。Yeah，all
+of the ma-machine learning problems
+supervised learning
+I, I, I have finished about it。Okay
+我已經講完了整個 machine learning 的
+的，的，的過程了
+大概就是長這個樣子喔。So
+the first part is data preprocessing
+Second part is data representation
+The third is the algorithm
+And the last is the output
+This is very
+very, very important
+You need to
+uh, figure out each step
+If you know that
+if you know that very well
+and then you can
+use the vibe
+vibe coding very well
+because you know what step you need to do。Okay？
+你一定要搞清楚到底有哪些 step 在這裡面
+你才有辦法用 vibe coding 的方式去製作
+我好像花了很多時間在講這個
+
+[33:55.4] All right, so now I
+I give you a very
+uh, quick examples
+Uh, for example
+if, if, if today we have a news article
+uh, about Kobe Bryant
+all right, so how to represent it？Okay
+here I give you two
+two methods
+The very simple method or very traditional classical method is we
+call bag of word
+Okay, we can use a dictionary like
+uh, Oxford dictionary and to see
+uh, each word
+appear in the dictionary and to count the
+term frequency
+For example
+the, in the dictionary
+the first word called Laker
+All right, so the Laker appear two times
+Two, right？So the second word in the Oxford dictionary called hospital
+But this news article don't have the word called hospital
+So here is zero
+Right？And so on。Right？So this is very simple
+ways that we can convert the news article to vector。All right？Very
+simple
+But the problem is that the dimension is very huge
+What's the dimension size？Equal to how many dic—how many word in that
+dictionary？Right？It's about more than
+more than one hundred thousand
+Right？But only in average
+only five hundred words in a news article
+So that means
+more than ninety-nine percent dimension is zero
+Right？Okay
+可以，可以了解嗎？
+喔，可以
+好。Another way to represent
+a, a better way
+but not a, another way
+a better way to represent the
+the text is we call word embedding。Right？
+I don't, I, uh
+I don't tell you the detail now
+Uh, maybe in the
+in the deep learning part
+I will
+Uh, we can discuss more about it
+Okay?
+But a better way is use the word embedding
+Uh, we can use a fixed dimension
+For example
+three hundred dimension to represent the
+the, the, the test data very well
+And how you work
+the theory behind the word embedding is use the self-supervised learning
+Okay
+Traditional way is the supervised
+but the, the word embedding is use the self-supervised learning
+Okay?
+I will talk more about it in the deep learning part
+
+[37:25.2] All right
+So this is the
+the history of the language model
+All right
+So as you can see in two thousand thirteen
+the word em-embedding or we call word2vector method has been proposed
+So afterward
+everything or every model can be pretrained
+Because the reason is use the self-supervised learning
+Okay?
+Also, I don't tell
+uh, more detail about it
+uh, now
+Not now
+Okay?
+So
+afterward
+we can pretrain the
+the model
+So what is a pretrain?
+We can prepare very
+very large data and to train a very
+very large model
+All right?
+Not everyone can do it
+Only big company or big research center can do it
+So after pretrain
+they release the model
+and nowaday
+we just need to use the pretrained model
+Okay?
+So the ChatGPT
+GPT is pretrained transformer
+Okay
+All right
+And
+the red line is about
+uh, GPT and the another
+large language model
+Okay
+
+[39:03.6] All right
+So this is about a transformer
+So if you guys
+uh, have interesting about the language model or NLP
+so I suggest you need to read this paper
+As you can see here
+the citation is
+many times
+All right?
+Okay
+Transformer
+Attention Is All You Need
+Right
+So here is the architecture of the trans-transformers
+It contain two model
+The first, uh
+model calls encoder
+Another call decoder
+So the goal of the de-encoder is to learn how to convert the input data
+to representation
+So the decoder based on the representation as the input to learn
+how to decode it to the task sequence
+Okay?
+So it's like a cooperation model
+I will talk
+talk more about it in
+in the next semester
+all right?
+Next semester
+All right
+So, uh, here
+I just list the
+Okay, so this is a transformer encoder and decoder
+As you can see
+most of the GPT model is based on the decoder model
+And what's the encoder?
+BERT-based model
+So if you, you guys
+already know the BERT model or already use the BERT model
+what's the function of the BERT model?
+BERT model is a language model
+The goal of the language model is to convert the model
+uh, the convert the raw text to vector or to the word embedding
+All right?
+Okay, I don't talk this more
+Okay
+All right, so this is a example
+uh, I want to show you
+Okay?
+This is a BERT model
+certain BERT model
+uh, from, from my paper
+From my paper
+Okay
+So this is a BERT model
+and the task is to recognize whether the patient
+need go to
+Uh, need, need
+need a CT scan
+So the input is a chief complain
+It's a chief complain
+uh, a chief complain from the ED
+Okay?
+And after BERT
+the output is the embedding of the chief complain
+And then we just need to decide to dense
+layer and create
+our downstream task dataset
+And then we can fine-tune the BERT-based
+uh, the, the BERT language model
+All right？
+這個是一個例子
+喔，從那個——那個是你們學姐發表的例子
+喔，這是一個蠻好的期刊
+那怎麼用呢？
+我們就是用急診的
+急診的那個 chief complaint 的描述的內容
+當作輸入到 BERT 裡面
+那 BERT 那個我剛剛講的
+它是一個 encoder
+目的就是在 encode 這個 raw text to representation
+所以我們就準備了這個 downstream 的 task
+我們不用重新訓練這個 BERT model
+這是 pretrain。So BERT model is a pretrain model
+pretrain language model。Right？So we need to
+We nee-we don't need to worry about how to represent the raw
+text efficiently
+because this pretrain language model already take care about it。Right？
+所以我們就是 focus 在 downstream 的 task
+下游任務就是說怎麼樣去預測這個東西
+好。So here I list
+呃，the most well-known
+pretrain language model for clinical NLP。BioBERT
+Bioclinical BERT
+RoBERT, PalmBERT
+RadBERT。Rad-rad means the radiology。So that means the BERT model training
+using the radiology report。Right？And the GATORtron。OK。So
+far, the GATORtron is perform very well。So if we want to
+choose one or two from them
+I suggest you can start from GATORtron。Right？
+
+[44:28.0] 呃，let me skip it。OK
+呃。The slides I want to tell you is that about
+the, the trend of LLM，LLM 的
+趨勢
+喔，as you can see，the BERT is here。The size is
+very small。But
+after 2022
+the model become large and large。Larger and larger
+larger and larger。OK。So this is out of our control。We
+cannot play the game here。OK。So I want you guys
+to
+notice that
+another trend is model become small and small。OK。So
+this is we called
+small language model，SLM。This is we call large language
+model，LLM。OK。So
+where we can use the large language model？Can you answer me？
+我們可以在哪裡使用到 LLM？On the cloud，right？The
+the large language model you can imagine it is the ChatGPT。So
+we use the ChatGPT
+using the browser or install the app，but we need internet。So
+the ChatGPT or Google Gemini only on the cloud。Right？But
+why is the small language model？On the cloud means we cannot touch it。We
+can only use it。We can only use our data to fit it。If
+today the data is from clinical，we use the ChatGPT。Wow！The
+data is outside the hospital。But the data is have the privacy
+issue，right？It's very dangerous。OK。So
+that's a chance
+we can do something。Use the small language model。All
+right。So the first constraint if we want to use the small language model
+is
+our computer or our computation resource
+is ready。Right？Before this year，we
+need GPU，we need a lot of
+a lot of GPU。It costs very
+Uh, the, the cost is very high。Right？
+要很多錢
+要買很多 GPU 才能夠跑這個東西。The cost is very high。But
+Oh, by the way，the average IQ is
+one hundred。Most of the large language model is more than one hundred thirty。But
+small language model also very smart，close to the average。OK。So
+in the end of last year，the chance
+is coming The computing power is ready
+The Jensen Huang
+give the spot to Elon Musk
+Okay
+How much it is?
+One hundred fifty thousand NTD
+It's acceptable
+right?
+So without the Spark
+how mi-- how
+how much money we need to pay if we want to use the small language model?
+I, I think three thousand
+That's all
+Three, three million NTD
+Three million
+So the, the cost is down to one hundred fifty thousand
+Okay
+
+[50:02.6] So this is the comparison between the large language model and the small
+language model
+So as I mentioned before
+uh, once we use the small language model
+the, uh, the privacy data can control it
+right?
+Right
+And here I also list four very well-known
+uh, small language model
+Gemma four
+Llama four
+and Mistral
+or OpenAI OSS
+All right
+As you can see here
+the unicorn company like Google not only proposed the large language model
+Gemini, but also
+Gemma, Gemma four
+small language model
+Also, the Meta proposed Llama
+OpenAI, now ChatGPT
+also
+OSS
+Okay, so it's a open source language model
+So if today you want to
+uh, do some business
+you can use the open source
+Depends on what license
+okay?
+You can choose one for do some business
+Okay
+All right
+So since we
+Uh, since everyone
+uh, start to use the small language model
+and then we have a issue that called harness engineering
+Yeah
+So I believe
+uh, most of you already hear about the OpenCloud
+Oh, right
+So around this
+uh, Chinese New Year
+the OpenCloud has been proposed
+So
+so that is the
+uh, harness engineering
+So what is the harness engineering?
+That means OpenCloud is a framework
+not a new technique
+All right
+So you-- if you use the OpenCloud
+you can develop your own AI agent
+So what is the brand of the AI?
+The brand is
+uh, large language model or small language model
+And the activity you want the agent to do
+we call skill
+For example
+uh, open the Word file and write something
+in it and save the
+the file and
+uh, provide to you to download it
+Okay, it's a skill
+All right
+So if today
+I, I think you have already noticed that today you use the ChatGPT
+you can see the
+the chain of thought
+The chain of thought means the
+uh, the thinking process
+Or maybe the ChatGPT will say
+"Okay, now
+uh, if I, I want to deal with the task
+I needed to use what skill?
+I need to use the OpenWord skill
+I need to use read PDF skill." Okay
+the skill means the activity
+uh, that you want the agent to do
+The skill
+Okay
+So the framework OpenCloud is about how
+to develop the skill or how to interact with certain
+uh, language model
+Okay, it's a framework
+Okay?
+好，這個 harness engineering
+中文叫做駕馭工程
+後面就是--它其實不是一個新的技術
+它就是後面
+呃，你要連接這個 AI 的大腦
+比如說 AI
+這就是在講 AI agent。AI agent 的大腦
+就是語言模型
+它可以接一顆大的語言模型
+也可以接一個低端的語言模型
+那它需要動作的這些事情
+我們就稱它為 skill
+所以你可以去開發自己的 skill
+用這個 Open Cloud 的框架
+喔，去做這件事情喔
+那有興趣的同學可以去多了解
+那現在要做些--這些東西其實都還蠻容易的
+相對容易許多喔
+
+[55:34.3] Do you want take a short break?
+Yes？OK。OK，let's break ten minutes。OK？All
+right，so let's keep talking about it。So
+呃，the slides I
+I just want to show you
+呃，six，one two three，yeah，six points or six important issue。If
+we want to do the not clinical NLP
+嗯，we can treat it is
+呃，also the machine learning issue in the clinical。So the first one is
+about data governance。Yeah，so it's about how to create the data from
+the clinical。Right。You need IRB
+right？Yeah，let me share a，for example
+呃，some of the student
+呃，all right，so in the fir-first semester
+呃，the students seeking for advisor，right？And，OK，when
+the student
+呃，decide the advisor，and then the second semester，OK
+呃，they start to apply the IRB because they want to get the data
+from the clinical or from the
+呃，our hospital，right？And
+when the student get the data，maybe
+呃，he, he passed three semester。That
+means only one semester he need to graduate
+就是學生第一個學期找到教授之後
+指導教授之後
+第二個學期討論好要做什麼之後
+開始申請 IRB
+想要拿醫院的資料
+等到他拿到醫院資料的時候
+已經二下或二--準備要二下了
+OK，so that
+so that means
+呃，when we
+呃，we need to
+that will take
+a long time if we want to get the data from hospital。Maybe
+half a year to one year。OK，in normal case。But
+I know the student
+呃，need to graduate within two years。But maybe for the PhD
+student，you
+you, you have time。Yeah。But
+呃，if we only wait the data，it don't work，right？So
+what we can do if we want
+if we want to develop the model？What we can do？Is
+there have alter-alternative way that we can get the data？Yes。We
+can use the open data。All right。So we use the open
+data to develop the da-- to deve-develop the model。Meanwhile，we apply
+the data from hospital
+for validation。Or maybe we can do some cross-training
+or cross-validation。Right。In this way
+呃，you can publish higher impact factor paper，right，for PhD student。All
+right，so this is the data governance issue，right，I want to point out。Another
+is the small data，not big data。So in the clinical environment
+呃，most of the data is small data。For example
+呃，how many patient we have？In usually around five hundred，around
+two thousand，it's a small data。All right。So how to train
+your model using the small data and also need to evaluate it。OK，it's
+a challenge，right？And I will talk more about the evaluation part in
+the-- when I
+when I talk about the machine learning。Yeah。If today
+呃，the data set is very small，but you also need to training and
+呃，testing，you can use
+the cross-validation。And the cro-- a very specific cross-validation
+method called leave one out cross-validation。Leave one out means
+I just leave one data and use the resting data for training。If
+today I only have one hundred，no
+no, no，one thousand Data
+That means I need to do one thousand times and get the average
+All right, so this is leave one out cross-validation
+In this weight
+uh, okay, I will talk more about it
+All right
+So another issue is about a mixed language
+As we can see in the previous slides
+the chief complaint is a mixed language issue
+right?
+The Mandarin Chinese and English
+Okay
+Maybe in the another country also have the same situation
+right?
+The data annotation
+the cost is very high because only doctor or nurse that can help you to annotate
+the data
+Right
+The data imbalance issue
+because in the clinical
+the positive case is very small
+So you need to fetch the small category and big
+category
+So it is the data imbalance issue
+Right
+Let me take an example
+All right
+So if today we have one thousand data
+all right?
+And, uh
+for certain patient
+we only have ten percent
+That means ten percent is positive
+and ninety percent is negative
+Right
+So this is why I called imbalance
+Okay
+So when you train your model
+the model will close
+to the big ca-category
+All right
+So maybe your model will predict all of the data as negative
+Okay
+Cannot predict a positive
+Okay
+So that means the model after training
+no function
+Okay
+So how to deal with the data imbalance?
+Okay
+And the last one is model explanation
+Okay, because
+uh, especially in the clinical environment
+the doctor
+not only need the model tell him the decision or the model prediction
+but also need to tell doctor why
+Why the model predict this is a positive case
+Okay
+So these six parts
+uh, I will talk more about it in this class
+Okay?
+
+[04:20.3] All right
+The following slides
+uh, I prepared two
+two application
+Actually, it's two research project I want to share you
+Okay
+The first is about NLP for lung cancer treatment
+Okay
+Uh, the lung cancer patient is focused on late stage
+Okay
+Three, B, or four
+Three to four stage
+Okay
+Late stage
+Why?
+Because lung cancer
+uh, when, where people or patient
+uh, occur a lung cancer or sometimes or usually
+is late stage
+Okay?
+So the time is limit
+So we want to use the AI or NLP method to help
+the implementation to generate a report
+Or another issue is
+as I mentioned before
+the pathology report is very long
+So can we use the NLP approach to fetch the
+important information
+that we called summary?
+Summarize the pathology report
+The last issue is about
+uh, treatment
+Can the NLP model suggest the drug or help
+patient to do the clinical trial matching?
+Okay
+Be-- What-- Do
+do you guys know the clinical trial matching?
+Clinical trial
+Why we need to do the clinical trial matching?
+Because, because you know the lung cancer
+uh, when, when a patient
+uh
+accepted a treatment
+around, uh
+eight or nine months
+they need to change drug
+Okay?
+If today we don't have drug can be used
+the patient
+only thing can do is waiting
+you know
+So another is to participate the clinical trial
+肺癌平均存活率
+通常是看三年或五年
+好，晚期肺癌
+那用藥用到大概八
+九個月會有抗藥性
+沒有藥，你要換藥
+這個藥不能用
+你就換藥嘛
+那你如果沒有藥可以換的時候怎麼辦？
+就沒有辦法了。OK
+所以你就只能去做 clinical trial。Clinical trial 叫什麼？
+臨床試驗
+臨床試驗就是說
+呃，這個藥還沒——還在開發當中
+然後它正在臨床上做試驗
+你只能去參加
+看看有沒有效
+喔，所以——但是現在這種情況是
+呃，很被動的
+喔，病人都是很被動的
+他沒有辦法主動去做這件事情
+因為你不知道現在有哪些 trial 在
+在，在國際上
+而且都用英文寫
+然後都——呃
+這些資料可能他都看不太懂
+對吧？
+因為沒有醫學的 background
+那這個東西能不能用 AI 來協助？
+好，大概是這樣的一個
+一個故事啊。OK，I
+I think we can
+呃，watch the video。OK，we can watch the video
+OK，I, I，呃，let's move to another slide。OK，so this is whole architecture
+of this，呃，project。And as you can see the inputs
+well，what's the input data？The input data is the pathology report of
+the patient。All right。And here is our called technology
+呃，we develop
+呃，a method called patient search or pad scan。And
+this approach can extract the key information from
+the pathology report。The information——key information contain the
+呃，fifty key information。Right。So
+呃，you can think that we can use fifty dimension to represent
+the patient。And then
+呃，we can do the search。Yeah，because we have the patient data bank，the
+past five thousand patient。All of the patient can represent
+using five
+呃，fifty dimension based on their pathology report。Right。And then
+we can do the matching or search。And we can refer the past patients
+survival, survival rate or the treatment。OK。And
+in the same way we can also do the clinical trial matching。Right
+好，這輸入是病理報告
+好，比較長
+那我們抽取了這個五十個特徵呢
+那這五十個特徵就用來表達病患
+好，那過去的有五千個病患
+我們也用同樣的方式去抽
+所以你看我有一個病患的資料庫
+那今天新進來的這病患
+我們就可以做sea-search搜尋了
+好，就用這五十個欄位去做媒合這樣子
+那同樣的方法我們也可以去做這個 clinical trial。OK，I
+I want to skip this。Right。Right。
+
+[12:45.2] The second，because the time is limited，sorry
+呃，I need to
+呃，move forward to the second application。All right。The second application
+is that we use NLP approach for the
+呃，emergency department
+Right
+So this is the video
+Over sixty percent of emergency departments worldwide face overcrowding
+When twenty-five percent of patients wait over four hours
+the risk of death within two days increases by fifty-four percent
+The TMDU big data team developed AIDPE
+By analyzing free-text notes and clinical computation risks
+it delivers precise risk predictions and research optimization within
+three to five minutes
+Compared to clinicians
+its accuracy is point leadership level
+Scientific analysis shows that AIDPE integrates patient information
+to identify risk early and support clinician decisions
+This optimizes medical resources and significantly improves the quality
+of care
+AIDPE, more than AI
+it's a mobile assistant that saves lives
+Well, this is another video
+I, I, I, I don't play here
+All right
+So, uh, many days that
+uh, we want to use the AI model to improve the throughput and
+uh, reducing the unnecessary exam
+Okay
+Right
+So this is the
+uh, workflow
+When patient arrive
+uh, ED, and we will
+uh, collect the vital sign and the chief complaint and fit into the model
+And the model
+uh, will predict the outcome
+And also what exam the patient need to do
+And also, uh
+what, what kind of lab they-- the dev exam or X-ray exam
+or CT scan the patient need to do
+All right
+So that means we have the platforms here and content many
+uh, model to waiting for input
+The same input
+but different task
+Right
+So, uh, what we--
+uh, what challenge we need to face?
+The first challenge i-is that how to use the vital sign
+or, uh, not use
+Okay, how to integrate the vital sign with the clinical narrative?
+Because the vital sign is the
+uh, numerical data
+and the clinical narrative is the text data
+All right?
+How to merge them together
+fit into the model
+And another challenge is how to deal with the mixed language and the
+the problem we just mentioned before
+uh, in the clinical
+narrative
+the chief complaint
+Okay, the second challenge
+The third challenge is how to deal with the data imbalance
+Okay?
+Only, uh, when we predict the outcome
+for example
+whether the patient will go to a ICU
+uh, only two point six percent person is the positive
+case
+So it is very
+very imbalanced
+All right?
+And then is the out-outpu-output
+yeah, we can predict many
+many, many
+uh, issues here
+How, there are several challenges
+How to integrate different data types
+uh, vital sign and this
+uh, clinical
+chief complaint
+The first challenge of the clinical chief complaint is that the clinical
+chief complaint is very random
+This is what we just saw
+The last challenge is
+uh, this data imbalance
+Oh, it's very serious
+Only two point six percent
+less than three out of a hundred people will have
+for example
+predictions like going to the ICU
+Uh, so the following is our prediction goal
+
+[17:02.8] All right
+So, uh, so far we have published around
+uh, ten or, uh
+more than ten papers
+uh, during these two or three years
+Right
+All right
+I think this is
+uh, what I want to say today
+Okay
+Any question?
+No
+Okay
+So if no question
+so we finish the class
+Sorry, I, I
+I speed, I speed it
+Yeah, speed up
+Yeah, because I
+I just noticed the time is close to five
+Sorry about that
+Yeah
+So next week
+uh, we will start to
+uh, talk about
+uh, data preprocessing
+Okay?
+And we will have some hands-on
+Hands-on
+Hands-on, sorry
+Hands-on
+Okay
+Uh, so you guys need to bring your laptop
+and, uh, I will
+uh, teach you how to use
+uh
+Not how to use
+How to start to programming
+all right, using the Python
+Okay?
+Okay, that's it
+Thank you

@@ -1,0 +1,3939 @@
+[
+  {
+    "id": 1,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "A model reads an emergency-department chief complaint and outputs whether the patient needs a CT scan (yes or no). What type of task is this?",
+    "zh": "模型讀取急診的主訴（chief complaint），輸出病人是否需要做 CT 檢查（是或否）。這屬於哪一種任務？",
+    "options": [
+      {
+        "en": "Regression",
+        "zh": "回歸"
+      },
+      {
+        "en": "Binary classification",
+        "zh": "二元分類"
+      },
+      {
+        "en": "Multiclass classification",
+        "zh": "多類別分類"
+      },
+      {
+        "en": "Sequence-to-sequence generation",
+        "zh": "序列到序列生成"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The output is one of exactly two classes (yes / no), which the lecturer explicitly called binary classification. Regression would output a continuous number, multiclass classification would choose among three or more classes, and sequence-to-sequence would output another text sequence such as a translation.",
+      "zh": "輸出只有「是／否」兩個類別，老師在課堂上明確稱之為二元分類（binary classification）。回歸輸出的是連續數值；多類別分類要在三個以上的類別中選一個；序列到序列則是輸出另一段文字序列（例如翻譯），都不符合。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "ED chief complaint → CT yes/no described as 'two class… binary classification'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 2,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "A model reads a news article and predicts the reader's emotion as happy, sad, or angry. Which task type is this?",
+    "zh": "模型讀一篇新聞，預測讀者的情緒是開心、難過或生氣。這是哪一種任務？",
+    "options": [
+      {
+        "en": "Regression",
+        "zh": "回歸"
+      },
+      {
+        "en": "Binary classification",
+        "zh": "二元分類"
+      },
+      {
+        "en": "Sequence-to-sequence",
+        "zh": "序列到序列"
+      },
+      {
+        "en": "Multiclass classification",
+        "zh": "多類別分類"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The output is a label (class) chosen from three emotions, so it is classification with more than two classes: multiclass classification. It is not binary (that needs exactly two classes), not regression (no continuous score), and not sequence-to-sequence (the output is one label, not a new text sequence).",
+      "zh": "輸出是從三種情緒中選出一個標籤（label），類別超過兩個，所以是多類別分類。二元分類只有兩類；回歸輸出連續分數；序列到序列輸出的是一段新文字，而這裡只輸出一個標籤。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "News article → reader emotion (happy, sad, angry) given as a label-prediction example",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 3,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "Which of the following is a regression task?",
+    "zh": "下列哪一個是回歸（regression）任務？",
+    "options": [
+      {
+        "en": "Input a master's thesis and output its numeric grade",
+        "zh": "輸入一篇碩士論文，輸出它的分數（數值）"
+      },
+      {
+        "en": "Input a chief complaint and output whether a CT scan is needed",
+        "zh": "輸入主訴，輸出是否需要做 CT"
+      },
+      {
+        "en": "Input a news article and output happy, sad, or angry",
+        "zh": "輸入新聞，輸出開心、難過或生氣"
+      },
+      {
+        "en": "Input an English sentence and output its Chinese translation",
+        "zh": "輸入英文句子，輸出中文翻譯"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Regression outputs a scalar value. The lecturer's example was exactly 'input your thesis, output the score of the thesis'. The CT question is binary classification, the emotion question is multiclass classification, and translation is a sequence-to-sequence task.",
+      "zh": "回歸的輸出是一個純量數值，老師舉的例子正是「輸入論文、輸出論文成績」。CT 是否需要是二元分類；開心／難過／生氣是多類別分類；翻譯是序列到序列任務。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'Another is the scalar… output a value. So it's a regression task… the score of the thesis'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 4,
+    "topic": "foundations",
+    "difficulty": "applied",
+    "en": "You build an emotion classifier where each text is assigned exactly one of several emotions, such as happy, fun, sad, or angry. What kind of task is this?",
+    "zh": "你要建立一個情緒分類器，每段文字只會被歸到開心、有趣、難過、生氣等多種情緒中的其中一種。這是什麼任務？",
+    "options": [
+      {
+        "en": "Binary classification",
+        "zh": "二元分類"
+      },
+      {
+        "en": "Regression",
+        "zh": "回歸"
+      },
+      {
+        "en": "Multiclass classification",
+        "zh": "多類別分類"
+      },
+      {
+        "en": "Dimension reduction",
+        "zh": "降維"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Each input gets one discrete label chosen from more than two categories, so it is multiclass classification. Binary would allow only two labels. Regression would predict a continuous number, such as an intensity score. Dimension reduction is a preprocessing step, not a prediction task.",
+      "zh": "每筆輸入得到一個離散標籤，且類別超過兩個，所以是多類別分類。二元分類只有兩種標籤；回歸預測的是連續數值（例如強度分數）；降維是前處理技術，不是預測任務。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "課堂以情緒標籤說明分類任務，並對應考點筆記 15:38 的情境。",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 5,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "The input is an English sentence and the output is the same sentence in Mandarin Chinese. Which output type did the lecture use for this?",
+    "zh": "輸入一段英文，輸出同一句話的中文。課堂上把這類任務歸為哪一種輸出型態？",
+    "options": [
+      {
+        "en": "Binary classification",
+        "zh": "二元分類"
+      },
+      {
+        "en": "Regression",
+        "zh": "回歸"
+      },
+      {
+        "en": "Sequence-to-sequence",
+        "zh": "序列到序列（seq2seq）"
+      },
+      {
+        "en": "Multiclass classification",
+        "zh": "多類別分類"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Both the input and the output are token sequences, so the lecture called it sequence-to-sequence (translation, dialogue, language generation). Classification outputs one label and regression outputs one number. Neither fits an output that is a whole new sentence.",
+      "zh": "輸入與輸出都是 token 序列，課堂稱之為序列到序列（如翻譯、對話、語言生成）。分類只輸出一個標籤，回歸只輸出一個數值，都無法描述「輸出一整句新文字」。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'if today the input is English, the output is another sequence like Mandarin Chinese… translation… sequence to sequence'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 6,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "According to the lecture's supervised-learning workflow, what is the correct order of steps?",
+    "zh": "依照課堂介紹的監督式學習流程，正確的步驟順序是？",
+    "options": [
+      {
+        "en": "Data preprocessing → data representation → learning algorithm → output",
+        "zh": "資料前處理 → 資料表示 → 學習演算法 → 輸出"
+      },
+      {
+        "en": "Data representation → preprocessing → output → algorithm",
+        "zh": "資料表示 → 前處理 → 輸出 → 演算法"
+      },
+      {
+        "en": "Learning algorithm → preprocessing → representation → output",
+        "zh": "學習演算法 → 前處理 → 資料表示 → 輸出"
+      },
+      {
+        "en": "Output → algorithm → representation → preprocessing",
+        "zh": "輸出 → 演算法 → 資料表示 → 前處理"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer summarised it as: first data preprocessing, second data representation, third the algorithm, last the output, and said every step must be clear before you can vibe-code well. Raw data must be cleaned before it is turned into numbers, and a model can only learn from numeric representations, so the other orders are not workable.",
+      "zh": "老師總結：第一前處理、第二資料表示、第三演算法、最後輸出，並強調要清楚每一步才能善用 vibe coding。原始資料要先清理才能轉成數字，模型也只能從數值表示中學習，其他順序都不合理。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'the first part is data preprocessing, second part is data representation, the third is the algorithm, and the last is the output'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "In this course, what does 'data representation' mean?",
+    "zh": "在本課程中，「資料表示（data representation）」指的是什麼？",
+    "options": [
+      {
+        "en": "Drawing pie charts and line charts to observe data",
+        "zh": "畫圓餅圖、折線圖來觀察資料"
+      },
+      {
+        "en": "Filling in missing values with the mean",
+        "zh": "用平均值填補缺失值"
+      },
+      {
+        "en": "Asking domain experts to annotate labels",
+        "zh": "請領域專家標註標籤"
+      },
+      {
+        "en": "Converting raw data into a numeric, machine-readable form such as vectors, matrices, or tensors",
+        "zh": "把原始資料轉成機器可讀的數值形式，例如向量、矩陣或張量"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said machines can only read numbers, so raw data must be converted into a machine-readable form, such as a vector (1D), a matrix (2D), or a tensor (3D). Charts belong to data observation, mean imputation is preprocessing (data cleaning), and annotation produces labels, not representations.",
+      "zh": "老師說機器只能讀數字，必須把原始資料轉成機器可讀的形式，例如向量（1D）、矩陣（2D）或張量（3D）。畫圖屬於資料觀察，平均值填補屬於前處理（資料清理），標註是產生標籤，都不是資料表示。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'We need convert the raw data into the form that's machine readable. The machine only can read number'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 42",
+        "image": "./images/slides/lecture-4-p42.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "The lecture splits the whole AI process into Data, Learning and Action. Which part did the lecturer say this class focuses on?",
+    "zh": "課程把 AI 的整體流程分為 Data、Learning、Action 三部分。老師說本課程主要聚焦在哪一部分？",
+    "options": [
+      {
+        "en": "Data: getting and storing data, e.g. IRB applications",
+        "zh": "Data：取得與儲存資料，例如申請 IRB"
+      },
+      {
+        "en": "Learning: how to learn knowledge from data and train well-performing models",
+        "zh": "Learning：如何從資料學到知識、訓練出表現好的模型"
+      },
+      {
+        "en": "Action: making the final decision with the AI output",
+        "zh": "Action：依 AI 結果做最終決策"
+      },
+      {
+        "en": "Ranking: submitting predictions to a leaderboard",
+        "zh": "Ranking：把預測結果上傳到排行榜"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 3 lists Data (how to get and store data), Learning (how to learn knowledge from data) and Action (how to use learned knowledge), and the lecturer said 'our class will focus on this one, learning'. Data governance and action are acknowledged but are not the focus, and leaderboard ranking is not one of the three parts.",
+      "zh": "投影片第 3 頁列出 Data（如何取得、儲存資料）、Learning（如何從資料學習知識）、Action（如何運用學到的知識）。老師明說「our class will focus on this one, learning」。Data 治理與 Action 雖有提及但非重點；排行榜不是三部分之一。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[05:45.3]–[07:09.6]",
+      "note": "'So our class will focus on this one, learning'; matches slide p. 3 of lecture 4",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 3",
+        "image": "./images/slides/lecture-4-p03.webp",
+        "note": "相關講義頁面；本題口述依據以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "topic": "foundations",
+    "difficulty": "applied",
+    "en": "An AI model predicts a patient's condition. In the lecture's Action step, who should make the final clinical decision?",
+    "zh": "一個 AI 模型預測了病人的狀況。依照課程的 Action 步驟，最終的臨床決策應由誰做？",
+    "options": [
+      {
+        "en": "The AI model, automatically and without review",
+        "zh": "AI 模型自動決定，不需審視"
+      },
+      {
+        "en": "The data engineer who cleaned the data",
+        "zh": "負責清理資料的資料工程師"
+      },
+      {
+        "en": "The model retrains itself until it decides",
+        "zh": "模型自行重新訓練直到做出決定"
+      },
+      {
+        "en": "The clinician, using the AI prediction together with all other information",
+        "zh": "臨床醫師，綜合 AI 預測與其他所有資訊後決定"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer stressed that AI can predict the situation of a patient, but 'the last step is back to you… the clinical doctor need to make the decision based on all of the information'. AI supports the decision but does not replace it. The data engineer does not make clinical decisions, and retraining is not a decision process.",
+      "zh": "老師強調 AI 可以預測病人狀況，但「最後一步回到你身上」，由臨床醫師根據所有資訊做決策。AI 是輔助而非取代；資料工程師不做臨床決策；模型重新訓練也不是決策過程。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[05:45.3]–[07:09.6]",
+      "note": "'AI can provide or predict the situation of patient but the clinical doctor need to make the decision'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 10,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "In the course notation, what do big X and small y stand for?",
+    "zh": "在課程符號中，大 X 與小 y 分別代表什麼？",
+    "options": [
+      {
+        "en": "X is the label; y is the features",
+        "zh": "X 是標籤；y 是特徵"
+      },
+      {
+        "en": "X is the features (data representation); y is the label the model must learn",
+        "zh": "X 是特徵（資料表示）；y 是模型要學習的標籤"
+      },
+      {
+        "en": "X is the training set; y is the testing set",
+        "zh": "X 是訓練集；y 是測試集"
+      },
+      {
+        "en": "X is the rows of a DataFrame; y is its columns",
+        "zh": "X 是 DataFrame 的列；y 是欄"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer defined big X as the features / feature set / data representation, and small y as the label, the objective the model needs to learn. Swapping them is wrong. Train/test is a different split of rows, and rows/columns describe table shape, not the roles of variables.",
+      "zh": "老師定義大 X 為特徵（feature set、資料表示），小 y 為標籤，也就是模型要學習的目標。顛倒是錯的；訓練／測試是依資料筆數切分，列／欄只是表格形狀，都不是 X、y 的意義。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[14:30.1]",
+      "note": "'X is data representation… features or feature set… Y, small Y, Y is label'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "topic": "foundations",
+    "difficulty": "applied",
+    "en": "In the lecturer's BMI demo, X already contains height and weight, which directly determine the current BMI target y. What task-design problem was the lecturer warning about?",
+    "zh": "在老師的 BMI 示範中，X 已包含身高和體重，可直接算出當下的 BMI 目標 y。老師主要提醒哪個任務設計問題？",
+    "options": [
+      {
+        "en": "Class imbalance",
+        "zh": "類別不平衡"
+      },
+      {
+        "en": "Too many missing values",
+        "zh": "缺失值太多"
+      },
+      {
+        "en": "The target can be calculated directly from X, so using ML adds little value in this demo",
+        "zh": "此示範的目標可直接由 X 算出，用機器學習預測的價值有限"
+      },
+      {
+        "en": "The learning rate is too large",
+        "zh": "學習率太大"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer called this a data-leakage warning: in the demonstration, the current BMI is already determined by height and weight, so a formula suffices. More generally, a deterministic target shortcut is a task-design issue; whether something is leakage depends on what information is legitimately available at prediction time. Useful available predictors are not automatically leakage. Imbalance, missing cells and learning-rate size are different issues.",
+      "zh": "老師在此示範中把它稱為 data leakage 警訊：當下的 BMI 已可由身高與體重直接算出，使用公式即可，無須另訓練預測模型。更精確地說，這裡是目標可直接計算的任務設計問題；是否構成資料洩漏，仍要看預測當下能否合法取得這些資訊，不能把所有有效特徵一律視為洩漏。類別不平衡、缺值與學習率是另外的問題。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[25:14.2]–[34:09.2]",
+      "note": "BMI with height and weight in X → '我們有時候會講是 data leakage'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 12,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "In the model-training part of the workflow, why do we split data into a training set and a testing set?",
+    "zh": "在流程的模型訓練部分，為什麼要把資料切成訓練集與測試集？",
+    "options": [
+      {
+        "en": "Train on the training set, then use the trained model on the test set to check performance",
+        "zh": "用訓練集訓練模型，再用訓練好的模型預測測試集以檢驗表現"
+      },
+      {
+        "en": "The test set is used to fill missing values in the training set",
+        "zh": "測試集是用來填補訓練集的缺失值"
+      },
+      {
+        "en": "Both sets are merged so the model trains on more data at once",
+        "zh": "兩者會合併，讓模型一次訓練更多資料"
+      },
+      {
+        "en": "The test set decides which column is the label",
+        "zh": "測試集用來決定哪一欄是標籤"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said: split the data into training and testing, use the training set to train the model, then use the trained model to predict the test set so you can see its performance. Using the test set for imputation, merging the sets, or choosing the label all defeat the purpose of a separate evaluation set.",
+      "zh": "老師說：切成訓練與測試，用訓練資料訓練模型，再用訓練好的模型預測測試資料，藉此看到 performance。拿測試集補值、把兩者合併、或用它決定標籤，都破壞了獨立評估的目的。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[14:30.1]",
+      "note": "'split the data as training and testing, using the training set to train the model and adapt the trained model for predict test set'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 13,
+    "topic": "foundations",
+    "difficulty": "applied",
+    "en": "Before machine learning, many clinical text tasks used rule-based (expert system) code. Which pain point did the lecturer describe?",
+    "zh": "在機器學習之前，許多臨床文字任務用規則式（專家系統）程式處理。老師描述了什麼痛點？",
+    "options": [
+      {
+        "en": "The code becomes complex nested loops and if-else that is hard to maintain, and writing rules requires close cooperation with doctors",
+        "zh": "程式變成大量巢狀迴圈與 if-else，難以維護，而且寫規則需要與醫師密切合作"
+      },
+      {
+        "en": "Rule-based systems need no domain knowledge at all",
+        "zh": "規則式系統完全不需要領域知識"
+      },
+      {
+        "en": "Rule-based systems learn automatically from labelled data",
+        "zh": "規則式系統會自動從標註資料中學習"
+      },
+      {
+        "en": "Rule-based systems always outperform ML on free-text notes",
+        "zh": "規則式系統在自由文字上一定勝過機器學習"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer showed rule-based extraction, such as nodule sizes, and said the code ends up with complicated for loops that are difficult to maintain. Only doctors know how to define the rules, so you must work closely with them. Rule-based systems therefore depend heavily on domain knowledge, do not learn from data, and struggle with free-style text.",
+      "zh": "老師示範以規則抽取（例如結節大小），並說最後程式充滿複雜的 for loop，很難維護；而且只有醫師知道規則該怎麼下，需要密切合作。所以規則式其實高度依賴領域知識、不會從資料學習，面對自由書寫文字也很吃力。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[12:49.7]–[18:11.0]",
+      "note": "Rule-based / expert system: complicated for loops, difficult for maintenance, need doctors to define rules",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 14,
+    "topic": "foundations",
+    "difficulty": "applied",
+    "en": "Why did the lecturer suggest small language models (SLMs) as an opportunity for clinical data?",
+    "zh": "老師為什麼認為小型語言模型（SLM）對臨床資料是一個機會？",
+    "options": [
+      {
+        "en": "SLMs are always smarter than large language models",
+        "zh": "SLM 一定比大型語言模型更聰明"
+      },
+      {
+        "en": "SLMs need no computing resources at all",
+        "zh": "SLM 完全不需要運算資源"
+      },
+      {
+        "en": "SLMs can run locally, so private clinical data does not have to leave the hospital",
+        "zh": "SLM 可以在本地端執行，私密的臨床資料不必離開醫院"
+      },
+      {
+        "en": "SLMs can only be used on the cloud",
+        "zh": "SLM 只能在雲端使用"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Cloud LLMs such as ChatGPT require sending data outside the hospital, which is a privacy risk. The lecturer said SLMs let us control privacy-sensitive data locally. SLMs still need computing resources (the cost has come down), they are described as close to average intelligence rather than smarter than LLMs, and they are the opposite of cloud-only.",
+      "zh": "雲端 LLM（如 ChatGPT）需要把資料送出醫院，有隱私風險；老師說使用 SLM 可以在本地掌控隱私資料。SLM 仍需運算資源（只是成本降低）；它被形容為接近平均智力，並非比 LLM 聰明；也不是只能在雲端。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[44:28.0]–[55:34.3]",
+      "note": "LLM on the cloud → privacy issue; 'once we use the small language model the privacy data can control it'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 15,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "According to the lecture slide on LLM hallucination, which statement is closest to the slide's message?",
+    "zh": "根據投影片關於 LLM 幻覺（hallucination）的說明，下列哪項最接近其觀點？",
+    "options": [
+      {
+        "en": "Hallucination only happens when the internet connection drops",
+        "zh": "只有網路斷線時才會產生幻覺"
+      },
+      {
+        "en": "Language models generate text by 'making things up', so correct-looking output is partly by chance, and there is a balance between creativity and accuracy",
+        "zh": "語言模型生成文字本質上是在「編造」，看起來正確的輸出部分出於偶然，並存在創意與精確之間的取捨"
+      },
+      {
+        "en": "Large enough models can never hallucinate",
+        "zh": "模型夠大就永遠不會產生幻覺"
+      },
+      {
+        "en": "Hallucination is a hardware failure of the GPU",
+        "zh": "幻覺是 GPU 的硬體故障"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 22 says language models are designed to make things up, and when the output happens to be correct, that is by chance. It also mentions a balance between creativity and perfect accuracy. Hallucination is not caused by network or hardware problems, and the slide never claims that scale removes it.",
+      "zh": "第 22 頁指出語言模型的設計就是在編造文字，輸出剛好正確是出於偶然，並提到創意與完美精確之間的平衡。幻覺不是網路或硬體問題造成的，投影片也沒有說模型變大就能消除幻覺。"
+    },
+    "source": {
+      "file": "materials/lectures/2. What is AI and Why do I need to know ML.pdf",
+      "locator": "p. 22",
+      "note": "LLM Hallucination slide: models 'make things up'; balance between creativity and accuracy",
+      "supplemental": false,
+      "image": "./images/slides/lecture-2-p22.webp"
+    }
+  },
+  {
+    "id": 16,
+    "topic": "foundations",
+    "difficulty": "basic",
+    "en": "The intro slide divides ML development into The Data, Model Development, and Production & Engineering. Where does 'performance evaluation' belong?",
+    "zh": "課程簡介投影片把 ML 開發分成 The Data、Model Development、Production & Engineering。「效能評估」屬於哪一部分？",
+    "options": [
+      {
+        "en": "The Data",
+        "zh": "The Data（資料）"
+      },
+      {
+        "en": "Production and Engineering",
+        "zh": "Production and Engineering（產品與工程）"
+      },
+      {
+        "en": "None of them; evaluation is not part of the procedure",
+        "zh": "都不是，評估不在流程內"
+      },
+      {
+        "en": "Model Development",
+        "zh": "Model Development（模型開發）"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 5 lists 'Model Development: machine learning and deep learning, performance evaluation'. The Data covers collection, visualization, preprocessing and representation. Production & Engineering covers web services, GUIs and unit tests. Evaluation is explicitly part of the procedure.",
+      "zh": "第 5 頁寫明「Model Development：機器學習與深度學習、performance evaluation」。The Data 包含收集、視覺化、前處理、資料表示；Production & Engineering 包含網頁服務、GUI、單元測試。評估明確屬於流程的一部分。"
+    },
+    "source": {
+      "file": "materials/lectures/1. Introduction to the Machine Learning Course.pdf",
+      "locator": "p. 5",
+      "note": "Basic procedure of developing an ML model: The Data / Model Development / Production and Engineering",
+      "supplemental": false,
+      "image": "./images/slides/lecture-1-p05.webp"
+    }
+  },
+  {
+    "id": 17,
+    "topic": "models",
+    "difficulty": "applied",
+    "en": "A k-nearest neighbor (KNN) classifier with k = 5 finds these neighbors for a new point: female, female, female, male, male. What does it predict?",
+    "zh": "k 近鄰（KNN）分類器設定 k = 5，新資料點的五個鄰居為：女、女、女、男、男。它會預測什麼？",
+    "options": [
+      {
+        "en": "Male",
+        "zh": "男"
+      },
+      {
+        "en": "Female, by majority vote",
+        "zh": "女（多數決）"
+      },
+      {
+        "en": "It cannot decide because k must be even",
+        "zh": "無法決定，因為 k 必須是偶數"
+      },
+      {
+        "en": "0.6 'female', the average of the labels",
+        "zh": "0.6 個「女」，取標籤平均"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer explained KNN: pick the k nearest labelled neighbors and use majority vote. Three female versus two male gives female. An odd k actually helps avoid ties, so 'k must be even' is wrong. For classification KNN outputs a class label, not a fractional average.",
+      "zh": "老師說明 KNN：找出 k 個最近且已知標籤的鄰居，用多數決（majority vote）。三女二男，答案為女。k 取奇數反而可避免平手，「必須偶數」是錯的；分類時 KNN 輸出類別，而非小數平均。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[36:55.1]–[44:32.6]",
+      "note": "KNN with k = 5, 'female, female, female and male, male, so the answer is female'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 38",
+        "image": "./images/slides/lecture-4-p38.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 18,
+    "topic": "models",
+    "difficulty": "basic",
+    "en": "The lecturer listed classic supervised machine-learning models to be taught. Which of these is NOT a supervised classification model?",
+    "zh": "老師列出了將教授的經典監督式機器學習模型。下列哪一個「不是」監督式分類模型？",
+    "options": [
+      {
+        "en": "Naive Bayes",
+        "zh": "單純貝氏（Naive Bayes）"
+      },
+      {
+        "en": "Decision Tree",
+        "zh": "決策樹（Decision Tree）"
+      },
+      {
+        "en": "Support Vector Machine",
+        "zh": "支援向量機（SVM）"
+      },
+      {
+        "en": "Principal Component Analysis (PCA)",
+        "zh": "主成分分析（PCA）"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Naive Bayes, Decision Tree, Logistic Regression and SVM were named as classic supervised models. PCA was taught as a dimension-reduction method (and for visualization). It does not predict labels, so it is not a supervised classifier.",
+      "zh": "Naive Bayes、Decision Tree、Logistic Regression、SVM 被列為經典監督式模型。PCA 在課堂上是降維（也可用於視覺化）的方法，不預測標籤，所以不是監督式分類器。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_338742 (已AI校正).txt",
+      "locator": "[18:51.0]–[20:12.0]",
+      "note": "'five classic machine learning models… Naive Bayes, Decision Tree… Logistic Regression or Support Vector Machines'; PCA is covered as dimension reduction in 344615 [10:47.3]",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 19",
+        "image": "./images/slides/lecture-4-p19.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 19,
+    "topic": "models",
+    "difficulty": "applied",
+    "en": "In the lecturer's ED example, a chief complaint goes into BERT and then a dense layer predicts whether a CT scan is needed. What is BERT's role?",
+    "zh": "在老師的急診範例中，主訴輸入 BERT 後，再接一層 dense layer 預測是否需要 CT。BERT 扮演什麼角色？",
+    "options": [
+      {
+        "en": "An encoder that converts raw text into a representation (embedding)",
+        "zh": "編碼器（encoder），把原始文字轉成表示（embedding）"
+      },
+      {
+        "en": "A decoder that writes long answers like GPT",
+        "zh": "像 GPT 一樣產生長篇回答的解碼器"
+      },
+      {
+        "en": "A web crawler that downloads the complaints",
+        "zh": "下載主訴資料的網路爬蟲"
+      },
+      {
+        "en": "A CNN that processes chest X-ray pixels",
+        "zh": "處理胸部 X 光像素的 CNN"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said BERT is an encoder-based language model whose goal is to convert raw text into a vector or word embedding. A dense layer on top then makes the prediction. Most GPT models are decoder-based generators. A crawler only collects data, and a CNN is for images, not chief-complaint text.",
+      "zh": "老師說 BERT 是以 encoder 為基礎的語言模型，目的是把原始文字轉成向量或 embedding，再接 dense layer 做預測。GPT 多是 decoder 生成模型；爬蟲只負責收集資料；CNN 用於影像，不是處理主訴文字。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[39:03.6]–[44:28.0]",
+      "note": "Encoder learns to convert input to representation; 'most of the GPT model is based on the decoder… what's the encoder? BERT-based model'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 20,
+    "topic": "models",
+    "difficulty": "applied",
+    "en": "How did the lecturer describe using a pretrained language model such as BERT for a downstream clinical task?",
+    "zh": "老師如何描述把 BERT 這類預訓練語言模型用在下游臨床任務？",
+    "options": [
+      {
+        "en": "Every lab must pretrain its own giant model from scratch first",
+        "zh": "每個實驗室都必須先從頭預訓練自己的巨型模型"
+      },
+      {
+        "en": "Pretrained models cannot be adapted to new tasks",
+        "zh": "預訓練模型無法用在新任務"
+      },
+      {
+        "en": "Reuse the pretrained model, add a task layer, and fine-tune on the downstream dataset instead of retraining from scratch",
+        "zh": "沿用預訓練模型，加上任務層，用下游資料集微調（fine-tune），不必從頭訓練"
+      },
+      {
+        "en": "Fine-tuning means deleting the labels of the dataset",
+        "zh": "微調就是把資料集的標籤刪掉"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer explained that only big companies or research centers can pretrain very large models. We download the pretrained model, prepare the downstream task dataset and fine-tune it, without worrying about how to represent raw text, because the pretrained model already handles that. The other options contradict this.",
+      "zh": "老師說只有大公司或研究中心能預訓練超大模型；我們下載預訓練模型、準備下游任務資料並微調即可，不用煩惱如何表示原始文字，因為預訓練模型已處理好。其他選項都與此矛盾。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[37:25.2]–[44:28.0]",
+      "note": "Pretrain by big companies; 'we don't need to retrain this BERT model… focus on the downstream task'; fine-tune",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 21,
+    "topic": "models",
+    "difficulty": "basic",
+    "en": "Conceptually, how does a Support Vector Machine (SVM) separate two classes?",
+    "zh": "概念上，支援向量機（SVM）如何區分兩個類別？",
+    "options": [
+      {
+        "en": "It averages the labels of the k nearest points",
+        "zh": "取 k 個最近點的標籤平均"
+      },
+      {
+        "en": "It builds a tree of if-else splits",
+        "zh": "建立一棵 if-else 分裂樹"
+      },
+      {
+        "en": "It finds a decision boundary (hyperplane) that maximizes the margin between the classes",
+        "zh": "找出使兩類之間間隔（margin）最大的決策邊界（超平面）"
+      },
+      {
+        "en": "It removes features with PCA and stops there",
+        "zh": "只用 PCA 刪除特徵就結束"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "An SVM looks for the separating boundary with the largest margin, i.e. the widest gap to the nearest training points of each class. A wide margin tends to generalize better. Averaging neighbors describes KNN, if-else splits describe decision trees, and PCA is dimension reduction, not a classifier.",
+      "zh": "SVM 尋找間隔最大的分隔邊界，也就是與兩類最近訓練點距離最寬的那條線（面），寬間隔通常泛化較好。取鄰居是 KNN；if-else 分裂是決策樹；PCA 是降維，不是分類器。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:36 entry",
+      "note": "Exam note: questions on how models such as SVM work, conceptually; margin concept from scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 22,
+    "topic": "models",
+    "difficulty": "basic",
+    "en": "In an SVM, what are 'support vectors'?",
+    "zh": "在 SVM 中，「支援向量（support vectors）」是什麼？",
+    "options": [
+      {
+        "en": "The training points closest to the decision boundary, which determine where it lies",
+        "zh": "最靠近決策邊界、決定邊界位置的那些訓練資料點"
+      },
+      {
+        "en": "Every training point, all weighted equally",
+        "zh": "所有訓練點，權重都相同"
+      },
+      {
+        "en": "The points in the test set",
+        "zh": "測試集中的資料點"
+      },
+      {
+        "en": "The average point (centroid) of each class",
+        "zh": "每一類的平均點（質心）"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Support vectors are the training samples on or inside the margin, nearest to the boundary. They alone define the boundary: moving distant points usually changes nothing. Not all points matter equally, the test set is never used to fit the boundary, and SVM does not simply use class centroids.",
+      "zh": "支援向量是落在間隔上或間隔內、最接近邊界的訓練樣本，邊界由它們決定；移動遠處的點通常不影響邊界。並非所有點同等重要；測試集不參與擬合；SVM 也不是用類別質心。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:36 entry",
+      "note": "Exam note on SVM working principle; support vectors per scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 23,
+    "topic": "models",
+    "difficulty": "applied",
+    "en": "What is the role of a kernel in an SVM?",
+    "zh": "SVM 中的核函數（kernel）扮演什麼角色？",
+    "options": [
+      {
+        "en": "It is another name for the learning rate",
+        "zh": "它是學習率的另一個名稱"
+      },
+      {
+        "en": "It label-encodes categorical columns",
+        "zh": "它負責把類別欄位做 label encoding"
+      },
+      {
+        "en": "It deletes rows with missing values",
+        "zh": "它刪除含缺失值的資料列"
+      },
+      {
+        "en": "It computes similarity as if the data were mapped into a higher-dimensional space, letting the SVM learn non-linear boundaries",
+        "zh": "它像是把資料映射到更高維空間來計算相似度，讓 SVM 能學到非線性邊界"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "A kernel function measures similarity between samples as though they were transformed into a richer feature space, without computing that transformation explicitly (the 'kernel trick'). This lets a linear separator in that space become a curved boundary in the original space. It has nothing to do with learning rate, encoding or missing-value handling.",
+      "zh": "核函數衡量樣本間的相似度，效果等同把資料轉到更豐富的特徵空間，卻不必真的計算該轉換（kernel trick）。在高維空間的線性分隔，回到原空間就成了彎曲邊界。它與學習率、編碼、缺失值處理無關。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:39 entry",
+      "note": "Exam note asks about SVM kernel; kernel concept per scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 24,
+    "topic": "models",
+    "difficulty": "applied",
+    "en": "A classmate asks: 'What is THE main kernel of the SVM?' Which answer is most accurate?",
+    "zh": "同學問：「SVM 的主要 kernel 是哪一個？」下列哪個回答最精確？",
+    "options": [
+      {
+        "en": "SVM can only use a linear kernel",
+        "zh": "SVM 只能用線性核"
+      },
+      {
+        "en": "Common kernels include linear, polynomial, RBF (Gaussian) and sigmoid; the choice depends on the data, and RBF is scikit-learn SVC's default",
+        "zh": "常見核函數有線性、多項式、RBF（高斯）與 sigmoid；依資料選擇，scikit-learn 的 SVC 預設是 RBF"
+      },
+      {
+        "en": "The polynomial kernel is always best for every dataset",
+        "zh": "多項式核對所有資料集永遠最好"
+      },
+      {
+        "en": "The kernel is the CPU core that runs the SVM",
+        "zh": "kernel 就是執行 SVM 的 CPU 核心"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "There is no single universal 'main' kernel. Standard options are linear, polynomial, RBF and sigmoid, and you pick one (often by validation) based on the data. In scikit-learn, SVC uses RBF by default, which is a reasonable starting point but not always best. SVM is not limited to linear, no kernel is always best, and 'kernel' here is a similarity function, not hardware.",
+      "zh": "並沒有放諸四海皆準的「主要」核函數。常見有線性、多項式、RBF、sigmoid，要依資料（通常透過驗證）選擇；scikit-learn 的 SVC 預設 RBF，是合理起點但不保證最好。SVM 不限於線性核；沒有永遠最好的核；這裡的 kernel 是相似度函數，不是硬體。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:39 entry",
+      "note": "'What is the main kernel of the SVM?' recorded verbatim; kernel list and SVC default from scikit-learn",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 25,
+    "topic": "models",
+    "difficulty": "basic",
+    "en": "What usually happens if you set the learning rate very large during gradient-based training?",
+    "zh": "在以梯度為基礎的訓練中，如果把學習率設得很大，通常會怎樣？",
+    "options": [
+      {
+        "en": "Training is guaranteed to be faster and more accurate",
+        "zh": "保證訓練更快且更準確"
+      },
+      {
+        "en": "The model learns very slowly and needs many more iterations",
+        "zh": "模型學得非常慢，需要更多迭代"
+      },
+      {
+        "en": "Nothing changes; the learning rate has no effect",
+        "zh": "沒有任何變化，學習率不影響訓練"
+      },
+      {
+        "en": "Updates overshoot the minimum, so the loss oscillates or diverges and training may fail to converge",
+        "zh": "更新步伐跨過最低點，損失震盪甚至發散，訓練可能無法收斂"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The learning rate controls the size of each parameter update. If it is too large, each step jumps past the minimum, so the loss bounces around or grows instead of settling. Slow learning is the symptom of a learning rate that is too small. A larger rate does not guarantee better results, and the rate clearly affects training.",
+      "zh": "學習率決定每次參數更新的步伐大小。太大時每一步都跨過最低點，損失來回震盪或越來越大而不收斂。學得太慢是學習率「太小」的症狀；大學習率不保證更好；學習率顯然會影響訓練。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:38 entry",
+      "note": "'如果把learning rate設定的很大會怎樣'; answer per Google ML Crash Course hyperparameters page",
+      "supplemental": true,
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "illustration": {
+        "image": "./images/concepts/learning-rate.svg",
+        "caption": "自製學習率示意圖：較大步幅可能跨過低點；示意路徑並非數值訓練結果。"
+      }
+    }
+  },
+  {
+    "id": 26,
+    "topic": "models",
+    "difficulty": "basic",
+    "en": "What is the learning rate?",
+    "zh": "學習率（learning rate）是什麼？",
+    "options": [
+      {
+        "en": "The fraction of data reserved for testing",
+        "zh": "保留作測試的資料比例"
+      },
+      {
+        "en": "A hyperparameter set before training that controls how big each parameter-update step is",
+        "zh": "訓練前設定的超參數，控制每次參數更新的步伐大小"
+      },
+      {
+        "en": "The number of features in X",
+        "zh": "X 中的特徵數量"
+      },
+      {
+        "en": "The model's accuracy on the test set",
+        "zh": "模型在測試集上的準確率"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The learning rate is a hyperparameter: you choose it rather than the model learning it, and it scales each gradient-descent update. Too small means slow convergence. Too large means overshooting or divergence. The test fraction, the feature count and the test accuracy are different quantities.",
+      "zh": "學習率是超參數（由人設定、不是模型學出來的），用來縮放每次梯度下降的更新。太小收斂慢，太大會跨過頭或發散。測試比例、特徵數量、測試準確率都是不同的量。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:38 entry",
+      "note": "Learning-rate question in exam note; definition per Google ML Crash Course",
+      "supplemental": true,
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "illustration": {
+        "image": "./images/concepts/learning-rate.svg",
+        "caption": "自製學習率示意圖：較大步幅可能跨過低點；示意路徑並非數值訓練結果。"
+      }
+    }
+  },
+  {
+    "id": 27,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "A record has occupation = \"\" (empty). According to the slide, which kind of dirty data is this?",
+    "zh": "某筆資料 occupation = \"\"（空白）。依投影片分類，這屬於哪種髒資料？",
+    "options": [
+      {
+        "en": "Noisy",
+        "zh": "雜訊（noisy）"
+      },
+      {
+        "en": "Inconsistent",
+        "zh": "不一致（inconsistent）"
+      },
+      {
+        "en": "Incomplete",
+        "zh": "不完整（incomplete）"
+      },
+      {
+        "en": "Normalized",
+        "zh": "已正規化（normalized）"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slide 8 gives occupation=\"\" as the example of incomplete data: an attribute value is missing. Noisy data contains errors or outliers (e.g. Salary=-10). Inconsistent data has conflicting codes or names. 'Normalized' is a transformation result, not a type of dirty data.",
+      "zh": "第 8 頁以 occupation=\"\" 作為不完整資料（缺少屬性值）的例子。雜訊是錯誤或離群值（如 Salary=-10）；不一致是代碼或名稱互相矛盾；「已正規化」是轉換結果，不是髒資料類型。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 8",
+      "note": "incomplete: lacking attribute values, e.g., occupation=\"\"",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p08.webp"
+    }
+  },
+  {
+    "id": 28,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "A record shows Salary = \"-10\". Which type of dirty data is this?",
+    "zh": "某筆資料顯示 Salary = \"-10\"。這屬於哪種髒資料？",
+    "options": [
+      {
+        "en": "Noisy (contains errors or outliers)",
+        "zh": "雜訊（含錯誤或離群值）"
+      },
+      {
+        "en": "Incomplete",
+        "zh": "不完整"
+      },
+      {
+        "en": "Inconsistent",
+        "zh": "不一致"
+      },
+      {
+        "en": "One-hot encoded",
+        "zh": "已做 one-hot 編碼"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "A negative salary is an impossible value, an error. Slide 8 lists it as noisy data. It is not missing (incomplete), and it does not conflict with another field or code system (inconsistent). One-hot encoding is unrelated.",
+      "zh": "薪水為負是不可能的錯誤值，第 8 頁將其列為雜訊資料。它並未缺失（不完整），也沒有與其他欄位或代碼系統衝突（不一致）；one-hot 編碼無關。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 8",
+      "note": "noisy: containing errors or outliers, e.g., Salary=\"-10\"",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p08.webp"
+    }
+  },
+  {
+    "id": 29,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "A record has Age = \"42\" but Birthday = \"03/07/1997\". Which type of dirty data did the slide label this as?",
+    "zh": "某筆資料 Age = \"42\"，但 Birthday = \"03/07/1997\"。投影片把這歸類為哪種髒資料？",
+    "options": [
+      {
+        "en": "Inconsistent",
+        "zh": "不一致"
+      },
+      {
+        "en": "Incomplete",
+        "zh": "不完整"
+      },
+      {
+        "en": "Normalized",
+        "zh": "已正規化"
+      },
+      {
+        "en": "Unstructured",
+        "zh": "非結構化"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Age and birthday contradict each other, a discrepancy between fields, which slide 8 calls inconsistent data. Changing a rating scale from 1,2,3 to A,B,C is another inconsistency example. Nothing is missing, so it is not incomplete, and 'normalized' or 'unstructured' do not describe a conflict.",
+      "zh": "年齡與生日互相矛盾，是欄位間的不一致，第 8 頁稱為 inconsistent。評分由 1,2,3 改為 A,B,C 也是不一致的例子。這裡沒有缺值，不是不完整；「已正規化」「非結構化」都不描述矛盾。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 8",
+      "note": "inconsistent: e.g., Age=\"42\" Birthday=\"03/07/1997\"; rating '1,2,3' now 'A, B, C'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p08.webp"
+    }
+  },
+  {
+    "id": 30,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "A patient questionnaire has many blank cells in two columns. Based on the lecture, what is a typical reason?",
+    "zh": "病人問卷中有兩個欄位出現大量空白。根據課堂說明，常見原因是什麼？",
+    "options": [
+      {
+        "en": "Min-max normalization turned the values into blanks",
+        "zh": "min-max 正規化把數值變成空白"
+      },
+      {
+        "en": "One-hot encoding deleted the values",
+        "zh": "one-hot 編碼刪掉了數值"
+      },
+      {
+        "en": "Those columns were optional (not required), so most people left them empty",
+        "zh": "那些欄位不是必填，所以多數人沒填"
+      },
+      {
+        "en": "Cosine similarity removed the values",
+        "zh": "餘弦相似度移除了數值"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer explained that when a questionnaire column is not required, most people do not fill it in, so optional columns receive missing values. Normalization, encoding and similarity computations work on existing values and do not create blanks.",
+      "zh": "老師說明：問卷欄位若非必填，大多數人就不會填，因此選填欄位會產生缺失值。正規化、編碼、相似度計算都是對既有數值操作，不會製造空白。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[00:04.2]–[01:26.8]",
+      "note": "'if the column… we don't require it to fill in… optional column will receive missing value'; also 343399 [23:03.7]",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 8",
+        "image": "./images/slides/lecture-4-p08.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 31,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "According to the slide 'Why Is Data Dirty?', which of the following is listed as a source of inconsistent data?",
+    "zh": "依投影片「Why Is Data Dirty?」，下列哪項被列為不一致資料的來源？",
+    "options": [
+      {
+        "en": "Applying min-max normalization",
+        "zh": "做 min-max 正規化"
+      },
+      {
+        "en": "Combining different data sources",
+        "zh": "整合不同的資料來源"
+      },
+      {
+        "en": "Training on a GPU",
+        "zh": "在 GPU 上訓練"
+      },
+      {
+        "en": "Choosing k in KNN",
+        "zh": "選擇 KNN 的 k 值"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 9 says inconsistent data comes from different data sources and from functional-dependency violations. Noisy data comes from collection, entry and transmission, and incomplete data from n/a values or human, hardware or software problems. Normalization, GPUs and choosing k are not causes of dirty data.",
+      "zh": "第 9 頁指出不一致資料來自不同資料來源與函數相依性違反。雜訊來自收集、輸入、傳輸；不完整來自 n/a 值或人為、硬體、軟體問題。正規化、GPU、選 k 都不是髒資料的成因。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 9",
+      "note": "Inconsistent data comes from different data sources and functional dependency violation",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p09.webp"
+    }
+  },
+  {
+    "id": 32,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "What does the slide mean by 'No quality data, no quality mining results!'?",
+    "zh": "投影片「No quality data, no quality mining results!」是什麼意思？",
+    "options": [
+      {
+        "en": "Data quality does not matter if the model is large enough",
+        "zh": "模型夠大就不必在意資料品質"
+      },
+      {
+        "en": "Preprocessing is only for making nicer charts",
+        "zh": "前處理只是為了讓圖表更好看"
+      },
+      {
+        "en": "Any row with a missing value must always be deleted",
+        "zh": "只要有缺值的列一律刪除"
+      },
+      {
+        "en": "Duplicate or missing data can produce incorrect or misleading statistics, so data quality determines result quality",
+        "zh": "重複或缺失資料會造成錯誤甚至誤導的統計，資料品質決定結果品質"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 10 explains that quality decisions need quality data: duplicate or missing data may cause incorrect or misleading statistics. The lecturer added that a good model needs good-quality training data. Model size does not fix bad data, preprocessing is not just cosmetic, and blanket deletion is not what the slide recommends (imputation is also taught).",
+      "zh": "第 10 頁說明品質決策需要品質資料，重複或缺失資料可能造成錯誤或誤導的統計；老師也說好模型需要高品質訓練資料。模型大小無法彌補爛資料；前處理不是美化；投影片也未主張一律刪除（課堂也教了補值）。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 10",
+      "note": "'No quality data, no quality mining results!… duplicate or missing data may cause incorrect or even misleading statistics'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p10.webp"
+    }
+  },
+  {
+    "id": 33,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "A 2020 statistic in the slides said most AI-development time (about 80%) goes to data preprocessing. What did the lecturer suggest in 2026?",
+    "zh": "投影片中 2020 年的統計指出約 80% 的 AI 開發時間花在資料前處理。老師在 2026 年提出了什麼看法？",
+    "options": [
+      {
+        "en": "Preprocessing is no longer needed at all",
+        "zh": "現在已經完全不需要前處理"
+      },
+      {
+        "en": "LLMs / generative AI can help reduce preprocessing time, leaving more time for models and applications",
+        "zh": "可以用 LLM／生成式 AI 減少前處理時間，留更多時間做模型與應用"
+      },
+      {
+        "en": "Manual preprocessing is always better than any tool",
+        "zh": "手動前處理永遠比任何工具好"
+      },
+      {
+        "en": "The statistic proves models take 80% of the time",
+        "zh": "這統計證明模型訓練占 80% 時間"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer said he had commented on this 2020 figure: with large language models we can use GenAI to reduce preprocessing time and have more time to develop models or applications. He did not say preprocessing disappears, he did not dismiss tools, and the 80% refers to preprocessing (data wrangling), not modelling.",
+      "zh": "老師說他針對這張 2020 年的圖下了註解：現在有大型語言模型，可以用生成式 AI 減少前處理時間，把時間留給開發模型或應用。他沒說前處理消失，也沒否定工具；80% 指的是前處理（data wrangling），不是模型訓練。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[16:22.1]–[19:53.7]",
+      "note": "'I believe we can use the LLM to reduce the time we taken in the data preprocessing'; slide p. 11 (80% wrangling)",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 11",
+        "image": "./images/slides/lecture-4-p11.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 34,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "Which of the following is NOT one of the major data-preprocessing tasks shown on the slide?",
+    "zh": "下列哪一項「不是」投影片列出的主要資料前處理任務？",
+    "options": [
+      {
+        "en": "Data cleaning",
+        "zh": "資料清理"
+      },
+      {
+        "en": "Data integration",
+        "zh": "資料整合"
+      },
+      {
+        "en": "Dimension reduction",
+        "zh": "降維"
+      },
+      {
+        "en": "Submitting predictions to a Kaggle leaderboard",
+        "zh": "把預測上傳到 Kaggle 排行榜"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 12 shows data cleaning, data transformation, data integration and dimension reduction (with missing-value imputation and noise identification under cleaning). Uploading predictions to Kaggle happens after a model is trained. It is not preprocessing.",
+      "zh": "第 12 頁列出資料清理、資料轉換、資料整合與降維（清理下還有缺值補值、雜訊辨識）。把預測上傳 Kaggle 是模型訓練之後的事，不是前處理。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 12",
+      "note": "Major Tasks in Data Preprocessing: cleaning, transformation, integration, dimension reduction",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p12.webp"
+    }
+  },
+  {
+    "id": 35,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "The slide lists three ways to fill missing values. Which one does 'the most probable value' refer to?",
+    "zh": "投影片列出三種填補缺失值的方法。「最可能的值（most probable value）」指的是哪一種？",
+    "options": [
+      {
+        "en": "An inference-based estimate, e.g. using a Bayesian formula or a decision tree",
+        "zh": "以推論為基礎的估計，例如用貝氏公式或決策樹"
+      },
+      {
+        "en": "A global constant such as 'unknown'",
+        "zh": "全域常數，例如「unknown」"
+      },
+      {
+        "en": "The attribute mean",
+        "zh": "該屬性的平均值"
+      },
+      {
+        "en": "Deleting the whole column",
+        "zh": "刪除整個欄位"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Slide 13 gives three fill strategies: a global constant (such as 'unknown', which may act like a new class), the attribute mean, and the most probable value, which is inference-based, such as a Bayesian formula or decision tree. The lecturer also mentioned training a model to predict missing values. Deleting a column is dropping data, not filling it.",
+      "zh": "第 13 頁三種補法：全域常數（如「unknown」，可能變成新類別）、屬性平均值、最可能的值（以推論為基礎，如貝氏公式或決策樹）。老師也提到可訓練模型預測缺失值。刪除欄位是丟棄資料，不是補值。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 13",
+      "note": "Fill in missing value: global constant / attribute mean / the most probable value (Bayesian formula or decision tree)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p13.webp"
+    }
+  },
+  {
+    "id": 36,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "A column is missing in more than 30% of rows. What did the lecturer say he would personally do?",
+    "zh": "某個欄位有超過 30% 的資料缺失。老師說他個人會怎麼做？",
+    "options": [
+      {
+        "en": "Always fill it with 0",
+        "zh": "一律補 0"
+      },
+      {
+        "en": "Duplicate the column to strengthen it",
+        "zh": "複製該欄位以加強它"
+      },
+      {
+        "en": "Drop the column so it is not used as a feature",
+        "zh": "刪除該欄位，不作為特徵使用"
+      },
+      {
+        "en": "Turn the column into the label y",
+        "zh": "把該欄位改當標籤 y"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer said that if a column has a high proportion of missing values, 'for me, if more than thirty percent, I will drop this column', so it is not used in the feature set. Filling with 0 can distort the data, duplicating a column adds nothing, and the label is chosen by the task, not by how much data is missing.",
+      "zh": "老師說缺失比例高時，「對我來說超過 30% 就刪掉這欄」，不放入特徵集。補 0 可能扭曲資料；複製欄位沒有幫助；標籤由任務決定，而不是看缺多少。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[23:03.7]–end",
+      "note": "'if more than thirty percent I will drop this column… can be not used for the feature set'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 13",
+        "image": "./images/slides/lecture-4-p13.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 37,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "In the Titanic exercise, how were missing values in the numerical columns 'age' and 'fare' filled?",
+    "zh": "在 Titanic 練習中，數值欄位 age 與 fare 的缺失值是如何填補的？",
+    "options": [
+      {
+        "en": "With the mode",
+        "zh": "用眾數"
+      },
+      {
+        "en": "With the constant 'unknown'",
+        "zh": "用常數「unknown」"
+      },
+      {
+        "en": "With each column's mean",
+        "zh": "用各自欄位的平均值"
+      },
+      {
+        "en": "By deleting every row of the dataset",
+        "zh": "刪除資料集中的所有列"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slides 31 and 33 say age and fare are numerical data, filled using their respective mean. The mode was used for the categorical column 'embarked'. A text constant would break a numerical column, and deleting all rows would leave no data.",
+      "zh": "第 31、33 頁：age 與 fare 是數值資料，用各自的平均值填補。眾數用於類別欄位 embarked；文字常數會破壞數值欄；刪掉所有列就沒資料了。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 31, 33",
+      "note": "'Age' and 'Fare' are numerical data, filled using the mean",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p31.webp"
+    }
+  },
+  {
+    "id": 38,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "In the Titanic exercise, the categorical column 'embarked' had missing values. What was used to fill them?",
+    "zh": "Titanic 練習中，類別欄位 embarked 有缺失值。用什麼填補？",
+    "options": [
+      {
+        "en": "The mode (most frequent category)",
+        "zh": "眾數（出現最多的類別）"
+      },
+      {
+        "en": "The mean",
+        "zh": "平均值"
+      },
+      {
+        "en": "Min-max scaling",
+        "zh": "min-max 縮放"
+      },
+      {
+        "en": "Cosine similarity",
+        "zh": "餘弦相似度"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "For categorical data the lecturer filled with the mode, the most common label. A mean is undefined for categories such as ports. Min-max scaling and cosine similarity are not imputation methods.",
+      "zh": "類別資料用眾數（最多的那個標籤）填補。港口這類類別無法取平均；min-max 與餘弦相似度都不是補值方法。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 31, 33",
+      "note": "'Embarked' is categorical data, filled using the mode",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p31.webp"
+    }
+  },
+  {
+    "id": 39,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "Why were the 'name' and 'ticket' columns removed in the Titanic survival task?",
+    "zh": "在 Titanic 存活預測中，為什麼移除 name 與 ticket 欄位？",
+    "options": [
+      {
+        "en": "They are the label column",
+        "zh": "它們是標籤欄"
+      },
+      {
+        "en": "They are numeric and need normalization",
+        "zh": "它們是數值，需要正規化"
+      },
+      {
+        "en": "They have no rows at all",
+        "zh": "它們完全沒有資料"
+      },
+      {
+        "en": "They are considered irrelevant for predicting survival",
+        "zh": "它們被認為與預測存活無關"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 31 and the lecturer state that Name, Ticket and Cabin are irrelevant in predicting survival. He joked that name only matters if you study name numerology. The label is 'survived', these columns are text rather than numbers to normalize, and they do contain data.",
+      "zh": "第 31 頁與老師都說 Name、Ticket、Cabin 與預測存活無關，老師還開玩笑說除非研究姓名學。標籤是 survived；這些欄位是文字而非需正規化的數值；它們也確實有資料。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[33:37.0]–[36:55.1]",
+      "note": "'the name and ticket is irrelevant to survival'; slide p. 31",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 33",
+        "image": "./images/slides/lecture-4-p33.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 40,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "In the Titanic data the 'cabin' column had more than 1,000 missing values (roughly 80–90%). What did the lecturer do?",
+    "zh": "Titanic 資料中 cabin 欄位缺失超過 1000 筆（約 80–90%）。老師怎麼處理？",
+    "options": [
+      {
+        "en": "Filled it with the mean",
+        "zh": "用平均值填補"
+      },
+      {
+        "en": "Dropped the column",
+        "zh": "刪除該欄位"
+      },
+      {
+        "en": "Used it as the label",
+        "zh": "把它當作標籤"
+      },
+      {
+        "en": "Applied one-hot encoding to keep all blanks",
+        "zh": "做 one-hot 編碼保留所有空白"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer said cabin had more than a thousand missing values, 'more than eighty or ninety percent… I will drop it'. That is consistent with his 30% rule. Imputing 80–90% of a column would mostly invent data. The label is 'survived'. Encoding blanks does not fix the lack of information.",
+      "zh": "老師說 cabin 缺了一千多筆，超過八、九成，「I will drop it」，與他的 30% 原則一致。補 80–90% 的值等於大量捏造；標籤是 survived；把空白編碼也無法補足資訊。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[28:45.2]–[33:37.0]",
+      "note": "'the cabin more than one thousand… more than eighty or ninety percent missing value, I will drop it'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 33",
+        "image": "./images/slides/lecture-4-p33.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 41,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "You have a chronic-health-record table and a laboratory table. Both contain patient ID, blood glucose and record time. How do you integrate them?",
+    "zh": "你有一張慢性病紀錄表與一張檢驗表，兩者都有病人 ID、血糖與紀錄時間。要如何整合？",
+    "options": [
+      {
+        "en": "Apply min-max scaling to the patient ID",
+        "zh": "對病人 ID 做 min-max 縮放"
+      },
+      {
+        "en": "One-hot encode the patient ID and drop the tables",
+        "zh": "把病人 ID 做 one-hot 後刪掉表格"
+      },
+      {
+        "en": "Run PCA on each table separately",
+        "zh": "對兩張表分別做 PCA"
+      },
+      {
+        "en": "Merge the tables using patient ID as the key",
+        "zh": "以病人 ID 作為鍵（key）合併表格"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Data integration combines multiple sources into a coherent store. The lecturer's example merged the two tables using patient ID as the key. Scaling or one-hot encoding an ID is meaningless, and PCA reduces dimensions rather than joining sources.",
+      "zh": "資料整合是把多個來源合成一致的資料。老師的例子是以病人 ID 為鍵合併兩張表。對 ID 做縮放或 one-hot 沒有意義；PCA 是降維，不是合併資料來源。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[01:26.8]–[03:12.1]",
+      "note": "'we can use the patient ID as the key to integrate different or multiple data source'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 15",
+        "image": "./images/slides/lecture-4-p15.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 42,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "Column A ranges from 0 to 10 while column B ranges from 100 to 1,000. Why apply normalization before modelling?",
+    "zh": "A 欄介於 0–10，B 欄介於 100–1000。為什麼建模前要做正規化？",
+    "options": [
+      {
+        "en": "To convert the columns into text",
+        "zh": "把欄位轉成文字"
+      },
+      {
+        "en": "To transform all columns to the same scale",
+        "zh": "把所有欄位轉換到相同尺度"
+      },
+      {
+        "en": "To remove the label column",
+        "zh": "移除標籤欄"
+      },
+      {
+        "en": "To increase the number of missing values",
+        "zh": "增加缺失值數量"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer explained that numerical columns can have very different scales, so before processing we transfer every column to the same scale. This is normalization (data transformation). It keeps the data numeric, does not touch the label, and certainly should not create missing values.",
+      "zh": "老師說數值欄位可能尺度差很多，處理前要把所有欄位轉到相同尺度，這就是正規化（資料轉換）。它保持數值型態、不動標籤，也不會製造缺失值。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[03:12.1]–[06:06.3]",
+      "note": "'column A, the scale is between zero to ten or column B… one hundred to thousand… transfer… to the same scale'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 17",
+        "image": "./images/slides/lecture-4-p17.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 43,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "For a nonconstant column, standard min-max scaling is fitted to the observed values with the target range [0, 1]. Where do those observed values fall after scaling?",
+    "zh": "對非固定值欄位，以觀察到的數值做標準 min-max 縮放，目標範圍設為 [0, 1]。這批數值縮放後落在哪裡？",
+    "options": [
+      {
+        "en": "Always between −1 and 1",
+        "zh": "永遠介於 −1 到 1"
+      },
+      {
+        "en": "Mean 0 and standard deviation 1",
+        "zh": "平均 0、標準差 1"
+      },
+      {
+        "en": "Between 0 and 1 (the minimum becomes 0 and the maximum becomes 1)",
+        "zh": "介於 0 到 1（最小值變 0、最大值變 1）"
+      },
+      {
+        "en": "Between 0 and 255",
+        "zh": "介於 0 到 255"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Min-max scaling subtracts the minimum and divides by the range (max − min), so the result is between 0 and 1. The lecturer said 'Min-Max scaling result can normalize the value between zero to one'. Mean 0 and SD 1 describes z-score, −1 to 1 is a different scaling, and 0–255 is the raw pixel range. (Note: the slide's formula prints 'man(x)', a typo for max(x).) This describes the fitted observations and the stated target range; unseen values outside the fitted minimum or maximum may fall outside [0, 1].",
+      "zh": "min-max 是減去最小值再除以全距（max − min），結果介於 0 到 1；老師說「Min-Max scaling result can normalize the value between zero to one」。平均 0、標準差 1 是 z-score；−1 到 1 是其他縮放；0–255 是像素原始範圍。（註：投影片公式印成 man(x)，應為 max(x)。） 此結論針對用來決定最小值、最大值的這批觀察值，以及指定的目標範圍；未來若出現超出原最小值、最大值的新資料，轉換結果可能超出 [0, 1]。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 17",
+      "note": "Normalization: min-max and z-score; transcript 344615 [03:12.1] confirms the 0–1 range",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p17.webp"
+    }
+  },
+  {
+    "id": 44,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "Conceptually, how does z-score normalization differ from min-max normalization?",
+    "zh": "概念上，z-score 正規化與 min-max 正規化有什麼不同？",
+    "options": [
+      {
+        "en": "Z-score centers values on the column mean and scales by the standard deviation, so results are not limited to [0, 1] and can be negative",
+        "zh": "z-score 以欄位平均為中心、除以標準差，結果不限於 [0, 1]，可能為負"
+      },
+      {
+        "en": "Z-score always maps values into exactly [0, 1]",
+        "zh": "z-score 一定把數值映射到 [0, 1]"
+      },
+      {
+        "en": "Z-score converts categories into one-hot columns",
+        "zh": "z-score 把類別轉成 one-hot 欄位"
+      },
+      {
+        "en": "Z-score sorts values alphabetically",
+        "zh": "z-score 把數值依字母排序"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Z-score subtracts the mean and divides by the standard deviation. Values below the mean become negative and extreme values can exceed 1. Min-max is the method that bounds values to [0, 1]. The lecturer suggested trying both on Kaggle. Encoding and sorting are unrelated. (The transcript's 'Z-score is now zero to one' is likely a mis-transcription of 'not'.)",
+      "zh": "z-score 是減平均再除以標準差：低於平均會變負值，極端值可大於 1；把數值限制在 [0, 1] 的是 min-max。老師建議在 Kaggle 兩者都試試。編碼與排序無關。（逐字稿「Z-score is now zero to one」應為「not」的誤植。）"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 17",
+      "note": "z = (x − mean)/stand_dev vs min-max; 344615 [03:12.1]–[06:06.3] contrasts the two",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p17.webp"
+    }
+  },
+  {
+    "id": 45,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "What is the main purpose of dimension reduction?",
+    "zh": "降維（dimension reduction）的主要目的為何？",
+    "options": [
+      {
+        "en": "Get a smaller representation that gives the same or similar analytical results, cutting computation",
+        "zh": "取得體積更小、但分析結果相同或相近的表示，減少運算"
+      },
+      {
+        "en": "Increase the number of features as much as possible",
+        "zh": "盡量增加特徵數量"
+      },
+      {
+        "en": "Fill in missing values",
+        "zh": "填補缺失值"
+      },
+      {
+        "en": "Encode text labels as integers",
+        "zh": "把文字標籤編碼成整數"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Slide 19 says dimension reduction 'obtains reduced representation in volume but produces the same or similar analytical results'. In class, the main purpose given was reducing computation time, e.g. images with hundreds of thousands of pixel features. Adding features is the opposite, and imputation and encoding are other preprocessing tasks.",
+      "zh": "第 19 頁：降維是「取得體積較小的表示，但產生相同或相近的分析結果」；課堂也說主要目的是減少運算時間（例如影像有數十萬個像素特徵）。增加特徵正好相反；補值與編碼是其他前處理工作。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 19",
+      "note": "Dimension Reduction definition; 344615 [06:06.3] 'main purpose… to reduce the computation time'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p19.webp"
+    }
+  },
+  {
+    "id": 46,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "Besides dimension reduction, why did the lecturer say PCA is often used after representation?",
+    "zh": "除了降維，老師說 PCA 在資料表示之後還常被用來做什麼？",
+    "options": [
+      {
+        "en": "To compute the kappa statistic",
+        "zh": "計算 kappa 統計量"
+      },
+      {
+        "en": "To split training and testing data",
+        "zh": "切分訓練與測試資料"
+      },
+      {
+        "en": "To project high-dimensional representations to 2 or 3 dimensions so they can be plotted",
+        "zh": "把高維表示投影到 2 或 3 維以便繪圖視覺化"
+      },
+      {
+        "en": "To parse HTML pages",
+        "zh": "剖析 HTML 網頁"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "A figure can only show two or three dimensions, but representations are high-dimensional, so 'we usually use the PCA' to reduce them for visualization. Kappa measures annotator agreement, splitting data is a separate step, and HTML parsing is done with BeautifulSoup.",
+      "zh": "圖只能畫二或三維，但資料表示是高維的，所以「we usually use the PCA」把它降到 2、3 維來視覺化。kappa 衡量標註一致性；切分資料是另一步驟；剖析 HTML 用 BeautifulSoup。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[10:47.3]–[14:49.9]",
+      "note": "'a figure only can draw two dimension or three dimension… reduce high dimension to two or three dimension… we usually use the PCA'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 19",
+        "image": "./images/slides/lecture-4-p19.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 47,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "Which of the following is NOT listed on the slide as a dimension-reduction method?",
+    "zh": "下列哪一項「不是」投影片列出的降維方法？",
+    "options": [
+      {
+        "en": "Principal Component Analysis",
+        "zh": "主成分分析（PCA）"
+      },
+      {
+        "en": "One-hot encoding",
+        "zh": "One-hot 編碼"
+      },
+      {
+        "en": "Singular Value Decomposition",
+        "zh": "奇異值分解（SVD）"
+      },
+      {
+        "en": "Feature selection",
+        "zh": "特徵選擇"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 19 lists autoencoder, SVD, PCA, clustering, sampling, data compression and feature selection. One-hot encoding does the opposite: it adds one new column per category, increasing dimensionality.",
+      "zh": "第 19 頁列出 autoencoder、SVD、PCA、分群、抽樣、資料壓縮與特徵選擇。One-hot 編碼正好相反，它為每個類別新增一欄，會增加維度。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 19",
+      "note": "Dimension reduction methods: Autoencoder, SVD, PCA, Clustering, Sampling, Data Compression, Feature Selection",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p19.webp"
+    }
+  },
+  {
+    "id": 48,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "Feature-selection methods were described as 'filter' or 'wrapper'. Which statement matches the lecture?",
+    "zh": "課堂把特徵選擇分為 filter 與 wrapper。下列哪項敘述符合課堂內容？",
+    "options": [
+      {
+        "en": "Filter methods require training the model many times",
+        "zh": "filter 方法需要反覆訓練模型"
+      },
+      {
+        "en": "Chi-square is a wrapper method",
+        "zh": "卡方檢定屬於 wrapper"
+      },
+      {
+        "en": "Wrapper methods do not involve any model",
+        "zh": "wrapper 方法完全不涉及模型"
+      },
+      {
+        "en": "Wrapper methods involve model training, e.g. forward or backward feature selection",
+        "zh": "wrapper 方法涉及模型訓練，例如前向或後向特徵選擇"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said filter methods include chi-square, mutual information, PMI and log-likelihood, and that wrapper methods 'involve model training', using forward or backward selection. So chi-square is a filter method, filters do not need repeated training, and wrappers do need a model.",
+      "zh": "老師說 filter 方法有卡方、互資訊、PMI、log-likelihood；wrapper「involve model training」，例如前向／後向選擇。所以卡方是 filter；filter 不需反覆訓練；wrapper 一定要用模型。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[10:47.3]–[14:49.9]",
+      "note": "'One called filter, another called wrapper… chi-square or mutual information… wrapper involve model training… forward or backward'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 19",
+        "image": "./images/slides/lecture-4-p19.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 49,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "To recognize a bird in a photo, the lecturer said we don't need to feed every pixel into the model. How did he connect CNNs to this idea?",
+    "zh": "要辨識照片中的鳥，老師說不必把每個像素都丟進模型。他如何把 CNN 與這個概念連結？",
+    "options": [
+      {
+        "en": "A CNN increases the number of pixels to add detail",
+        "zh": "CNN 增加像素數以補充細節"
+      },
+      {
+        "en": "A CNN extracts useful features (patterns), so the model focuses on informative parts such as the head or tail, which acts as dimension reduction",
+        "zh": "CNN 擷取有用的特徵（pattern），讓模型聚焦在頭、尾等有資訊的部位，達到降維效果"
+      },
+      {
+        "en": "A CNN performs label encoding on images",
+        "zh": "CNN 對影像做 label encoding"
+      },
+      {
+        "en": "A CNN measures agreement between annotators",
+        "zh": "CNN 衡量標註者之間的一致性"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer said that for a bird we only need to focus on parts like the head or tail. The convolutional neural network's mechanism is to extract good features or patterns for dimension reduction. It does not add pixels, it is not label encoding, and it does not measure annotator agreement (that is kappa).",
+      "zh": "老師說辨識鳥只需聚焦頭或尾巴等部位；卷積神經網路的機制就是擷取好的特徵或 pattern 來降維。它不會增加像素，不是 label encoding，也不衡量標註一致性（那是 kappa）。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[06:06.3]–[09:31.6]",
+      "note": "'The mechanism of the convolution neural network is to extract the good feature or… patterns… for the dimension reduction'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 40",
+        "image": "./images/slides/lecture-4-p40.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 50,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "Why do we need categorical encoding?",
+    "zh": "為什麼需要類別編碼（categorical encoding）？",
+    "options": [
+      {
+        "en": "To make the data unstructured",
+        "zh": "讓資料變成非結構化"
+      },
+      {
+        "en": "To remove outliers",
+        "zh": "移除離群值"
+      },
+      {
+        "en": "To compute the kappa statistic",
+        "zh": "計算 kappa 統計量"
+      },
+      {
+        "en": "Machine-learning algorithms understand numbers, not text categories, so categorical columns must be converted to numbers",
+        "zh": "機器學習演算法只懂數字、不懂文字類別，必須把類別欄位轉成數值"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 20 says a machine can only understand numbers, not text, so we convert categorical columns to numerical columns. This process is called categorical encoding. It does not change data structure, remove outliers, or compute agreement.",
+      "zh": "第 20 頁：機器只懂數字、不懂文字，因此要把類別欄位轉成數值欄位，這就是類別編碼。它不會改變資料結構性、移除離群值或計算一致性。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 20",
+      "note": "'A machine can only understand the numbers… convert categorical columns to numerical columns… categorical encoding'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p20.webp"
+    }
+  },
+  {
+    "id": 51,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "Hospital arrival mode (walk-in, ambulance, transfer) is label-encoded as 0, 1, 2. What risk did the lecturer point out?",
+    "zh": "到院方式（步行、救護車、轉院）以 label encoding 編為 0、1、2。老師指出什麼風險？",
+    "options": [
+      {
+        "en": "The codes imply an order (0 < 1 < 2) that the original categories do not have",
+        "zh": "編碼暗示了原本類別沒有的順序關係（0 < 1 < 2）"
+      },
+      {
+        "en": "It creates three new columns",
+        "zh": "它會產生三個新欄位"
+      },
+      {
+        "en": "It deletes all information in the column",
+        "zh": "它會刪除欄位中所有資訊"
+      },
+      {
+        "en": "It only works on numerical columns",
+        "zh": "它只能用在數值欄位"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer warned that with a label encoder the codes 0, 1, 2 can be read as an order relation, but originally the categories don't have any order. Creating three new columns describes one-hot encoding. Label encoding keeps the category identity, and it is meant for text categories, not numerical columns.",
+      "zh": "老師提醒 label encoder 的 0、1、2 會被當成順序關係，但原本類別並沒有順序。產生三個新欄位的是 one-hot；label encoding 仍保留類別身分；它本來就是處理文字類別，不是數值欄位。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[14:49.9]–[20:08.8]",
+      "note": "'the code zero, one, two means the order… But originally they don't have the order'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 21",
+        "image": "./images/slides/lecture-4-p21.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 52,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "If the arrival-mode column (walk-in, ambulance, transfer) is one-hot encoded, what is the result?",
+    "zh": "若把到院方式欄位（步行、救護車、轉院）做 one-hot 編碼，結果會是？",
+    "options": [
+      {
+        "en": "One column with the values 0, 1, 2",
+        "zh": "一個欄位，值為 0、1、2"
+      },
+      {
+        "en": "One column with the text unchanged",
+        "zh": "一個欄位，文字保持不變"
+      },
+      {
+        "en": "Three new binary columns; each row has 1 in its own category's column and 0 elsewhere",
+        "zh": "三個新的二元欄位；每列只在所屬類別的欄位為 1，其餘為 0"
+      },
+      {
+        "en": "A single average value for all patients",
+        "zh": "所有病人共用一個平均值"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "One-hot (dummy variables) creates one new feature per unique category. A walk-in patient becomes [1, 0, 0], an ambulance patient [0, 1, 0], and a transfer patient [0, 0, 1]. A single 0/1/2 column is label encoding. Keeping text is not encoding, and averaging categories makes no sense.",
+      "zh": "One-hot（dummy variables）為每個獨特類別新增一個特徵：步行為 [1,0,0]、救護車 [0,1,0]、轉院 [0,0,1]。單欄 0/1/2 是 label encoding；保留文字不算編碼；對類別取平均沒有意義。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[14:49.9]–[20:08.8]",
+      "note": "'one-hot encoding… separate the three new column… walk-in, one, otherwise zero'; slide p. 20",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 21",
+        "image": "./images/slides/lecture-4-p21.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 53,
+    "topic": "preprocessing",
+    "difficulty": "basic",
+    "en": "According to the slide, how does label encoding assign values?",
+    "zh": "根據投影片，label encoding 如何指定數值？",
+    "options": [
+      {
+        "en": "It gives each category a vector of zeros with a single 1",
+        "zh": "給每個類別一個只有一個 1 的零向量"
+      },
+      {
+        "en": "It assigns random real numbers",
+        "zh": "指定隨機實數"
+      },
+      {
+        "en": "Each label gets a unique integer based on alphabetical ordering",
+        "zh": "依字母順序給每個標籤一個唯一整數"
+      },
+      {
+        "en": "It replaces each label with its frequency count",
+        "zh": "以出現次數取代每個標籤"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slide 20: 'each label is assigned a unique integer based on alphabetical ordering.' The vector with a single 1 is one-hot encoding. Random numbers and frequency counts are not label encoding.",
+      "zh": "第 20 頁：「each label is assigned a unique integer based on alphabetical ordering」。只有一個 1 的向量是 one-hot；隨機數與次數取代都不是 label encoding。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 20",
+      "note": "Label Encoding: unique integer based on alphabetical ordering",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p20.webp"
+    }
+  },
+  {
+    "id": 54,
+    "topic": "preprocessing",
+    "difficulty": "applied",
+    "en": "Why did the lecturer emphasize word segmentation for Mandarin Chinese, compared with using spaces as a first approximation of English word boundaries?",
+    "zh": "相較於可先用空白粗略辨識英文單字邊界，老師為何特別強調中文的斷詞？",
+    "options": [
+      {
+        "en": "Chinese has no white space marking token boundaries, so the boundaries are hard to identify",
+        "zh": "中文沒有空白標示詞的邊界，難以辨識 token 邊界"
+      },
+      {
+        "en": "Chinese text cannot be stored on computers",
+        "zh": "中文無法存在電腦裡"
+      },
+      {
+        "en": "English has no vocabulary",
+        "zh": "英文沒有詞彙"
+      },
+      {
+        "en": "Tokenizers translate Chinese into English",
+        "zh": "斷詞工具會把中文翻成英文"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said English token boundaries are clear because white space separates them, but Chinese, Japanese and Thai make boundaries hard to recognize, so we need a tokenizer or segmentation tool. Different data types and languages need different preprocessing. The other options are false. A tokenizer splits text and does not translate it. English still requires tokenization; spaces are only a simple boundary cue, not a claim that English needs no preprocessing.",
+      "zh": "老師說英文以空白切分，token 邊界清楚；中文、日文、泰文則難以辨識邊界，所以需要斷詞工具。不同資料型態與語言有不同的前處理。其他選項皆錯；斷詞是切分文字，不是翻譯。 英文仍需要 tokenization；空白只是簡易邊界線索，並不表示英文完全不需要斷詞或前處理。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'the Mandarin Chinese… is difficult to recognize the token boundary. So we need to use a tokenizer or segmentation tool'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 41",
+        "image": "./images/slides/lecture-4-p41.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 55,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "You use TSMC's opening and closing prices over the past few days to predict tomorrow's price. Which data type did the lecture call this?",
+    "zh": "用台積電過去幾天的開盤與收盤價預測明天的股價。課堂把這種資料稱為哪一類？",
+    "options": [
+      {
+        "en": "Image data",
+        "zh": "影像資料"
+      },
+      {
+        "en": "Static categorical data",
+        "zh": "靜態類別資料"
+      },
+      {
+        "en": "Free-text data",
+        "zh": "自由文字資料"
+      },
+      {
+        "en": "Wave (dynamic) / time-series data",
+        "zh": "波形（動態）／時間序列資料"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer used this exact example: predicting the next time period from previous periods is wave data, also called time-series data. Slide 4 lists numerical value, text, wave data (dynamic data) and image. It is not an image, not static categories and not free text.",
+      "zh": "老師正是以此為例：用前幾期資料預測下一期，是波形資料，也稱時間序列資料。第 4 頁列出數值、文字、波形資料（動態資料）與影像。它不是影像、靜態類別或自由文字。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[09:12.4]–[11:22.0]",
+      "note": "TSMC open/close price → 'this is the wave data… time series data'; slide 4 data types",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 4",
+        "image": "./images/slides/lecture-4-p04.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 56,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "The lecture said unstructured data is now more than 80% of data. Which example is NOT unstructured?",
+    "zh": "課堂說非結構化資料已超過八成。下列哪一項「不是」非結構化資料？",
+    "options": [
+      {
+        "en": "Speech recordings (wave data)",
+        "zh": "語音錄音（波形資料）"
+      },
+      {
+        "en": "A fixed-column table of lab values",
+        "zh": "欄位固定的檢驗數值表"
+      },
+      {
+        "en": "Images",
+        "zh": "影像"
+      },
+      {
+        "en": "Free-text clinical notes",
+        "zh": "自由書寫的臨床紀錄"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer listed wave data (speech, EEG), images and text as unstructured. A table with fixed numerical columns (like the thumbs-up count or lab values) is structured numerical data. Mixed data is everywhere, but the lab-value table itself is structured.",
+      "zh": "老師列舉波形（語音、腦波）、影像、文字為非結構化資料。欄位固定的數值表（如按讚數、檢驗值）屬結構化數值資料。混合資料雖然無所不在，但檢驗值表本身是結構化的。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[11:22.0]–[13:19.3]",
+      "note": "'the unstructured data is more than eighty percent… wave data… image… text is unstructured'; slide p. 5",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 5",
+        "image": "./images/slides/lecture-4-p05.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 57,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "Why did the lecturer say text can also be treated as time-series data?",
+    "zh": "老師為什麼說文字也可以視為時間序列資料？",
+    "options": [
+      {
+        "en": "Every text file has a timestamp",
+        "zh": "每個文字檔都有時間戳記"
+      },
+      {
+        "en": "Text is stored as images",
+        "zh": "文字是以影像儲存的"
+      },
+      {
+        "en": "Words in a sentence are completely independent",
+        "zh": "句子中的詞彼此完全獨立"
+      },
+      {
+        "en": "A token at position t is related to the preceding tokens at t−1, t−2, and so on",
+        "zh": "位置 t 的 token 與前面 t−1、t−2 等 token 相關"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer explained that each token has correlation with earlier tokens: the token at time t relates to tokens t−1 and t−2. That sequential dependence is why text behaves like time-series data. Timestamps and images are irrelevant, and independence is the opposite of the point.",
+      "zh": "老師說明每個 token 都與先前的 token 相關：時間 t 的 token 與 t−1、t−2 有關，這種序列相依性讓文字像時間序列。時間戳記與影像無關；「完全獨立」正好相反。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+      "locator": "[09:12.4]–[11:22.0]",
+      "note": "'the token in the time t will related to periods token t minus one and t minus two'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 4",
+        "image": "./images/slides/lecture-4-p04.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 58,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "In the lecture example that predicts students' gender from height and weight, what are the features and what is the label?",
+    "zh": "課堂中用身高與體重預測學生性別的例子，特徵與標籤分別是什麼？",
+    "options": [
+      {
+        "en": "Features: gender; label: height and weight",
+        "zh": "特徵：性別；標籤：身高與體重"
+      },
+      {
+        "en": "Features: height and weight (2 dimensions); label: gender",
+        "zh": "特徵：身高與體重（二維）；標籤：性別"
+      },
+      {
+        "en": "Features: student ID; label: classroom",
+        "zh": "特徵：學號；標籤：教室"
+      },
+      {
+        "en": "There are no features, only a label",
+        "zh": "沒有特徵，只有標籤"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Each student is represented by two dimensions, height and weight, with gender as the label, so every student becomes a point in a 2D feature space. Swapping them reverses the roles. ID and classroom were not used, and a model cannot learn without features.",
+      "zh": "每位學生以身高、體重兩個維度表示，性別為標籤，於是每位學生成為二維特徵空間中的一點。顛倒就是角色互換；學號、教室並未使用；沒有特徵模型無從學習。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[36:55.1]–[44:32.6]",
+      "note": "'predict the gender based on height and the weight… two dimension for representation with a label'; slide p. 38",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 38",
+        "image": "./images/slides/lecture-4-p38.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 59,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "Two students appear as points very close together in the height–weight feature space. What can we conclude, according to the lecturer?",
+    "zh": "兩位學生在身高－體重特徵空間中的點非常接近。依老師的說法，我們可以得出什麼結論？",
+    "options": [
+      {
+        "en": "They definitely have the same gender",
+        "zh": "他們的性別一定相同"
+      },
+      {
+        "en": "They must be the same person",
+        "zh": "他們一定是同一個人"
+      },
+      {
+        "en": "Their representations (height and weight) are similar; the same label is likely only if the representation is strongly associated with the label",
+        "zh": "他們的表示（身高與體重）很相似；只有當表示與標籤高度相關時，標籤才可能相同"
+      },
+      {
+        "en": "They definitely have different genders",
+        "zh": "他們的性別一定不同"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "A student answered 'the sex is the same', and the lecturer corrected it: close points mean the height and weight are similar. Whether the label matches depends on how well the representation is associated with the label, so a good representation is crucial. Nothing guarantees the same label, the same person, or different labels.",
+      "zh": "有同學回答「性別相同」，老師修正：兩點接近代表身高體重相似；標籤是否相同取決於表示與標籤的關聯程度，所以好的表示很關鍵。沒有任何保證說標籤相同、是同一人或一定不同。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[36:55.1]–[44:32.6]",
+      "note": "'I would say not sex is the same… the height and the weight is very similar… depends on the representation'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 38",
+        "image": "./images/slides/lecture-4-p38.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 60,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "How is each flower represented in the Iris dataset example?",
+    "zh": "在 Iris 資料集的例子中，每朵花是如何表示的？",
+    "options": [
+      {
+        "en": "Four features (sepal length, sepal width, petal length, petal width) plus a species label; it is a classification task",
+        "zh": "四個特徵（花萼長、花萼寬、花瓣長、花瓣寬）加上品種標籤；屬於分類任務"
+      },
+      {
+        "en": "Raw image pixels only",
+        "zh": "只用影像原始像素"
+      },
+      {
+        "en": "One feature, color, used to regress petal length",
+        "zh": "只用顏色一個特徵來回歸花瓣長度"
+      },
+      {
+        "en": "A bag-of-words vector of the flower's name",
+        "zh": "花名的詞袋向量"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer noted that although Iris comes from images, it does not use image features. It uses four measured features with a label (Setosa, Versicolor, Virginica), and the goal is to classify the flower type. Pixels, a single color feature and bag-of-words are not how this dataset is represented.",
+      "zh": "老師指出 Iris 雖源自影像，但不使用影像特徵，而是用四個量測特徵加上標籤（Setosa、Versicolor、Virginica），目標是分類花的種類。像素、單一顏色特徵、詞袋都不是此資料集的表示法。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 39",
+      "note": "Iris: sepal length/width, petal length/width + label; 344615 [44:32.6] 'It's a classification'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p39.webp"
+    }
+  },
+  {
+    "id": 61,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "How did the lecture describe representing a grayscale image versus a color image?",
+    "zh": "課堂如何描述灰階影像與彩色影像的表示方式？",
+    "options": [
+      {
+        "en": "Grayscale is a matrix (2D); color adds a third axis for RGB, making a 3D tensor (a 'cube')",
+        "zh": "灰階是矩陣（2D）；彩色多一個 RGB 軸，成為 3D 張量（「方塊」）"
+      },
+      {
+        "en": "Both are scalars",
+        "zh": "兩者都是純量"
+      },
+      {
+        "en": "Grayscale is a 3D tensor and color is a 1D vector",
+        "zh": "灰階是 3D 張量，彩色是 1D 向量"
+      },
+      {
+        "en": "Images cannot be represented numerically",
+        "zh": "影像無法以數值表示"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "A grayscale image (e.g. a handwritten 5) is an n × m matrix of pixel values. A color image needs an extra axis for the three RGB channels, so it becomes a 3D tensor, which the lecturer called a cube. The other options reverse or deny this.",
+      "zh": "灰階影像（如手寫數字 5）是 n × m 的像素矩陣；彩色影像需要多一軸表示 RGB 三原色，成為 3D 張量，老師稱之為 cube。其他選項顛倒或否定了這點。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[44:32.6]–[49:43.5]",
+      "note": "'這個是矩陣… 這個叫 3D tensor 或是我們稱它為 cube… RGB 三原色… 灰階的它沒有第三軸'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 40",
+        "image": "./images/slides/lecture-4-p40.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 62,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "For an 8-bit image channel, what pixel-intensity range matches the example described in the lecture?",
+    "zh": "以 8 位元影像通道而言，哪個像素強度範圍符合老師舉的例子？",
+    "options": [
+      {
+        "en": "Only 0 or 1",
+        "zh": "只有 0 或 1"
+      },
+      {
+        "en": "−1 to 1",
+        "zh": "−1 到 1"
+      },
+      {
+        "en": "0 to 255",
+        "zh": "0 到 255"
+      },
+      {
+        "en": "0 to 100",
+        "zh": "0 到 100"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer said 'what is a pixel? It can from zero to two fifty-five.' Values such as 0–1 or −1–1 only appear after scaling, and 0–100 is not the standard pixel range. The 0–255 range assumes 8-bit channels; other image bit depths can have other ranges.",
+      "zh": "老師說「像素可以從 0 到 255」。0–1 或 −1–1 是縮放之後才會出現的範圍；0–100 不是標準像素範圍。 0–255 的範圍以 8 位元通道為前提，其他位元深度的影像可以有不同範圍。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'So what is a pixel? It can from zero to two fifty-five'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 40",
+        "image": "./images/slides/lecture-4-p40.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 63,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "A news article is represented with bag-of-words over a dictionary of more than 100,000 words, but the article has about 500 words. What problem did the lecturer highlight?",
+    "zh": "用超過十萬字的字典對一篇新聞做詞袋（bag-of-words）表示，但該文章只有約 500 個字。老師點出了什麼問題？",
+    "options": [
+      {
+        "en": "The vector is too short to hold the words",
+        "zh": "向量太短，裝不下所有字"
+      },
+      {
+        "en": "The dimension equals the dictionary size, so more than 99% of the entries are zero (very sparse and huge)",
+        "zh": "維度等於字典大小，超過 99% 的維度都是 0（巨大且稀疏）"
+      },
+      {
+        "en": "Bag-of-words keeps the exact word order",
+        "zh": "詞袋會保留精確的字詞順序"
+      },
+      {
+        "en": "Bag-of-words needs labelled images",
+        "zh": "詞袋需要有標註的影像"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Bag-of-words counts term frequency for every dictionary word, so the vector length equals the dictionary size (over 100k). With about 500 words per article, more than 99% of dimensions are zero. This was the motivation for word embeddings. The vector is huge rather than short, word order is not preserved, and images are irrelevant.",
+      "zh": "詞袋為字典中每個字計算詞頻，向量長度等於字典大小（十萬以上）；一篇文章約 500 字，所以超過 99% 的維度為 0，這也是引入詞向量（word embedding）的動機。向量是太大而非太短；不保留字序；與影像無關。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[33:55.4]–[37:25.2]",
+      "note": "'the dimension is very huge… more than one hundred thousand… only five hundred words… more than ninety-nine percent dimension is zero'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 41",
+        "image": "./images/slides/lecture-4-p41.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 64,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "Compared with bag-of-words, how does a word embedding represent text?",
+    "zh": "相較於詞袋，詞向量（word embedding）如何表示文字？",
+    "options": [
+      {
+        "en": "With a vector as long as the dictionary",
+        "zh": "使用與字典一樣長的向量"
+      },
+      {
+        "en": "With hand-written if-else rules",
+        "zh": "使用手寫的 if-else 規則"
+      },
+      {
+        "en": "With a one-hot vector per word",
+        "zh": "每個字一個 one-hot 向量"
+      },
+      {
+        "en": "With a fixed-dimension dense vector (e.g. 300 dimensions), learned through self-supervised learning",
+        "zh": "使用固定維度的密集向量（例如 300 維），透過自監督學習得到"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said a better way is word embedding, which uses a fixed dimension, for example 300, and its theory is self-supervised learning, unlike traditional supervised learning. Dictionary-length vectors and one-hot vectors are sparse bag-of-words-style representations, and rules are not a learned representation.",
+      "zh": "老師說更好的方式是詞向量：使用固定維度（例如 300 維），其原理是自監督學習（不同於傳統監督式）。字典長度向量、one-hot 都是稀疏的詞袋式表示；規則不是學出來的表示。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[33:55.4]–[37:25.2]",
+      "note": "'word embedding… fixed dimension… three hundred dimension… use the self-supervised learning'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 41",
+        "image": "./images/slides/lecture-4-p41.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 65,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "In a bilingual embedding visualization, vectors for Chinese 加大 and English 'enlarge' are already aligned in a shared space and appear close together. What does their proximity suggest?",
+    "zh": "在雙語詞向量視覺化中，中文「加大」與英文 enlarge 的向量已對齊至共用空間，且彼此接近。這種接近表示什麼？",
+    "options": [
+      {
+        "en": "PCA translates words by looking them up in a dictionary",
+        "zh": "PCA 會查字典翻譯字詞"
+      },
+      {
+        "en": "Their representations may capture similar meanings in that shared space",
+        "zh": "它們在該共用空間的表示可能捕捉到相近語意"
+      },
+      {
+        "en": "Embeddings only work for one language",
+        "zh": "詞向量只適用於單一語言"
+      },
+      {
+        "en": "Cosine similarity cannot be used on embeddings",
+        "zh": "詞向量不能用餘弦相似度"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "In an aligned shared embedding space, proximity can reflect semantic similarity, which helps cross-language matching. The lecturer illustrated this with Chinese/English word neighbors. PCA reduces dimensions for visualization; it does not automatically align independently trained languages or look up translations. Embeddings are not limited to one language, and cosine similarity can compare compatible embeddings. The alignment condition matters: arbitrary independent spaces cannot simply be overlaid.",
+      "zh": "在「已對齊的共用詞向量空間」裡，位置接近可以反映語意相近，協助跨語言比對。老師以中英文相鄰字詞示範這個想法。PCA 負責降維視覺化，不會自動對齊各自獨立訓練的語言空間，也不是查字典翻譯；詞向量不限單一語言，適當且相容的詞向量可用餘弦相似度比較。須注意：獨立空間不能未經對齊就直接疊在一起。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[57:02.6]–[59:32.8]",
+      "note": "'use the PCA to reduce the dimension from three hundred to two… 加大, English, enlarge… no human involved, this is a translation'; wording clarifies the required shared-space alignment rather than attributing alignment to PCA alone",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 66,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "Which statement about tensors matches the lecture slide?",
+    "zh": "下列關於張量（tensor）的敘述，何者符合投影片？",
+    "options": [
+      {
+        "en": "A tensor is always exactly a 2D matrix",
+        "zh": "張量一定就是二維矩陣"
+      },
+      {
+        "en": "A tensor is Python's built-in list type",
+        "zh": "張量就是 Python 內建的 list"
+      },
+      {
+        "en": "Tensors are only used for image files",
+        "zh": "張量只用於影像檔"
+      },
+      {
+        "en": "A tensor is a container for data in N dimensions; a matrix is specifically a 2D tensor",
+        "zh": "張量是可容納 N 維資料的容器；矩陣特指二維張量"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 42 says a tensor is a container that can house data in N dimensions. It is often wrongly used interchangeably with matrix, which is specifically a 2D tensor. Tensors generalize matrices to N-dimensional space. In NumPy, tensors are ndarrays, not lists, and they are used for text and numbers too.",
+      "zh": "第 42 頁：張量是能容納 N 維資料的容器，常被誤與矩陣混用，而矩陣特指 2D 張量；張量是矩陣在 N 維的推廣。NumPy 中張量是 ndarray 而非 list，也用於文字與數值資料。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 42",
+      "note": "'A tensor is a container which can house data in N dimensions… matrix (which is specifically a 2-dimensional tensor)'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p42.webp"
+    }
+  },
+  {
+    "id": 67,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "What is a scalar in tensor terms?",
+    "zh": "以張量的觀點，純量（scalar）是什麼？",
+    "options": [
+      {
+        "en": "A 0-dimensional tensor with 0 axes (rank 0)",
+        "zh": "0 維張量，0 個軸（rank 0）"
+      },
+      {
+        "en": "A 1D tensor with one axis",
+        "zh": "1 維張量，一個軸"
+      },
+      {
+        "en": "A 2D grid of numbers",
+        "zh": "二維數字網格"
+      },
+      {
+        "en": "A 3D cube of numbers",
+        "zh": "三維數字方塊"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Slide 76: a single number is a scalar, a 0D tensor with 0 axes and rank 0 (rank = number of axes). A vector is 1D (rank 1), a matrix is 2D, and 3D or higher is what people usually mean by 'tensor'.",
+      "zh": "第 76 頁：單一數字即純量，是 0D 張量，有 0 個軸、rank 0（rank＝軸數）。向量是 1D（rank 1），矩陣是 2D，3D 以上是一般口語說的張量。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 76",
+      "note": "'A scalar is a 0-dimensional (0D) tensor… 0 axes, and is of rank 0'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p76.webp"
+    }
+  },
+  {
+    "id": 68,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "A NumPy array has shape (5,). What is it?",
+    "zh": "某個 NumPy 陣列的 shape 是 (5,)。它是什麼？",
+    "options": [
+      {
+        "en": "A 5 × 5 matrix",
+        "zh": "5 × 5 矩陣"
+      },
+      {
+        "en": "The scalar 5",
+        "zh": "純量 5"
+      },
+      {
+        "en": "A 1D vector with 5 elements and one axis",
+        "zh": "含 5 個元素、只有一個軸的 1D 向量"
+      },
+      {
+        "en": "A 3D tensor",
+        "zh": "3D 張量"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slide 43 shows a 1D array (vector) with shape (5,), a single axis 0 holding five values. A 2D example is shape (2, 5), and a 3D example is shape (4, 3, 2). A scalar has shape (), not (5,).",
+      "zh": "第 43 頁顯示 1D 陣列（向量）shape 為 (5,)，只有 axis 0、存 5 個值；2D 例子是 (2, 5)，3D 是 (4, 3, 2)。純量的 shape 是 ()，不是 (5,)。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 43",
+      "note": "1D array (vector) Shape: (5,); 2D Shape: (2, 5); 3D Shape: (4, 3, 2)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p43.webp"
+    }
+  },
+  {
+    "id": 69,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "On a grid where movement follows horizontal and vertical streets, which distance concept best matches the total length of the route between two points?",
+    "zh": "在只能沿水平與垂直街道移動的格狀道路上，兩點間路程的總長度最符合哪種距離概念？",
+    "options": [
+      {
+        "en": "Cosine similarity",
+        "zh": "餘弦相似度"
+      },
+      {
+        "en": "Kappa agreement",
+        "zh": "Kappa 一致性"
+      },
+      {
+        "en": "Manhattan (city-block) distance",
+        "zh": "曼哈頓（城市街區）距離"
+      },
+      {
+        "en": "Straight-line Euclidean distance",
+        "zh": "直線歐氏距離"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Manhattan distance adds the absolute differences along coordinate directions, like following horizontal and vertical streets. Euclidean distance is the direct straight-line separation. Cosine compares vector directions, while kappa measures annotator agreement. No numerical calculation is required to distinguish these ideas.",
+      "zh": "曼哈頓距離把各座標方向的差距加總，就像沿水平與垂直街道前進。歐氏距離是兩點直接連線的直線距離；餘弦相似度比較向量方向；Kappa 衡量標註者一致性。辨識這些概念不需要計算數值。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 49",
+      "note": "'|X2-X1| + |Y2-Y1| = |3-1| + |4-1| = 5'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p49.webp"
+    }
+  },
+  {
+    "id": 70,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "Which description best matches Euclidean distance between two points?",
+    "zh": "下列哪個描述最符合兩點之間的歐氏距離？",
+    "options": [
+      {
+        "en": "The length of the direct straight line connecting them",
+        "zh": "直接連接兩點的直線長度"
+      },
+      {
+        "en": "The sum of horizontal and vertical street segments",
+        "zh": "水平與垂直街道路段的長度總和"
+      },
+      {
+        "en": "Agreement between two human annotators",
+        "zh": "兩位人工標註者的一致性"
+      },
+      {
+        "en": "Only the angle between the two feature vectors",
+        "zh": "只看兩個特徵向量的夾角"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Euclidean distance measures straight-line separation in feature space. Summing axis-wise street segments describes Manhattan distance; human agreement is measured with kappa; vector orientation is the focus of cosine similarity. Note that the arithmetic on the original slide 50 contains a typo: its coordinates would give about 3.61, not 3.16. This question tests the geometric concept rather than that calculation.",
+      "zh": "歐氏距離衡量特徵空間中兩點直接連線的長度。沿座標軸把街道路段相加是曼哈頓距離；人工標註一致性用 Kappa；向量方向是餘弦相似度的重點。注意原始第 50 頁的算例有筆誤：依所列座標，結果應約 3.61，而非 3.16。本題考的是幾何概念，不要求計算該數值。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 50",
+      "note": "Euclidean distance example; slide arithmetic shows '1 + 9 = 3.16' (source error; correct is √13 ≈ 3.61)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p50.webp"
+    }
+  },
+  {
+    "id": 71,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "In cosine similarity, what does a smaller angle between two data vectors indicate?",
+    "zh": "在餘弦相似度中，兩個資料向量的夾角越小代表什麼？",
+    "options": [
+      {
+        "en": "The two data points are less similar",
+        "zh": "兩筆資料越不相似"
+      },
+      {
+        "en": "The vectors have more missing values",
+        "zh": "向量的缺失值越多"
+      },
+      {
+        "en": "The Manhattan distance must be zero",
+        "zh": "曼哈頓距離一定為 0"
+      },
+      {
+        "en": "The two data points are more similar",
+        "zh": "兩筆資料越相似"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said 'if the angle here is more smaller, that means those two data is more similar'. Cosine similarity is the cosine of the angle θ, which grows toward 1 as the angle shrinks. The angle says nothing about missing values, and a small angle does not force the Manhattan distance to zero, because the vectors can still differ in length.",
+      "zh": "老師說「夾角越小，代表兩筆資料越相似」。餘弦相似度是夾角 θ 的餘弦值，角度越小越接近 1。角度與缺失值無關；夾角小也不代表曼哈頓距離為 0（向量長度仍可不同）。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[51:13.6]–[57:02.6]",
+      "note": "'If the angle here is more smaller that means those two data is more similar'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 52",
+        "image": "./images/slides/lecture-4-p52.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 72,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "For nonzero, nonnegative vectors, such as word-count vectors, what range does cosine similarity take, and what do its ends mean?",
+    "zh": "對於非零且非負的向量（例如詞頻向量），餘弦相似度的範圍與兩端意義為何？",
+    "options": [
+      {
+        "en": "From 0 to 100; 100 means identical",
+        "zh": "0 到 100；100 表示相同"
+      },
+      {
+        "en": "From 0 to 1; 1 means the same direction (identical orientation), 0 means orthogonal (no shared nonzero terms)",
+        "zh": "0 到 1；1 表示方向相同，0 表示正交（沒有共同的非零詞）"
+      },
+      {
+        "en": "From 0 to 1; 0 means identical and 1 means orthogonal",
+        "zh": "0 到 1；0 表示相同、1 表示正交"
+      },
+      {
+        "en": "It can be any real number",
+        "zh": "可以是任意實數"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 52 states the range [0, 1], with 1 meaning identical and 0 orthogonal. This holds for nonnegative vectors such as term counts. In general, vectors with negative entries give cosine values in [−1, 1]. The statement that 0 means identical and 1 means orthogonal reverses the meaning, 0–100 is not a cosine scale, and cosine values are always bounded.",
+      "zh": "第 52 頁說範圍是 [0, 1]：1 表示相同、0 表示正交。這適用於詞頻這類非負向量；若向量含負值，一般範圍是 [−1, 1]。「0 表示相同、1 表示正交」顛倒了意義；0–100 不是餘弦尺度；餘弦值一定有界。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 52",
+      "note": "'The range of cosine similarity is on [0,1]. 1 → identical. 0 → orthogonal' (valid for nonnegative vectors)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p52.webp"
+    }
+  },
+  {
+    "id": 73,
+    "topic": "representation",
+    "difficulty": "basic",
+    "en": "How is cosine distance defined on the slide?",
+    "zh": "投影片上如何定義餘弦距離（cosine distance）？",
+    "options": [
+      {
+        "en": "cos(θ) + 1",
+        "zh": "cos(θ) + 1"
+      },
+      {
+        "en": "The squared Euclidean distance",
+        "zh": "歐氏距離的平方"
+      },
+      {
+        "en": "The sum of absolute coordinate differences",
+        "zh": "各座標差的絕對值總和"
+      },
+      {
+        "en": "1 − cos(θ)",
+        "zh": "1 − cos(θ)"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 53: 'Cosine Distance = 1 − cos(θ)'. Higher similarity gives a smaller distance, and identical directions give distance 0. The sum of absolute differences is the Manhattan distance, the squared straight-line length relates to Euclidean distance, and cos θ + 1 grows with similarity, so it is not a distance.",
+      "zh": "第 53 頁：「Cosine Distance = 1 − cos(θ)」，相似度越高距離越小，方向相同時距離為 0。絕對差總和是曼哈頓距離；直線長度平方與歐氏距離相關；cos θ + 1 隨相似度變大，不是距離。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 53",
+      "note": "'Consine Distance = 1 - cos(θ)' (slide spelling)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p53.webp"
+    }
+  },
+  {
+    "id": 74,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "Why is cosine distance often good for text data?",
+    "zh": "為什麼餘弦距離常適合用於文字資料？",
+    "options": [
+      {
+        "en": "It measures the exact straight-line distance between raw counts",
+        "zh": "它衡量原始詞頻之間的精確直線距離"
+      },
+      {
+        "en": "Texts vary greatly in length; cosine looks at orientation (word proportions), not raw counts or magnitude",
+        "zh": "文字長度差異大，餘弦只看方向（字詞比例），不受原始次數或大小影響"
+      },
+      {
+        "en": "It only works when documents are the same length",
+        "zh": "它只在文件等長時有效"
+      },
+      {
+        "en": "It removes stop words automatically",
+        "zh": "它會自動移除停用詞"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 55: cosine distance is only concerned with orientation, so it is much less affected by magnitude. Texts are often of very different lengths, and if words appear in roughly the same proportion, cosine ignores raw counts. Straight-line distance on raw counts is Euclidean, which is sensitive to length. Cosine works across different lengths and does not remove stop words.",
+      "zh": "第 55 頁：餘弦距離只關心方向，受大小影響小。文件長度常差很多，只要字詞比例相近，餘弦就不在意原始次數。原始詞頻的直線距離是歐氏距離，受長度影響；餘弦不限等長，也不會移除停用詞。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 55",
+      "note": "'Cosine distance is sometimes very good for text-related data. Often texts are of very different lengths…'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p55.webp"
+    }
+  },
+  {
+    "id": 75,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "Document A's nonzero word-count vector is doubled, while document B's nonzero vector stays fixed. What happens to their cosine similarity?",
+    "zh": "將文件 A 的非零詞頻向量整體乘以 2，文件 B 的非零向量保持不變，兩者的餘弦相似度如何改變？",
+    "options": [
+      {
+        "en": "It doubles",
+        "zh": "變成兩倍"
+      },
+      {
+        "en": "It halves",
+        "zh": "變成一半"
+      },
+      {
+        "en": "It stays the same, because the vector's direction is unchanged",
+        "zh": "維持不變，因為向量方向沒有改變"
+      },
+      {
+        "en": "It becomes 0",
+        "zh": "變成 0"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Multiplying a nonzero vector by a positive constant changes its length but not its direction. Cosine similarity normalizes by both vector lengths, so this scaling cancels out and the cosine remains unchanged. It does not automatically double, halve, or become zero. A length-sensitive distance such as Euclidean distance can change, but cosine similarity depends on orientation.",
+      "zh": "將非零向量乘以正的常數，只會改變長度、不改變方向。餘弦相似度會除以兩向量的長度，所以整體縮放因子被抵消，相似度維持不變，不會因此加倍、減半或歸零。歐氏距離等與長度相關的量可能改變，但餘弦比較的是方向。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 52, 55",
+      "note": "Denominator normalizes to unit vector; cosine 'won't worry about the raw counts, only their proportional relationships'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p52.webp"
+    }
+  },
+  {
+    "id": 76,
+    "topic": "representation",
+    "difficulty": "applied",
+    "en": "In the lung-cancer project, 50 key items extracted from pathology reports describe each patient, and a new patient is matched against about 5,000 past patients. What representation idea is this?",
+    "zh": "在肺癌專案中，從病理報告抽取 50 個關鍵資訊來描述每位病人，再把新病人與約 5000 位過去病人比對。這體現了什麼資料表示概念？",
+    "options": [
+      {
+        "en": "Represent each patient as a 50-dimensional feature vector, then search for similar patients",
+        "zh": "把每位病人表示成 50 維特徵向量，再搜尋相似的病人"
+      },
+      {
+        "en": "Represent each patient as one raw image",
+        "zh": "把每位病人表示成一張原始影像"
+      },
+      {
+        "en": "Use the 50 items as 50 separate labels to regress",
+        "zh": "把 50 個項目當作 50 個標籤做回歸"
+      },
+      {
+        "en": "Discard the reports and match by patient name",
+        "zh": "捨棄報告，改用病人姓名比對"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said 'we can use fifty dimension to represent the patient' and then do matching or search against the patient data bank, referring to past patients' survival or treatment. This is feature-vector representation plus similarity search. Images, regression labels and name matching do not describe the project.",
+      "zh": "老師說「用 50 個維度表示病人」，再與病人資料庫做媒合搜尋，參考過去病人的存活或治療。這是特徵向量表示加上相似度搜尋。影像、回歸標籤、姓名比對都不符合此專案。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "part 2 [04:20.3]–[12:45.2]",
+      "note": "'you can think that we can use fifty dimension to represent the patient… then we can do the search' (timestamps restart after the break)",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 77,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "What does the kappa statistic measure in the 'Assessing Relevance' slides?",
+    "zh": "在「Assessing Relevance」投影片中，kappa 統計量衡量的是什麼？",
+    "options": [
+      {
+        "en": "Agreement between judges (annotators) beyond what is expected by chance",
+        "zh": "評審（標註者）之間扣除機率性一致後的一致程度"
+      },
+      {
+        "en": "A model's accuracy on test data",
+        "zh": "模型在測試資料上的準確率"
+      },
+      {
+        "en": "The distance between two documents",
+        "zh": "兩份文件之間的距離"
+      },
+      {
+        "en": "How well columns are normalized",
+        "zh": "欄位正規化的程度"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Kappa compares observed agreement P(A) with agreement expected by chance P(E). It measures how consistently two judges label the same items, which matters for label quality before training. It is not a model accuracy metric, not a distance, and not a normalization check.",
+      "zh": "kappa 比較觀察到的一致 P(A) 與機率上預期的一致 P(E)，衡量兩位評審標註同一批資料的一致性，在訓練前檢查標籤品質很重要。它不是模型準確率、距離或正規化指標。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 56–57",
+      "note": "'Kappa statistic – a common measure for agreement between judges'; observed vs expected agreement by chance",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p56.webp"
+    }
+  },
+  {
+    "id": 78,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "Two annotators obtain a kappa of 0.85. Using the thresholds on the slide, how is this interpreted?",
+    "zh": "兩位標註者的 kappa 為 0.85。依投影片的門檻，應如何解讀？",
+    "options": [
+      {
+        "en": "A dubious basis for evaluation",
+        "zh": "作為評估依據令人存疑"
+      },
+      {
+        "en": "Fair agreement",
+        "zh": "尚可的一致（fair）"
+      },
+      {
+        "en": "Good agreement",
+        "zh": "良好的一致（good）"
+      },
+      {
+        "en": "Worse than random",
+        "zh": "比隨機還差"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slide 57: above 0.8 is good agreement, 0.67–0.8 is fair, and below 0.67 is dubious. Negative values mean worse than random. 0.85 is above 0.8, so it is good. (The slide's worked example gives 0.776, which falls in the fair band.)",
+      "zh": "第 57 頁：高於 0.8 為良好一致，0.67–0.8 為尚可，低於 0.67 令人存疑；負值代表比隨機還差。0.85 高於 0.8，屬良好。（投影片的計算例 0.776 落在尚可區間。）"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 57",
+      "note": "'Above 0.8 is taken as good agreement. Between 0.67 and 0.8… fair… Below 0.67… dubious'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p57.webp"
+    }
+  },
+  {
+    "id": 79,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "What does a kappa value of 0 mean?",
+    "zh": "kappa 值為 0 代表什麼？",
+    "options": [
+      {
+        "en": "Perfect agreement",
+        "zh": "完全一致"
+      },
+      {
+        "en": "The judges agree only at the rate expected by chance",
+        "zh": "兩位評審的一致程度僅等同於機率上的偶然一致"
+      },
+      {
+        "en": "The judges always disagree on purpose",
+        "zh": "評審總是刻意意見相反"
+      },
+      {
+        "en": "The dataset has no labels",
+        "zh": "資料集沒有標籤"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Slide 57: kappa lies on a [−1, 1] scale. 1 is perfect agreement, 0 means the judges agree only at the rate given by chance, and negative values mean worse than random, which suggests systematic disagreement. Kappa 0 says nothing about missing labels.",
+      "zh": "第 57 頁：kappa 範圍為 [−1, 1]。1 是完全一致；0 表示一致程度只等於偶然；負值代表比隨機更差（可能有系統性分歧）。kappa 為 0 與資料是否有標籤無關。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 57",
+      "note": "'0 if they agree only at the rate given by chance. Negative if they are worse than random'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p57.webp"
+    }
+  },
+  {
+    "id": 80,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "Your annotators show low agreement on chest X-ray labels. Based on the lecture, what should you do?",
+    "zh": "你的標註者在胸部 X 光標籤上一致性很低。依照課堂內容，應該怎麼做？",
+    "options": [
+      {
+        "en": "Ignore it and start training the model immediately",
+        "zh": "忽略並立即開始訓練模型"
+      },
+      {
+        "en": "Delete the whole dataset",
+        "zh": "刪除整個資料集"
+      },
+      {
+        "en": "Replace kappa with Euclidean distance",
+        "zh": "改用歐氏距離取代 kappa"
+      },
+      {
+        "en": "Train annotators on sample data or hold a consensus meeting before annotating, then decide final labels by majority vote",
+        "zh": "標註前先用樣本資料訓練標註者或召開共識會議，最後以多數決決定標籤"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said that if agreement is low we need a consensus process. Before annotation, sample some data to train the annotators until they agree, and eventually use majority vote across annotators. Training on unreliable labels hurts the model, deleting all data is wasteful, and Euclidean distance does not measure annotator agreement.",
+      "zh": "老師說一致性低時要建立共識：標註前抽樣資料訓練標註者直到達成共識，最終以多位標註者的多數決決定標籤。用不可靠的標籤訓練會傷害模型；刪掉資料太浪費；歐氏距離不衡量標註一致性。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[59:32.8]–end",
+      "note": "'we use the majority vote to decide the label… before annotation we need to sample some data for training the annotator'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 56",
+        "image": "./images/slides/lecture-4-p56.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 81,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "In a clinical dataset of 1,000 patients, only 10% are positive. What risk did the lecturer describe?",
+    "zh": "在 1000 位病人的臨床資料中只有 10% 是陽性。老師描述了什麼風險？",
+    "options": [
+      {
+        "en": "The model will overfit to the positive class",
+        "zh": "模型會過度擬合陽性類別"
+      },
+      {
+        "en": "The model leans toward the big category and may predict everything as negative; it looks about 90% accurate but finds no positives",
+        "zh": "模型偏向多數類別，可能全部預測為陰性，看似約 90% 準確卻找不到任何陽性"
+      },
+      {
+        "en": "Imbalance only affects regression tasks",
+        "zh": "不平衡只影響回歸任務"
+      },
+      {
+        "en": "Imbalance makes kappa negative",
+        "zh": "不平衡會讓 kappa 變成負值"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer said that with data imbalance the model will move toward the big category and may predict all of the data as negative, so after training it has no function. Predicting all negatives would be right 90% of the time yet catch zero positives, which is why accuracy alone is misleading and recall matters. The risk is ignoring the minority class, not overfitting to it. Imbalance matters for classification, and it is unrelated to kappa.",
+      "zh": "老師說資料不平衡時模型會靠向大類別，可能全部預測為陰性，訓練後「no function」。全猜陰性有 90% 正確率卻抓不到任何陽性，所以只看準確率會誤導，召回率很重要。風險是忽略少數類而非過擬合它；不平衡主要影響分類；與 kappa 無關。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[55:34.3]–part 2 [04:20.3]",
+      "note": "'ten percent is positive and ninety percent is negative… maybe your model will predict all of the data as negative'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 82,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "You have a small dataset of 1,000 samples and use leave-one-out cross-validation. What does that involve?",
+    "zh": "你有 1000 筆的小型資料集，使用留一交叉驗證（leave-one-out cross-validation）。這代表什麼？",
+    "options": [
+      {
+        "en": "Train once on all 1,000 samples and test on the same samples",
+        "zh": "用全部 1000 筆訓練一次，再用同樣資料測試"
+      },
+      {
+        "en": "Remove one feature at a time",
+        "zh": "每次移除一個特徵"
+      },
+      {
+        "en": "Use 1 sample for training and 999 for testing",
+        "zh": "用 1 筆訓練、999 筆測試"
+      },
+      {
+        "en": "Train 1,000 times, each time holding out one sample for testing and training on the rest, then average the results",
+        "zh": "訓練 1000 次，每次留下 1 筆做測試、其餘訓練，最後取平均"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "The lecturer said 'leave one out means I just leave one data and use the resting data for training… one thousand data, I need to do one thousand times and get the average'. Testing on training data gives an over-optimistic result, removing features is feature selection, and training on 1 sample reverses the scheme.",
+      "zh": "老師說「留一就是留下一筆資料，其餘拿去訓練……一千筆就要做一千次再取平均」。用訓練資料測試會過度樂觀；逐一移除特徵是特徵選擇；用 1 筆訓練是把方法弄反了。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[55:34.3]–part 2 [04:20.3]",
+      "note": "'leave one out cross-validation… one thousand Data… do one thousand times and get the average'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 83,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "For a classification task, which metrics did the lecturer mention for the evaluation step of the workflow?",
+    "zh": "對於分類任務，老師在流程的評估步驟中提到了哪些指標？",
+    "options": [
+      {
+        "en": "Precision, recall, F1 score, sensitivity, specificity",
+        "zh": "精確率、召回率、F1 分數、敏感度、特異度"
+      },
+      {
+        "en": "Manhattan and Euclidean distance",
+        "zh": "曼哈頓與歐氏距離"
+      },
+      {
+        "en": "Min-max and z-score",
+        "zh": "min-max 與 z-score"
+      },
+      {
+        "en": "Shape and ndim",
+        "zh": "shape 與 ndim"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said the evaluation metrics depend on the task, and for a classification problem you may use precision, recall, F1 score, sensitivity or specificity. Distances are similarity measures, min-max and z-score are normalization methods, and shape/ndim describe arrays.",
+      "zh": "老師說評估指標取決於任務；分類問題可用 precision、recall、F1 score、sensitivity 或 specificity。距離是相似度度量；min-max、z-score 是正規化方法；shape／ndim 描述陣列。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[11:56.1]",
+      "note": "'classification task… you need to use precision-recall F1 score or sensitivity or specificity'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 84,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "Look at the confusion matrix shown. Which cells form the denominator of recall?",
+    "zh": "請看圖中的混淆矩陣。召回率（recall）的分母由哪些格子組成？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 8,
+      "fp": 2,
+      "fn": 4,
+      "tn": 6
+    },
+    "options": [
+      {
+        "en": "TP + FP (all predicted positives)",
+        "zh": "TP + FP（所有預測為陽性）"
+      },
+      {
+        "en": "TP + TN (all correct predictions)",
+        "zh": "TP + TN（所有預測正確）"
+      },
+      {
+        "en": "TP + FN (all actual positives)",
+        "zh": "TP + FN（所有實際陽性）"
+      },
+      {
+        "en": "All four cells",
+        "zh": "全部四格"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Recall asks: of all cases that are actually positive, how many did the model catch? Its denominator is TP + FN (here 8 + 4 = 12 actual positives), so recall = 8/12. TP + FP is precision's denominator, TP + TN is the numerator of accuracy, and all four cells are accuracy's denominator.",
+      "zh": "召回率問的是：所有「實際為陽性」的案例中，模型抓到多少？分母是 TP + FN（此圖 8 + 4 = 12 個實際陽性），召回率 = 8/12。TP + FP 是精確率的分母；TP + TN 是準確率的分子；全部四格是準確率的分母。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "'好像說會有些圖片讓你選recall'; recall definition per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 85,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "Look at the confusion matrix shown. Which cells form the denominator of precision?",
+    "zh": "請看圖中的混淆矩陣。精確率（precision）的分母由哪些格子組成？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 9,
+      "fp": 3,
+      "fn": 1,
+      "tn": 7
+    },
+    "options": [
+      {
+        "en": "TP + FN (all actual positives)",
+        "zh": "TP + FN（所有實際陽性）"
+      },
+      {
+        "en": "FP + TN (all actual negatives)",
+        "zh": "FP + TN（所有實際陰性）"
+      },
+      {
+        "en": "TP + FP (all predicted positives)",
+        "zh": "TP + FP（所有預測為陽性）"
+      },
+      {
+        "en": "TN + FN (all predicted negatives)",
+        "zh": "TN + FN（所有預測為陰性）"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Precision asks: of everything the model predicted positive, how many really are positive? Its denominator is TP + FP (9 + 3 = 12), giving 9/12. TP + FN is recall's denominator, FP + TN is the actual negatives (used for specificity), and TN + FN is the predicted negatives.",
+      "zh": "精確率問的是：模型「預測為陽性」的案例中，有多少真的是陽性？分母是 TP + FP（9 + 3 = 12），精確率 = 9/12。TP + FN 是召回率的分母；FP + TN 是實際陰性（特異度用）；TN + FN 是預測陰性。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[11:56.1]",
+      "note": "課堂列出 precision 作為分類評估指標；本題定義與自製矩陣依 scikit-learn 官方說明。",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 86,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "The confusion matrix shown comes from a disease-screening model. Its recall is 6/12 = 0.5. What does this mean?",
+    "zh": "圖中的混淆矩陣來自疾病篩檢模型，其召回率為 6/12 = 0.5。這代表什麼？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 6,
+      "fp": 1,
+      "fn": 6,
+      "tn": 7
+    },
+    "options": [
+      {
+        "en": "The model detected half of the patients who actually have the disease",
+        "zh": "模型抓到了實際患病病人中的一半"
+      },
+      {
+        "en": "Half of the model's positive predictions are correct",
+        "zh": "模型預測為陽性的案例中有一半正確"
+      },
+      {
+        "en": "Half of all patients were classified correctly",
+        "zh": "所有病人中有一半被正確分類"
+      },
+      {
+        "en": "Half of the healthy patients were correctly cleared",
+        "zh": "健康者中有一半被正確排除"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Recall (also called sensitivity) = TP / (TP + FN) = 6 / (6 + 6): of the 12 truly ill patients, 6 were caught and 6 were missed. 'Half of positive predictions correct' would be precision, which is 6/7 here, not 0.5. 'Half of all patients correct' is accuracy, which is 13/20 here. Clearing healthy patients is specificity.",
+      "zh": "召回率（又稱敏感度 sensitivity）= TP / (TP + FN) = 6 / (6 + 6)：12 位真正患病者中抓到 6 位、漏掉 6 位。「陽性預測一半正確」是精確率（此圖為 6/7，不是 0.5）；「所有病人一半正確」是準確率（此圖為 13/20）；正確排除健康者是特異度。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; recall = sensitivity per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 87,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "Based on the confusion matrix shown, which statement is true?",
+    "zh": "根據圖中的混淆矩陣，下列哪項敘述正確？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 5,
+      "fp": 0,
+      "fn": 5,
+      "tn": 10
+    },
+    "options": [
+      {
+        "en": "Recall is perfect because there are no false negatives",
+        "zh": "召回率完美，因為沒有偽陰性"
+      },
+      {
+        "en": "Both precision and recall are perfect",
+        "zh": "精確率與召回率都完美"
+      },
+      {
+        "en": "Precision is zero because FP is zero",
+        "zh": "精確率為零，因為 FP 為零"
+      },
+      {
+        "en": "Precision is perfect (no false positives), but recall is only half because 5 actual positives were missed",
+        "zh": "精確率完美（沒有偽陽性），但召回率只有一半，因為漏掉了 5 個實際陽性"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "FP = 0, so every positive prediction is correct: precision = 5/5 = 1. FN = 5, so half of the actual positives (5 of 10) were missed: recall = 5/10. There are false negatives, so recall is not perfect. FP = 0 makes precision high, not zero.",
+      "zh": "FP = 0，代表每個陽性預測都正確，精確率 = 5/5 = 1；FN = 5，代表實際陽性 10 個中漏掉 5 個，召回率 = 5/10。有偽陰性，所以召回率並不完美；FP = 0 讓精確率變高而非變零。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; precision/recall trade-off per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 88,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "Based on the confusion matrix shown, which statement best describes the model?",
+    "zh": "根據圖中的混淆矩陣，下列哪項最能描述此模型？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 10,
+      "fp": 6,
+      "fn": 0,
+      "tn": 4
+    },
+    "options": [
+      {
+        "en": "Precision is perfect, but recall is low",
+        "zh": "精確率完美，但召回率低"
+      },
+      {
+        "en": "Recall is perfect (no actual positives missed), but precision is lower because of 6 false alarms",
+        "zh": "召回率完美（沒有漏掉實際陽性），但因 6 個誤報使精確率較低"
+      },
+      {
+        "en": "The model never predicts positive",
+        "zh": "模型從不預測陽性"
+      },
+      {
+        "en": "Both precision and recall are zero",
+        "zh": "精確率與召回率都是零"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "FN = 0, so all 10 actual positives were caught: recall = 10/10. FP = 6, so of 16 positive predictions only 10 are correct: precision = 10/16. This is the opposite pattern to 'perfect precision, low recall'. The model clearly predicts positives (16 times), and neither metric is zero.",
+      "zh": "FN = 0，10 個實際陽性全被抓到，召回率 = 10/10；FP = 6，16 個陽性預測中只有 10 個正確，精確率 = 10/16。這與「精確率完美、召回率低」正好相反；模型預測了 16 次陽性；兩個指標都不是零。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; definitions per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 89,
+    "topic": "evaluation",
+    "difficulty": "basic",
+    "en": "In the confusion matrix shown, what does the number in the FN cell (3) represent?",
+    "zh": "圖中混淆矩陣 FN 格的數字（3）代表什麼？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 7,
+      "fp": 2,
+      "fn": 3,
+      "tn": 8
+    },
+    "options": [
+      {
+        "en": "Cases predicted positive that were actually negative",
+        "zh": "預測為陽性但實際為陰性的案例"
+      },
+      {
+        "en": "Cases correctly predicted negative",
+        "zh": "正確預測為陰性的案例"
+      },
+      {
+        "en": "Cases correctly predicted positive",
+        "zh": "正確預測為陽性的案例"
+      },
+      {
+        "en": "Cases that are actually positive but were predicted negative (missed cases)",
+        "zh": "實際為陽性卻被預測為陰性的案例（漏掉的案例）"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "A false negative is a negative prediction that is false: the case is really positive but the model said negative. These 3 missed cases lower recall, which is 7/(7+3). Predicted positive but actually negative is a false positive (FP = 2). Correct negatives are TN (8) and correct positives are TP (7).",
+      "zh": "偽陰性（false negative）是「錯誤的陰性預測」：實際為陽性，模型卻判為陰性。這 3 個漏掉的案例會拉低召回率 7/(7+3)。預測陽性但實際陰性是偽陽性（FP = 2）；正確陰性是 TN（8）；正確陽性是 TP（7）。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; FN definition per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 90,
+    "topic": "evaluation",
+    "difficulty": "applied",
+    "en": "For the same fixed set of screened patients, recall must increase by turning missed positive cases into detected cases. Which confusion-matrix cell decreases?",
+    "zh": "在固定同一組受測者的前提下，將原先漏掉的陽性病例改為成功抓到，使召回率提高。混淆矩陣中的哪一格會減少？",
+    "diagram": {
+      "type": "confusion",
+      "tp": 8,
+      "fp": 2,
+      "fn": 4,
+      "tn": 6
+    },
+    "options": [
+      {
+        "en": "TN (true negatives)",
+        "zh": "TN（真陰性）"
+      },
+      {
+        "en": "FN (false negatives)",
+        "zh": "FN（偽陰性）"
+      },
+      {
+        "en": "FP (false positives) only",
+        "zh": "只有 FP（偽陽性）"
+      },
+      {
+        "en": "None; recall should be lowered for screening",
+        "zh": "不需要，篩檢應該降低召回率"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "Recall = TP / (TP + FN) = 8/12 here. Turning missed cases (FN = 4) into caught cases raises recall, so FN must shrink. TN is not part of recall. Reducing FP improves precision, not recall. In screening, where misses are costly, high recall is usually the priority.",
+      "zh": "召回率 = TP / (TP + FN)，此圖為 8/12。把漏掉的病例（FN = 4）變成抓到的病例才能提高召回率，所以 FN 要變小。TN 不在召回率公式中；減少 FP 改善的是精確率；在漏診代價高的篩檢情境，通常優先追求高召回率。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; recall per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 91,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "Why does this course use Python for machine learning, according to the lecturer?",
+    "zh": "老師說本課程為什麼使用 Python 做機器學習？",
+    "options": [
+      {
+        "en": "Python is the fastest compiled language",
+        "zh": "Python 是最快的編譯式語言"
+      },
+      {
+        "en": "Kaggle only accepts Python files",
+        "zh": "Kaggle 只接受 Python 檔案"
+      },
+      {
+        "en": "It has a rich ecosystem of toolkits, e.g. Pandas for preprocessing, Plotly for visualization, Keras or PyTorch for models",
+        "zh": "有豐富的工具生態，例如 Pandas 做前處理、Plotly 做視覺化、Keras 或 PyTorch 建模型"
+      },
+      {
+        "en": "Python needs no libraries at all",
+        "zh": "Python 完全不需要函式庫"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer said everyone doing data science uses Python because there are many toolkits and existing models you can download with it: Pandas for preprocessing and representation, Plotly for visualization, Keras or PyTorch to implement models, plus Hugging Face. Python is interpreted, not the fastest compiled language (NumPy uses C/C++ for speed). Kaggle's rules were not the reason, and the whole point is its libraries.",
+      "zh": "老師說做資料科學的人都用 Python，因為有很多可下載的工具與模型：Pandas 做前處理與表示、Plotly 做視覺化、Keras／PyTorch 實作模型，還有 Hugging Face。Python 是直譯式而非最快的編譯語言（NumPy 靠 C/C++ 加速）；Kaggle 規則不是理由；重點恰恰在函式庫。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_338742 (已AI校正).txt",
+      "locator": "[03:44.9]–[05:59.7]",
+      "note": "'there are many toolkit… Pandas… Plotly… Keras or PyTorch to implement your model'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 92,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "The lecturer called Hugging Face an 'AI App Store'. What does that mean?",
+    "zh": "老師把 Hugging Face 比喻為「AI 的 App Store」。這是什麼意思？",
+    "options": [
+      {
+        "en": "It is a platform hosting many models and datasets you can download or integrate with a few lines of Python",
+        "zh": "它是收藏大量模型與資料集的平台，幾行 Python 就能下載或整合"
+      },
+      {
+        "en": "It is a shop that sells laptops",
+        "zh": "它是販售筆電的商店"
+      },
+      {
+        "en": "It is a Colab menu item for formatting text",
+        "zh": "它是 Colab 用來排版文字的選單"
+      },
+      {
+        "en": "It is a dimension-reduction algorithm",
+        "zh": "它是一種降維演算法"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Just as an App Store lets you install apps, Hugging Face hosts many state-of-the-art models, and also datasets such as MT Samples, which you can download with a few lines of Python. It is not a hardware store, a Colab menu or an algorithm.",
+      "zh": "就像 App Store 讓你安裝 App，Hugging Face 收藏大量最新模型，也有資料集（如 MT Samples），幾行 Python 即可下載使用。它不是硬體商店、不是 Colab 選單，也不是演算法。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_338742 (已AI校正).txt",
+      "locator": "[05:59.7]–[08:13.5]",
+      "note": "'Hugging Face is a AI Apple Store… lots of models… a few of Python code'; 343400 [17:18.7] adds datasets",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 93,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "Which kinds of cells does the Colab main editor support, according to the slide?",
+    "zh": "根據投影片，Colab 主要編輯區支援哪些類型的儲存格（cell）？",
+    "options": [
+      {
+        "en": "Code cells (Python) and text cells (Markdown)",
+        "zh": "程式碼儲存格（Python）與文字儲存格（Markdown）"
+      },
+      {
+        "en": "Only Python code cells",
+        "zh": "只有 Python 程式碼儲存格"
+      },
+      {
+        "en": "Only Markdown text cells",
+        "zh": "只有 Markdown 文字儲存格"
+      },
+      {
+        "en": "Spreadsheet cells, like Excel",
+        "zh": "類似 Excel 的試算表儲存格"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "Slide 4: the main editor 'supports Code cells (Python code) and Text cells (Markdown)', and the toolbar has '+ Code / + Text' to insert each type. Supporting only one type is incorrect, and Colab cells are not spreadsheet cells.",
+      "zh": "第 4 頁：主要編輯區「支援 Code cells（Python）與 Text cells（Markdown）」，工具列也有「+ Code / + Text」可分別插入。只支援其中一種是錯的；Colab 儲存格也不是試算表格子。"
+    },
+    "source": {
+      "file": "materials/lectures/3. Set Up and Start Using Your Python Playground.pdf",
+      "locator": "p. 4",
+      "note": "Main Editor Area: supports Code cells (Python code) and Text cells (Markdown)",
+      "supplemental": false,
+      "image": "./images/slides/lecture-3-p04.webp"
+    }
+  },
+  {
+    "id": 94,
+    "topic": "python",
+    "difficulty": "applied",
+    "en": "In the MT Samples exercise, which column did the lecturer identify as the label y?",
+    "zh": "在 MT Samples 練習中，老師指出哪一欄是標籤 y？",
+    "options": [
+      {
+        "en": "sample_name",
+        "zh": "sample_name"
+      },
+      {
+        "en": "keywords",
+        "zh": "keywords"
+      },
+      {
+        "en": "medical_specialty (40 unique labels)",
+        "zh": "medical_specialty（40 個不同標籤）"
+      },
+      {
+        "en": "The serial-number column",
+        "zh": "流水號欄位"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "The lecturer said the first step is to find y. In MT Samples it is medical_specialty, with 40 unique values, and the input is the medical description or transcription text. Sample names, keywords and serial numbers are not the prediction target. Keywords could even leak information about the specialty.",
+      "zh": "老師說第一步要找出 y；MT Samples 的 y 是 medical_specialty，有 40 個不同值，輸入是醫療描述／轉錄文字。sample_name、keywords、流水號都不是預測目標（keywords 甚至可能洩漏專科資訊）。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[25:14.2]–[34:09.2]",
+      "note": "'the column is the label, is the Y label… the result is 40… Forty labels'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 9",
+        "image": "./images/slides/lecture-3-p09.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 95,
+    "topic": "python",
+    "difficulty": "applied",
+    "en": "The bar chart of medical_specialty values shows a few specialties with very many records and most with very few. What did the lecturer call this distribution?",
+    "zh": "medical_specialty 的長條圖顯示少數專科資料很多、大多數專科很少。老師稱這種分布為什麼？",
+    "options": [
+      {
+        "en": "Uniform distribution",
+        "zh": "均勻分布"
+      },
+      {
+        "en": "Long-tail (power-law) distribution, like the 80/20 rule",
+        "zh": "長尾（冪律）分布，類似 80/20 法則"
+      },
+      {
+        "en": "Normal distribution centered on the mean",
+        "zh": "以平均為中心的常態分布"
+      },
+      {
+        "en": "A distribution with no labels",
+        "zh": "沒有標籤的分布"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The lecturer said 'the distribution we call long tail distribution or power law distribution… only few labels have high frequency, most of the label is low frequency', comparing it to the 80/20 rule. A uniform distribution would have equal counts, a normal distribution is bell-shaped around a mean, and the column clearly does have labels.",
+      "zh": "老師說這叫長尾分布或冪律分布：只有少數標籤頻率高，大多數標籤頻率低，並以 80/20 法則比喻。均勻分布各類數量相同；常態分布是以平均為中心的鐘形；這欄顯然有標籤。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[25:14.2]–[34:09.2]",
+      "note": "'long tail distribution or power law distribution… 八十二十法則'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 9",
+        "image": "./images/slides/lecture-3-p09.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 96,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "What is Beautiful Soup used for?",
+    "zh": "Beautiful Soup 是用來做什麼的？",
+    "options": [
+      {
+        "en": "Training deep neural networks",
+        "zh": "訓練深度神經網路"
+      },
+      {
+        "en": "Computing cosine similarity",
+        "zh": "計算餘弦相似度"
+      },
+      {
+        "en": "Restarting the Colab runtime",
+        "zh": "重新啟動 Colab 執行環境"
+      },
+      {
+        "en": "Parsing HTML or XML into a parse tree so you can search it and extract text and attributes, often together with requests for web scraping",
+        "zh": "把 HTML／XML 剖析成樹狀結構以搜尋並擷取文字與屬性，常與 requests 搭配做網路爬蟲"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 11 describes Beautiful Soup as a Python library for parsing HTML and XML, even messy 'tag soup'. You navigate and search the parse tree, then extract text or attribute values, usually with requests to fetch pages. The lecturer called it a parser (剖析器). It does not train models, compute similarity or control the runtime.",
+      "zh": "第 11 頁：Beautiful Soup 是剖析 HTML／XML（含結構混亂的 tag soup）的 Python 函式庫，可在剖析樹中導覽、搜尋並擷取文字或屬性，常與 requests 搭配抓網頁；老師稱它為剖析器（parser）。它不訓練模型、不算相似度、不控制執行環境。"
+    },
+    "source": {
+      "file": "materials/lectures/3. Set Up and Start Using Your Python Playground.pdf",
+      "locator": "p. 11",
+      "note": "Beautiful Soup: parsing HTML and XML, navigation and searching, data extraction, used with requests",
+      "supplemental": false,
+      "image": "./images/slides/lecture-3-p11.webp"
+    }
+  },
+  {
+    "id": 97,
+    "topic": "python",
+    "difficulty": "applied",
+    "en": "In the live demo, the Gemini-generated code kept failing to load MT Samples from Hugging Face. What was the cause, and how was it fixed?",
+    "zh": "在課堂示範中，Gemini 產生的程式一直無法從 Hugging Face 載入 MT Samples。原因是什麼？如何解決？",
+    "options": [
+      {
+        "en": "Colab was out of memory, so the lecturer bought more RAM",
+        "zh": "Colab 記憶體不足，老師加購 RAM"
+      },
+      {
+        "en": "The dataset path was wrong; the lecturer copied the correct path from the dataset's 'Use this dataset' option on Hugging Face",
+        "zh": "資料集路徑錯誤；老師從 Hugging Face 資料集頁面的「Use this dataset」複製正確路徑"
+      },
+      {
+        "en": "Python cannot read CSV files, so the data was retyped by hand",
+        "zh": "Python 讀不了 CSV，只好手動輸入資料"
+      },
+      {
+        "en": "Hugging Face blocks all students, so the data was emailed",
+        "zh": "Hugging Face 封鎖學生，只好用 email 寄資料"
+      }
+    ],
+    "answer": 1,
+    "explanation": {
+      "en": "The error came from an incorrect file path. Gemini's 'explain error' did not fix it, so the lecturer searched for the dataset on Hugging Face, clicked 'Use this dataset', and pasted the real path, after which loading succeeded. Memory, CSV support and access restrictions were not the problem.",
+      "zh": "錯誤來自檔案路徑不對；Gemini 的「解釋錯誤」也修不好，老師於是到 Hugging Face 搜尋資料集，點「Use this dataset」貼上真正路徑後就成功載入。記憶體、CSV 支援、存取限制都不是問題所在。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[19:26.0]–[25:14.2]",
+      "note": "'the problem is from the incorrect file path… use this dataset… I just copied the file path and paste here'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 98,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "According to the slide, what is the main reason NumPy arrays are faster than Python lists?",
+    "zh": "根據投影片，NumPy 陣列比 Python list 快的主要原因是什麼？",
+    "options": [
+      {
+        "en": "NumPy arrays are stored on the GPU only",
+        "zh": "NumPy 陣列只存在 GPU 上"
+      },
+      {
+        "en": "NumPy deletes duplicate values",
+        "zh": "NumPy 會刪除重複值"
+      },
+      {
+        "en": "NumPy compresses the data into text",
+        "zh": "NumPy 把資料壓縮成文字"
+      },
+      {
+        "en": "Arrays are stored in one continuous place in memory (locality of reference), and the heavy computation is written in C/C++",
+        "zh": "陣列存放在連續的記憶體位置（參考局部性），且重運算部分以 C/C++ 撰寫"
+      }
+    ],
+    "answer": 3,
+    "explanation": {
+      "en": "Slide 46: NumPy arrays are stored in one continuous place in memory, so processes can access them efficiently. This 'locality of reference' is the main reason. Most speed-critical parts are written in C or C++, and the slide says up to 50× faster than lists. GPU storage, deleting duplicates and text compression are not mentioned.",
+      "zh": "第 46 頁：NumPy 陣列存放在連續記憶體中，存取效率高，稱為參考局部性，是主要原因；需要快速運算的部分以 C/C++ 撰寫，投影片也提到最多比 list 快 50 倍。GPU、刪除重複值、壓縮成文字都未被提及。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 45–46",
+      "note": "'NumPy arrays are stored at one continuous place in memory… locality of reference… main reason'; written in C/C++",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p46.webp",
+      "imageCaption": "4. Preprocessing and Representation.pdf · p. 46"
+    }
+  },
+  {
+    "id": 99,
+    "topic": "python",
+    "difficulty": "applied",
+    "en": "With 'vibe coding' you describe what you want and an LLM writes the Python. What did the lecturer stress you still need?",
+    "zh": "使用「vibe coding」時，你描述需求，由 LLM 撰寫 Python 程式。老師強調你仍然需要什麼？",
+    "options": [
+      {
+        "en": "A clear understanding of each ML step (preprocessing, representation, algorithm, output) so you can direct the AI and judge good versus bad",
+        "zh": "清楚理解 ML 的每個步驟（前處理、資料表示、演算法、輸出），才能指揮 AI 並辨別好壞"
+      },
+      {
+        "en": "Nothing, because the AI makes every decision",
+        "zh": "什麼都不需要，AI 會做所有決定"
+      },
+      {
+        "en": "Memorizing every line of generated code",
+        "zh": "背下產生的每一行程式碼"
+      },
+      {
+        "en": "Avoiding prompts in Chinese",
+        "zh": "避免使用中文 prompt"
+      }
+    ],
+    "answer": 0,
+    "explanation": {
+      "en": "The lecturer said you must figure out each step, and if you know them well you can use vibe coding well. His goal is that students can recognize what is good and bad, e.g. which model and steps suit a dataset. The AI does not replace that judgment, memorizing code is not the point, and the slides themselves give prompts in both English and Chinese.",
+      "zh": "老師說一定要搞清楚每個步驟，熟悉了才能善用 vibe coding；他期待學生具備辨別好壞的能力（例如哪個模型、哪些步驟適合該資料集）。AI 無法取代這種判斷；背程式碼不是重點；投影片本身就提供中英文雙語 prompt。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'You need to figure out each step… then you can use the vibe coding very well'; see also 338742 [33:34.4]–[40:02.3]",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 100,
+    "topic": "python",
+    "difficulty": "basic",
+    "en": "A Colab cell has been running far too long and you want to interrupt it. Which toolbar action from the slide should you use?",
+    "zh": "某個 Colab 儲存格執行太久，你想中斷它。依投影片應使用哪個工具列功能？",
+    "options": [
+      {
+        "en": "▶ Run All",
+        "zh": "▶ Run All（全部執行）"
+      },
+      {
+        "en": "+ Text",
+        "zh": "+ Text（新增文字儲存格）"
+      },
+      {
+        "en": "⏹ Stop",
+        "zh": "⏹ Stop（停止）"
+      },
+      {
+        "en": "+ Code",
+        "zh": "+ Code（新增程式碼儲存格）"
+      }
+    ],
+    "answer": 2,
+    "explanation": {
+      "en": "Slide 4: '⏹ Stop: Interrupts the running code.' Run All executes the entire notebook, which would make things worse, and + Code or + Text only insert new cells. (Restart restarts the whole Python runtime, a heavier action than simply stopping.)",
+      "zh": "第 4 頁：「⏹ Stop：中斷正在執行的程式」。Run All 會執行整本筆記本，只會更糟；+ Code／+ Text 只是插入新儲存格。（Restart 會重啟整個 Python 執行環境，比單純停止更重。）"
+    },
+    "source": {
+      "file": "materials/lectures/3. Set Up and Start Using Your Python Playground.pdf",
+      "locator": "p. 4",
+      "note": "Toolbar: Run All / Stop (interrupts the running code) / Restart / + Code / + Text",
+      "supplemental": false,
+      "image": "./images/slides/lecture-3-p04.webp"
+    }
+  }
+]

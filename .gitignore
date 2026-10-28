@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+.DS_Store
+Thumbs.db
+docs/claude-run.json
+docs/claude-review-run.json
+qa/

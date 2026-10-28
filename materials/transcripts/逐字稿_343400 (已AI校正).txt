@@ -1,0 +1,638 @@
+﻿[00:03.1] Okay, so let's get started
+The first slide
+All right
+So this slide
+uh, is talking about how to set up and
+uh, start using the-- your
+your Python on the playground
+All right
+So, um, as shown in this slide
+uh, we will use the JupyterLab or Colab
+So d-does anyone know the Colab or Jupyter Notebook?
+Can you raise your hand?
+Okay
+So I think most of you have already know what is the Colab or JupyterLab
+right?
+But if you don't know it
+that's okay
+That's, uh
+the reason why I'm here to talk about the slides
+Right
+
+
+[00:54.0] So JupyterLab or Colab
+um, you can install it in your laptop
+all right?
+Um, after the slides
+I, I will-- If we
+we have time
+I can tell you how to install it using the VS Code
+All right?
+So, uh, the JupyterLab or Colab
+uh, in this slide
+I would like to tell you how to use it online
+Uh, when we use the Colab
+it's, it is
+uh, online
+uh, it's a uter- user interface that we can develop our Python
+programs online
+It's very convenient
+Okay?
+So if you want to use the Colab
+only one thing you need to do is to have the Google account
+Okay?
+All right
+
+
+[01:53.2] So, uh, so first of all
+you need to log in using your
+Google account
+Let me show you
+Okay
+All right
+So, uh, now I have already logged in
+and you just need to click
+here
+Have, uh
+Colab
+Colab, Colab
+Where is the Colab?
+Oh, if, if there is no Colab
+it doesn't matter
+Also, you can Google Colab
+Okay, here
+Right
+Or you can just use your Google Drive and
+new, uh
+Google Colaboratory
+All right?
+Okay, let's go back to the slides
+
+
+[03:14.3] Okay, so when you new
+uh, Colab file
+right?
+Let's new a Colab file
+right here
+A new Colo-Colab file
+All right, so this is the user interface of Colab
+Okay?
+So here you can start to programming
+right?
+So we call this is a cell
+This is a cell
+Okay?
+So for example
+I can write something here
+all right?
+And, uh, press this button
+like play
+Play means execute the program or the code of the
+cell
+Is that okay?
+All right
+
+
+[04:16.4] But
+I know most of you don't know how to programming using the
+Python
+It doesn't matter
+So that's the reason why you sit here
+Here is a icon called Generate Code
+Sorry, it's
+it is, uh, Mandarin Chinese
+but I believe you
+your interface is English
+right?
+So you can press this item
+this icon, and here create a new window
+Now, you just need to tell the AI or we call Google Gemini
+what you want to do
+And then the Gemini will generate a code here
+And then you can press the button
+and you will see the result of the cell
+Let's try it
+Which one?
+This one?
+No
+This one
+All right
+
+
+[05:27.4] All right, so
+uh, this slide show you
+uh, the function of the interface
+For example
+the menu bar here
+You can, uh
+create a new file
+Uh, you can edit
+the file
+Or you can insert
+the line of the code
+All right?
+So this is the
+uh, menu bar
+And
+All right, this is the toolbar
+Okay, toolbar here
+Uh, you can run all cell
+Run all means run all cell in this Colab file
+Right?
+And also you can stop
+the process of certain cell
+All right?
+And also you can restart
+Okay?
+Like play a music
+right?
+And the right-hand side
+uh, is a panel that
+uh, can show you some informations
+For example
+if you installed a package
+the right-hand side will show you the information of the package
+Okay?
+And this is main editor area
+So as I mentioned before
+we can, uh, implement our code here
+Okay
+And this is the
+uh, bottom assistant area here
+Uh, as we see that's the
+uh
+the screen
+uh, the assistant area is located on my right-hand side
+It doesn't matter
+Sometimes it is bottom
+sometimes it's right-hand side
+All right
+
+
+[07:33.9] Okay, so
+this slide show you how to
+uh, new a Colab file
+Okay?
+Just I, I just
+I just do it
+And all right
+this slide is very
+very important
+I want you to keep in mind when you do the machine learning
+you need to follow
+the step
+when you implement
+All right
+This slide is made by myself
+Okay
+Very, very important
+Okay, the-- Uh
+we can treat the slides or the process of the machine learning have two
+part
+The first part we call data preparation
+preparation
+Okay
+So when we prepare data
+we also need four step
+The first one is
+yeah, definitely
+we need to load the data
+All right?
+In most case
+we use the data frame
+It is a package
+Okay?
+The second
+we need to observe the data
+So, uh, there are many visualization skill we can
+use
+For example
+we use pie chart or line chart to observe the
+data set
+And the next is to identify X
+the big X
+What's the X?
+X is data representation
+I will tell you later
+And we can also call X is features or feature set
+All right?
+And Y, small Y
+Y is label
+What's the label?
+Label means the model
+the objective of the mo-- uh
+objective of the task model need to learn
+The next is data preprocessing
+For example
+missing value
+how to deal with the missing value
+or how to do the normalization
+All of them are preprocessing
+I will tell you later
+Okay?
+Let's move to the second part
+The second part is about the model training
+Okay?
+So firstly
+we need to split the data as training and testing
+using the training set to train the model
+and adapt the trained model for predict test set
+Okay?
+The next one
+All right
+The next one is data representation
+All right?
+Maybe you will say
+"Oh, here we have the X," but maybe here you can propose a new
+method to represent the data
+Not all of the feature we need to use
+we can do feature selection
+Okay?
+And the next is select the machine learning model
+For example
+random forest
+decision tree
+and so on
+Okay?
+And the last one is
+evaluation metrics
+Okay
+Depends on what task you do
+For example
+if you use the-- if your
+uh, task is a classification task or classification problem
+I think maybe here you need to use precision-recall F1 score or sensitivity
+or specificity
+All right
+I will tell you more in the maybe next month
+All right
+
+
+[11:56.1] 中文說一遍
+這很重要
+非常非常重要
+這個是這個老師我本身的整理出來的這個最簡單
+的心法了啦
+喔
+做 machine learning 就兩個步驟
+呃，兩大塊
+第一個你要準備資料
+第二個就是你的模-模型怎麼訓練這件事情
+所以你在實作的時候
+腦海中一定要記得這-這兩大步驟
+好，你在準備資料的時候呢
+第一個當然就是把資料給讀進來
+好，這邊我們常常會用到的是 DataFrame
+或是所謂的 pandas
+好的 package
+第二個就是我要觀察我的資料啊
+好，那觀察資料會有很多的資料視覺化的方式可以做
+譬如說做
+呃，用 pie chart 或 line chart
+喔，譬如說什麼直方圖啊
+或者是圓餅圖啊
+去看它分布等等等喔
+那接著呢
+你要去定義 X 跟 Y。X 是什麼？
+大家記得是大 X 喔
+big X，然後那個是 small y
+小 y 啊
+這個我們在後面在談 machine learning 的時候會用這樣的符號很多。OK
+好，然後這個 X 就是所謂的 features
+特徵，或者是所謂的 data representation。Y
+就是你的 label
+模型要學的目標就叫 Y
+最後是對這個資料做一些前處理
+包含了正規化
+包含了 missing value 要怎麼填
+這都是前處理
+好，那當然包含了影像
+包含了文字
+都有各自的前處理
+模型的訓練
+我要怎麼樣切訓練跟測試資料
+用訓練資料訓練模型
+測試資料用訓練好的模型來去驗證
+所以可以看到它的 performance。All right
+那這邊呢
+有 data representation
+不見得這邊所有 feature 我都要用
+喔，我可能有一些新的方法可以來 represent 我的 data
+接著，我要用什麼樣的 model
+可以喔。All right。OK。OK, so, uh, the
+
+
+[14:30.1] dataset we will use called MT samples dataset. Uh, what
+is the MT samples dataset? MT means the, uh, medical
+transcription, right? OK, so I, I ask AI to
+help me to draw the scenario that to describe the MT sample dataset. All
+right, so in clinical, uh, clinical encounters, so the doctor will
+ask the patient something. All right, so here we'll have the chief complaint
+and so on, and his-history of the patient. All right. And the doctor, uh, will
+okay, so here is the, the text transcription by
+the doctor. All right? And then, uh, the, the, the
+transcription content will become the MT sample dataset. All
+right. I believe even I tell you the size
+you don't know what is it. OK, so let's download it. Let's
+download it and to see what is the MT samples. All
+right. So as you can see, it's
+the, the dataset is, uh, it's a CSV file. OK? And
+there are many column
+in the dataset. All right. So the first column just a series number. Right? Second
+is a description, and the third is medical specialty, and
+sample name, and transcription, and keywords. OK? So, uh, so
+this is the dataset. All right? I, I think in the machine learning
+chapter, I will use the dataset to do some
+training model, to train some model for the exercise. Right? So
+here, uh, we just need to load this file and do some data
+observation. All right. So
+
+
+[17:18.7] firstly, now, uh, now, OK, now we start to use the live coding. Right? So
+firstly, I ask the Gemini I would like to use the
+MT sample data. Please download it from Hugging Face. OK, that
+means I no need to download from the IMTMU. I can ask Google Gemini
+help me to download the dataset from the Hugging Face. Hugging Face I just
+mentioned last week, it is a
+AI Apple store, right? So
+in that platform, it not contain many models, but also dataset. So
+that means MT samples dataset is very well known, so that is the reason why
+it is in the Hugging Face. All right? So please download it from Hugging
+Face
+Load it into a pandas DataFrame and display the
+first five rows
+This is a prompt
+right?
+好，中文是喔
+我想要使用 MT samples 資料集
+請幫我從 Hugging Face 下載
+並且載入 DataFrame 裡面
+輸出前五筆資料。Is that okay?
+Okay, try it
+
+
+[19:26.0] Okay, I'm chatting with Gemini
+See?
+When I passed the prompt in the slide here
+and the code will be generated in the left-hand side in the cell. Right? And
+you need to
+呃，click Accept here. Accept. All
+right, so
+And press the play button. Right, something
+wrong. If
+you need to debug, you can just press the button. The button means
+ask the Gemini to explain the error, right? And he
+or it will help you to revise the code. Right, and I accept, and
+run again. Right, something wrong. Okay, I
+believe, 呃, this is the
+the, the, the incorrect message is from the incorrect or the wrong
+path-- file path
+好，你只要在右邊這邊貼上你要的這個 prompt
+它就會幫你產生在左邊
+然後你 debug 的話
+你，呃，你就可以
+它好像就是錯誤喔。Dataset
+Hugging Face 不存在。Okay, so
+
+
+[23:32.9] since it cannot help me to revise the correct
+呃, the correct code, so
+呃, as I mentioned, the problem is from the incorrect file path. So
+I googled, okay, I just googled
+呃, Hugging Face MT sample dataset. And then
+I want to use the dataset, so I click here, use this dataset. As
+you can see it
+呃, the path is this. Okay? So I just copied the file path
+and paste here. All right, so it's
+finally successfully download the dataset. Is
+that okay?
+欸，剛剛錯誤就是那個路徑不對啊
+喔
+然後它一直產生錯誤的原因就是在這邊
+那路徑在哪裡呢？
+Hugging Face 上的路徑
+那就是自己去找一下啊
+因為其實這 dataset 有很多地方都有放
+那我既然要用 Hugging Face，Hugging Face 應該也有好幾個地方有放
+所以我就查到這 dataset
+然後右邊有這個 Use this dataset
+然後點開來
+你就知道
+欸，它就這樣 load 進來
+位置就長這樣
+可以嗎？
+Is that okay?
+Is that okay for you guys?
+All right, let's keep going
+
+
+[25:14.2] All right, the next
+uh, making your first data science the
+the program through
+the, the da-- sorry, the data science, the first data science program
+through the live coding. So what is the first step? The first prompt
+is want to calculate something or want to do some statistic. All
+right, so as
+as shown in this prompt, please calculate the number
+of the unique value in
+sorry, in the dataset. Oh
+sorry, in, in the column. Okay
+Okay, and the next prompt is please visualize the distribution
+of values in this column. Okay, so that means
+I want to focus on medical specialty column to
+calculate the unique numbers and also see the distribution. Why? Why
+I want to? Why I want to do this?
+All right, so as you can see, uh, the result is 40. All right? And the
+next is to visualize
+the distribution. Okay
+Okay, the next is to visualize the distribution. Okay? Uh, the result
+look like this. Okay? So
+why I want to observe this column? Why?
+嗯哼。Okay, uh, the
+reason I want to focus on this column is the column is
+the label, is the Y label. Okay. So, uh, when
+we do the machine learning, so we want to, uh, first
+first step is to observe, to separate the X and Y. And so when
+I get the dataset, I need to recognize which column is Y
+Okay, is the goal or is our objective. Right. So this
+column is Y, so that means give you the data set, MT samples
+data set, you need to figure out Y is medical specialty, specialty. And
+other columns is X. All right. So you can
+treat the problem is that you need to develop a model, and the input
+is medical description, and output is
+to predict the medical specialty, specialty
+Sorry?
+The number forty
+Forty labels. Yeah
+大家可以嗎？
+好，我中文講一遍
+你拿到資料之後呢
+最重要的一件事情是什麼？
+先找出你的 Y
+其他的大概就是 X
+但是要注意一件事情
+就是你的 X 裡面有沒有可以直接算出 Y 的東西
+這很危險
+好，譬如比方說
+假設我今天要算 BM
+我今天要 predict BMI，BMI
+但是我的 X 有，X
+有，有什麼身高跟體重
+那就根本就不用去 predict
+喔，那就等於是我們有時候會講是 data leakage 啊
+對
+喔，那
+這裡喔，我們鎖定這個的意思就是說
+欸，我拿到這個
+這個，我可以定義這樣的題目喔
+我想要打造一個 model
+然後它的輸入是什麼？
+就是那個 medical description
+的描述嘛
+喔，文字的描述
+然後你要 predict
+呃，這四十個
+這邊有四十個欄位啦
+喔，四十
+不是欄位
+四十個標籤
+然後它的 distribution 是長這樣子。Okay, so what is the distribution? The
+distribution we call long tail distribution or power law
+distribution. So that means only few item or few labels have
+high frequency. Most of the item or most of the label
+is low frequency
+八十二十法則，eighty percent, twenty percent, right?
+這樣可以嗎？
+道真可以嗎？Is that okay so far? All right. Okay, so
+that means
+呃, programming is very easy, right?
+So now we just need to use the AI as the assistant that can help you to implementation. Yeah. So
+implementation is
+is it don't challenge, right? Okay, so it's very easy now
+現在實作簡單多了吧
+喔，以前
+呃，你們學長是要一行一行的程式碼這樣去
+去學習喔
+現在很快
+好。All right. So the second case is about a web crawler. Okay
+
+
+[34:09.2] 呃, I don't implement it here, yeah, because I want to
+呃, move to the another slide. Okay, so I just go through it. All right. So
+if you want to develop a web crawler, web crawler is a
+a program that can help you to collect the data from the web. All right
+好，中文叫爬蟲啊
+爬蟲，網路爬蟲。All right. So
+呃
+, all right, so there is a toolkit called Beautiful Soup. You
+need to install it. Yeah, because
+呃
+, the Beautiful Soup can, is a parser that can help you to parse
+the HTML. All right. I think maybe you don't know what
+I talking about, so I show you. All right, as you can see
+this is a web page
+right?
+這個是一張網頁嘛。Right, so this is a human readable web page. But
+actually
+the code like this, we call this is a HTML. All
+right. So it is difficult to read. Okay, so if to
+if today I want to collect information
+like this automatically. All right, let's see. Okay. The
+information
+呃, sorry, this one. All right. If
+okay, so list description, if today I want to develop a web crawler to collect
+information
+喔 okay, okay, I
+I use another. All right, CNN
+news. Okay? So if today we want to collect the news from the CNN, right? So
+let's see the
+oh sorry
+The title of this news is here
+It belong to many HTML tags
+It's a very deep loop
+right?
+It's a tree structure
+so it is difficult to parse it
+But we have Beautiful Soup
+We have a Beautiful Soup
+All right
+So the goal of the Beautiful Soup is that given the HTML
+content like the web page
+and you can ask the Beautiful Soup to extract the information
+you want
+So when we have the package
+everything become very convenient
+好
+Beautiful Soup 是一個 parser。Parser 是什麼？
+剖析器啊
+中文叫剖析器
+那為什麼要有這剖析器呢？
+你們會覺得說
+欸，一個網頁好像很簡單
+喔，我們看到網頁就長這樣子啊
+左邊這樣子
+但是不要忘記
+你要抓這個文字呢
+你要怎麼抓？
+它其實是在這個 HTML 底下啊
+底下啊
+所以你，你今天機器看的東西是什麼？
+機器看的東西是
+這一大坨東西要給它。All of the HTML content
+we need to provide to machine or the program
+and then use the Beautiful Soup to extract the information we want
+Okay？
+要不然很難啊
+自己去製作的
+太，太難了
+不大可能。All right. So we need the Beautiful Soup
+right? What's going on? All
+right. Okay. So the
+
+
+[38:59.4] example here is we want to develop a web crawler to collect data
+from Wikipedia
+Right
+So this is the example
+All right
+So the prompt
+is, uh, please use a Beautiful Soup to scrap the table with
+class
+uh, wikitable from this URL and save this data
+into a dataframe
+好，就到這一頁了
+這一頁就是一個網址給它
+然後去裡面爬了某一張 table 回來這樣子。Okay
+All right. So
+all right. So this is a code
+And as you can see here
+uh, we need to debug
+All right. All right. So we can use
+uh, the same way to debug
+喔，一樣遇到錯誤啦
+好，那不過你可以用剛剛的方式來把它 debug。Okay? And
+afterwards
+uh, the next step is to
+uh, use the data from the dataframe
+Yeah, we just collect
+right? And to generate a map visualization showing the distribution
+across countries
+Okay
+So yeah, it's very easy. All right. And then we can get the code and the result
+like this. Okay. So what is the web page? Oh. Obesity
+rate. Okay. So yeah
+it's very straightforward
+We need to use the map visualization. Okay? All right. And
+all right
+The next is some
+some question I want to ask the student here
+but, uh, we don't have time. So
+uh, if you have interesting
+you can do the second test
+uh, to implement the web crawler
+And also you can post what you thought on our TMU
+uh, IMTMU classroom
+All right. To answer the two question
+Or you can raise a issue. Uh
+I think some of the student will join discussion. Yeah. Okay
+let's see. So let's move to the second part. Sorry?

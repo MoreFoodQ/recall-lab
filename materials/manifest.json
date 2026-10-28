@@ -1,0 +1,73 @@
+[
+  {
+    "name": "1. Introduction to the Machine Learning Course.pdf",
+    "path": "materials/lectures/1. Introduction to the Machine Learning Course.pdf",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\1. Introduction to the Machine Learning Course.pdf",
+    "bytes": 5546900,
+    "sha256": "43603fa6ad1c132c6f072a2800616eb8b3408d5885c6f6486b736bf8641ddf66",
+    "pages": 11,
+    "extracted_text": "materials/extracted/1. Introduction to the Machine Learning Course.txt"
+  },
+  {
+    "name": "2. What is AI and Why do I need to know ML.pdf",
+    "path": "materials/lectures/2. What is AI and Why do I need to know ML.pdf",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\2. What is AI and Why do I need to know ML.pdf",
+    "bytes": 10760659,
+    "sha256": "b0e7947b3b6e7e9a8d60996d3cfa880271c2346dd957ee693ab0fc30da2a910b",
+    "pages": 25,
+    "extracted_text": "materials/extracted/2. What is AI and Why do I need to know ML.txt"
+  },
+  {
+    "name": "3. Set Up and Start Using Your Python Playground.pdf",
+    "path": "materials/lectures/3. Set Up and Start Using Your Python Playground.pdf",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\3. Set Up and Start Using Your Python Playground.pdf",
+    "bytes": 9101574,
+    "sha256": "a50f79b7ae29b6d78d81425635d879d495d8b24ad5413cb3ba176d50d0a57799",
+    "pages": 16,
+    "extracted_text": "materials/extracted/3. Set Up and Start Using Your Python Playground.txt"
+  },
+  {
+    "name": "4. Preprocessing and Representation.pdf",
+    "path": "materials/lectures/4. Preprocessing and Representation.pdf",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\4. Preprocessing and Representation.pdf",
+    "bytes": 11683340,
+    "sha256": "e0aa0bab3c29bf94731a1c7105f9dde7f263227e442888130b4f1d1f5c17ea87",
+    "pages": 89,
+    "extracted_text": "materials/extracted/4. Preprocessing and Representation.txt"
+  },
+  {
+    "name": "逐字稿_338742 (已AI校正).txt",
+    "path": "materials/transcripts/逐字稿_338742 (已AI校正).txt",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\逐字稿_338742 (已AI校正).txt",
+    "bytes": 19863,
+    "sha256": "bbe7f402a6603e7e4224f5ea06e3aca6988c8658c5d425fb2f3b2caacd7ddb81"
+  },
+  {
+    "name": "逐字稿_341595 (已AI校正).txt",
+    "path": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\逐字稿_341595 (已AI校正).txt",
+    "bytes": 39657,
+    "sha256": "a9fc1654f3808c614813d21a51472088a2019462f9b2e380b28110bda4575e2a"
+  },
+  {
+    "name": "逐字稿_343399 (已AI校正).txt",
+    "path": "materials/transcripts/逐字稿_343399 (已AI校正).txt",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\逐字稿_343399 (已AI校正).txt",
+    "bytes": 13787,
+    "sha256": "066d5768354e81f61b87e2954179b149ac662299aec9414a605fda9c67458d9f"
+  },
+  {
+    "name": "逐字稿_343400 (已AI校正).txt",
+    "path": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\逐字稿_343400 (已AI校正).txt",
+    "bytes": 18729,
+    "sha256": "8b62c6e4e591e11ab5cb040bdd1eb302a902c0bdc23e2609c82f8d26c6a912ad"
+  },
+  {
+    "name": "逐字稿_344615 (已AI校正).txt",
+    "path": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+    "source": "Y:\\Users\\6QQ\\DownloadsSysyem\\期中考\\逐字稿_344615 (已AI校正).txt",
+    "bytes": 30079,
+    "sha256": "c8d14f29deed5ab5e021aa8f1987f79678c28655891527771f557c0d4e17cbdf"
+  }
+]

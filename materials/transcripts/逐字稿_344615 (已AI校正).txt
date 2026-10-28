@@ -1,0 +1,1178 @@
+﻿[00:04.2]
+Okay, uh, good afternoon
+So let's get started this class
+And, uh, today we are going to talk about
+uh, preprocessing and
+uh, representation
+Okay?
+And last week
+uh, I remember we stopped
+stopped here
+right?
+Uh, data cleaning
+Okay
+So, uh, last week
+uh, we mentioned that the reason we need to do the data cleaning is the data
+is dirty
+Okay?
+So why data is dirty
+we, uh, we discussed
+uh, one of the most part of the dirty means the data
+is, uh, lots of missing value
+right?
+So why data have so many missing value?
+Because, uh
+when we, uh
+provide a questionnaire and if the column
+uh, we, we don't require it to fill in
+so I think most of people don't fill in any value here
+So that means optional
+uh, column
+uh, will receive missing value
+All right
+
+
+[01:26.8]
+So another issue is about the data integration
+So why we need to integrate data?
+Because, uh
+the data set
+uh, will be separate as multiple subset
+Or maybe the data we want to train the model should be come from
+different data source
+Right
+So this is a example that show us
+uh, for example here
+there is chronic health record
+Uh, in this data set
+we have the patient ID
+Okay?
+And the glucose
+and the record time
+Right?
+And another table is about the laboratory
+So about the lab data
+So also we have the patient ID and the blood glucose
+and also the record time
+Right
+So maybe for our training purpose
+we need merge different table or different data source
+and we can use the patient ID as the key to
+integrate different or multiple data source as
+the integrate record
+Okay?
+Yeah
+Okay
+
+
+[03:12.1]
+Another issue is about the data transformation
+Right?
+So why we need to transfer data to certain format?
+Because, uh
+the data have different format
+We need transfer to a uniform format
+So we call this is the data transformation
+All right?
+So also we call it is
+uh, normalization
+Okay
+Uh, when the data
+uh, the data type if
+if the data type is
+uh, numerical data
+so we, we mentioned last week
+so maybe we have different scale
+For example
+column A, the scale is between zero to ten or column
+B scale is between one hundred to thousand
+So firstly
+before we process the data
+we need to, uh
+transfer it all of the column to the same
+scale
+Okay, so we call this is
+uh, normalization
+Okay, so here I provide two well-known
+uh, normalization scale
+The first one is Min-Max
+this one
+And the second call Z-score normalization
+Okay, so it is very simple and a classic method
+Right?
+Here is a example show you how to use the Min-Max scaling or Z-score standardization
+Okay
+Um, okay, so we have three patient and also have three value
+Okay, so if we use the Min-Max scaling
+so the number
+the Z is zero point five for the patient B
+Right
+So that is the Z-score
+So as you can see here
+the Min-Max scaling result can normalize the value
+between zero to one
+and Z-score is now zero to one
+Okay
+So which one is better?
+Maybe that one
+Okay
+Yeah
+Uh, I encourage you
+you can try both when you do the competition on Kaggle
+Okay?
+All right
+
+
+[06:06.3]
+So I think this is the last
+uh, data preprocessing skill that I mentioned in this
+class
+But, uh, I believe some of the students here already know
+uh, many lots of data preprocessing skill
+But here, I just point out the well-known part here
+right?
+So this is about the
+uh, dimension reduction
+Why we need to reduce the dimension?
+Can you give me a reason?
+Yeah
+Can you give
+can you give us some example why the data dimension is large?
+Yes
+Yeah
+Yeah, yeah
+yeah
+So, uh, the main
+the main purpose of the data dimension reduction is to
+reduce the computation time
+Yeah, yeah
+Yeah, so, yeah
+Feifei give us very good example because
+uh, if we do the computer vision
+if the size is
+um, N times M
+so overall
+we have
+so many
+features
+For example
+Wow
+It's very normal picture size
+but we will have
+uh, hundred
+thousand dimension
+Yeah
+So if today
+we want to
+Sorry
+Difficult to drag
+What's this?
+Oh, it is, this is a bird
+okay?
+Okay
+Sorry
+It is a bird
+Okay, so if today we want to recognize the bird
+we just need to focus on
+yeah
+here or the tail or something
+Yeah
+We don't need to put all of the dimension into the model
+right?
+So that is the dimension reduction
+right?
+So for the computer vision
+very well-known model called CNN
+Not a news article
+Convolutional neural network
+right?
+The mechanism of the convolution neural network is to extract
+the good feature
+or we call patterns of the figures for the dimension reduction
+Okay
+
+
+[09:31.6]
+Another thing
+uh, I remember last time
+last week, al- also last week
+Oh, not this one
+Okay
+Maybe later
+I will show you how to represent a document
+A document
+you
+We use a dictionary
+It's very long
+uh, dimension
+right?
+We use a dictionary
+maybe hundred
+thousand to represent a document
+But not all of the vocabulary is good for prediction
+or good for learning
+machine learning
+So we need to reduce the dimension
+Sometimes we use a keyword
+right?
+Or sometimes we use
+another model called RNN
+recurrent neural network
+to help us to extract the useful information or useful vocabulary
+for representation
+Right?
+I will talk
+I will talk more about it in the
+maybe
+after the midterm exam
+Okay
+
+
+[10:47.3]
+So dimension reduction is very
+very important
+Uh, here I just show you some of the case
+The first one is SVD
+SVD is a method that
+uh, usually used in computer vision
+For example
+uh, I, I think maybe Feifei know that because this is a matrix
+matrix
+So, uh, you can treat the
+the figure like a matrix
+Yes
+So, uh, the SVD is decomposite the matrix
+to a small one
+Yeah
+All right?
+So this is a matrix operation
+Another is PCA
+principal component analysis
+I think most of
+of the student here have already learned from the statistic class
+right?
+So PCA is very important
+All right?
+Sometime, uh
+point where we use the PCA in machine learning
+here is the dimension reduction
+and sometimes we will use for the data visualization
+Why?
+Mm-hmm
+Yeah
+Yeah, yeah
+Because, uh
+after representation
+we want to
+Maybe I, I want to draw a figure to
+uh, data visualization
+So we-- You
+you know, a figure only can draw two dimension or three dimension
+But for data representation
+it's high dimension
+So I need to reduce high dimension to two or three dimension
+So we c-- we usually use the PCA
+right?
+Another is feature selection
+Okay, I will talk more about it next week
+Yeah
+Ne-- This semester
+I include this new chapter
+Yeah
+So I will talk more about it next week
+Yeah
+And, uh, another feature select-- because feature selection have different
+method
+One called filter
+another called wrapper
+Filter, I, I will talk about the
+the, the filter method
+like chi-square or mutual information
+or pointwise mutual information or log-likelihood next week
+All right?
+Another way to do the feature selection called wrapper
+Wrapper, I will talk
+Because wrapper involve model training
+So sometimes we will use the
+forward or backward feature selection
+Okay, I will talk more about it after
+uh, we teach how to train the model
+And afterward is feature importance
+Okay?
+So in this semester
+I will include the new chapter here
+All right, another is clustering
+Okay?
+Uh, depends on how much time we have
+Maybe I can also briefly introduce the clustering
+Yeah
+And also data compression and sampling
+Okay
+All of the method that we
+we usually use for the dimension reduction
+Okay?
+Is that okay?
+All right
+
+
+[14:49.9]
+So after, uh
+the preprocessing for the
+you know, uh
+for the raw data
+the raw data means
+do you remember we have X and Y?
+Oh
+Because we have X and Y
+X means features
+X, big X means features
+Also means representation
+And small y
+Small y means label
+Okay?
+So this slide
+uh, tell us how to deal with the label
+label column
+For example
+if the goal of the model is to predict
+uh, whether the patient will go to the ICU within seventy-two
+hours
+So the label is
+yes and no, right?
+And otherwise
+the resting column is featured
+For example
+maybe the feature is the vital sign
+Maybe the feature is
+uh, text report
+Maybe the feature is demography
+and so on
+Okay?
+And the goal is to predict yes or no
+Okay?
+So you can imagine that all of the features that
+uh, all of the column you receive
+maybe from the Excel
+just one column can represent the label
+Okay?
+So maybe the label is Y or N
+Oh, yes or no
+So firstly
+you need to convert it to also to the number
+Okay, so we can use the label encoding
+Another is one-hot encoding
+Sometimes we call it as
+uh, dummy variables
+Okay, so this is a example here
+All right, so we have three patients
+and this is a label column
+That means the goal is wanna to predict
+uh, what, uh
+what kind of way that the patient arrive hospital
+For example
+the first patient is walk in
+and the second is ambulance
+the third transfer
+All right?
+So this is the text
+So we need to convert it to numerical
+So here we can use
+label encoder
+So walk-in can code as zero
+Ambulance one and two and so on
+Right?
+So if you use a one-hot encoding
+that will separate the three new column to represent the
+label
+The first one
+walk-in, one
+otherwise zero
+And second
+ambulance, otherwise zero
+The third
+transfer, other column is zero
+We call this is one-hot encoding
+Which one is better?
+I don't know
+You can try it
+But here, I want to point out very important thing is that if you use the
+label encoder
+sometimes
+the code zero
+one, two means the order
+The relation-- the order relation
+Okay?
+But
+originally
+they don't have the order
+Yeah
+Okay, so it depends on how to design your model
+okay?
+But I think you can try it
+And I will talk more about one-hot encoding when we teach the deep learning
+part
+Why we need to convert the label to one-hot encoding?
+Because the loss function
+Okay
+
+
+[20:08.8]
+All right, let's hands-on
+hands-on part
+Okay, so in this part
+uh, we will use the
+Titanic data set
+Okay?
+And the data set you can download from this link or from our IMTMU
+website
+Is that okay?
+Okay, you can download it
+And also, you can follow last week's hands-on
+You just need download it from Hugging Face
+Right?
+You can just tell the Google Gemini
+"I wanted to download the Titanic data set from Hugging Face," and then
+I, I, I believe we
+you can download it from Hugging Face
+All right?
+So here, I just
+uh, show you if you download f-the
+the data set to your laptop
+and you want to upload it to the Google Drive
+you can use this way
+Okay, I, I, I
+I believe you know how to upload the data to Google Drive
+Okay?
+And in this
+uh, in this case
+I upload the
+uh, Titanic data set
+the CSV file
+in the same folder place with my program
+my Python, IPython Notebook
+Okay?
+They are in the same directory
+Okay?
+All right
+And
+Okay
+So
+the first is to load the data
+right?
+So here is the English prompt
+This is the Chinese prompt
+Okay, for your reference
+So aft prompting
+and then you can generate the code here
+Okay
+Because, uh
+you upload the data set to your Google Drive
+so you need allow the permission
+Is that okay?
+All right
+Yeah
+Allow this notebook access your Google Drive
+And then you can
+uh
+you can show the
+the first ten data from the data
+frame
+Okay, so here is the video show you how to-- how it works
+The size is very good
+right?
+同學們可以照著這上面做喔
+這上面這
+這個影片就真的一步一步把它錄下來給各位看
+這老師我很花
+花很多時間做這投影片
+後面應該不會那麼多了
+不會那麼多
+多影片了
+Okay?
+Is that okay?
+Uh, give you five minutes to try it
+okay?
+
+
+[24:37.2]
+Okay
+So, uh, the next slide
+uh, is about
+uh, how to observe the data
+right?
+Yeah
+Uh, I think you remember that
+uh, in the previous slide
+I think this is the
+the further slide of
+uh, the slides
+Okay
+The first page of the slides
+I, I show you the step
+step, each step to
+uh, to do the machine learning
+We have two part
+The first part is prepare the data
+Okay, after loading the data
+the next step is to observe the data set
+Okay?
+So, um, all right
+So
+now, uh
+okay, so this is a prompt
+I used in this case
+Uh, the prompt say that the survive column is
+represent the survival information
+So that, that means the column means the label
+the Y
+Okay?
+And the remaining columns is features
+Okay
+好所以要用中文講
+所以中文的 prompt 就是 survive 這個 column 它是存活資訊
+喔一是活
+零是死亡。Okay
+so that means the goal of
+the, the Titanic data set is to predict
+survive or not
+right?
+Okay, so that means
+uh, we need to
+develop a model
+in the near future
+Okay, we, we will develop a model
+All right
+So now we, we can separate Y and X
+Okay?
+And then, uh
+I want to use a visualization method to generate the distribution
+of Y
+Okay?
+So
+yeah, so this is the prompt here
+Okay, I play
+Yeah, generate
+a new cell
+Separate X and Y
+Is that okay?
+Okay, so that means we have more than a hundred
+represent zero
+That means a hundred
+more than a hundred people not survive
+Five hundred survived
+Okay?
+Also, uh, five minutes do it
+okay?
+五分鐘。Okay
+
+
+[28:45.2]
+And so next
+uh, I want to
+I want to check the missing value
+All right?
+So, uh, the prompt is that I would like to check which column
+in X contain missing values
+Okay?
+So, uh, result showing here that is the distribution
+of missing value for the columns
+All right
+So as you can see it
+uh, the age column have around three
+hundred missing value and the cabin more than one thousand
+That means more than eighty or ninety percent missing value
+I will drop it
+Okay?
+And so on
+Okay
+So here, uh
+age and fare
+fare are a numerical data
+so fill using the mean
+Okay?
+And embark is the categorical data
+so fill, fill it using the mode
+Okay?
+All right, so other
+other ent-
+entries which too many missing value are removed like this
+All right
+Okay, so uh the problem here uh is
+the logic of
+the description here. So remove the column name, ticket, cabin
+and so on. And for age and fare column are fill missing values
+with their respective mean. Okay, and the embark
+uh is use the mode. Okay? So you can use the problem here to
+deal with the missing value for di-different type column. Is
+that okay?
+呃我再說一次
+我說一次哈
+就是說首先先看所有的 column 有多少的 missing value
+好，掃過一次
+那你就會發現說有些真的比重很大的
+我就乾脆都 column 都不要用了。Okay
+針對那些比呃 missing value 沒那麼嚴重的
+我們就來補
+那怎麼補呢？
+如果是數值型的
+我們就補平均值
+如果是類別型的
+我們就補眾數
+最多的那個標籤啦吼
+那當然你可以去學一些 model 去
+去預測這些東西
+有些人是這樣做啦
+那或者是什麼補插
+插值嘛，對不對？
+有一些補
+補法，不過最常見我們就是這樣做
+那
+這裡啊，這個 prompt 就是說我們呃把這些欄位刪掉嘛
+因為我們觀察下來決定要刪掉這些欄位
+名字要刪掉嘛
+因為名字跟生存機率應該沒關係啦
+除非你要做姓名學吧吼
+取名學得好不好這樣
+好，那當然呃處理完之後就會長得像這個樣子喔
+大家可以看一下
+好，大家花五分鐘做一下。Also five minutes to practice
+
+
+[33:37.0]
+Okay, yeah. Uh
+somebody ask me why I need to— why I remove the name and ticket because the
+name and ticket is irrelevant to survival. Okay, so that is the reason
+why we remove those two column. All right? Okay, so
+the next uh let me check. Okay, the
+next uh is to
+convert the y column to
+uh to process the la-la-the label column. Okay, so
+what is this? Update x as following. Okay, so convert e-embark into
+the one, one-hot encoded features. So uh all right. So
+here I uh as I mentioned the one-hot encoding the function can use
+to encode the labeled. But here I use to
+extend the features, the embark features. Okay, also
+can be used to ex-extend the features. And also convert the sex
+feature, uh sorry
+fix sex column
+to zero and one. Okay? So here the female is zero and male is
+one. All right? All right, so the next slide
+uh showing us how to use the min-max ma for normalization. Okay?
+Very easy, right? Please apply the min-max normalization to the age
+and fare column. Okay
+All right, only also five minutes
+
+
+[36:55.1]
+Okay, so I, I think
+uh, everyone is okay
+right?
+Okay, so let's keep going
+So, uh, now we are talking about the data representation
+Okay
+Data representation
+Okay, so this is very important slide
+Yeah, so if today
+uh, our data is
+uh, about, uh
+fifty percent or you can imagine that
+uh, now we want to represent all of the student here
+Okay?
+And the model
+uh, the goal of the model is to predict the gender
+okay, based on height and the weight
+Okay?
+So we can represent each student here
+use the height and the weight
+and the label is male for this one
+Okay?
+So that means the first dimension is height
+second is weight
+Okay?
+So in this way
+we can represent all of the student in this class
+Okay, so that means we use two dimension for representation with
+a label
+Okay?
+So in this way
+we can project all of the data into two dimension feature
+dimension
+The X is weight
+and the Y is height
+Okay?
+Is that okay?
+All right
+So question
+if two point here is very close
+what does it mean?
+Sorry?
+The sex is the same
+Hmm
+Why?
+Okay
+Any others?
+Any others?
+All right, I
+I will say not
+sex is the same
+I would say the height and the weight is very similar
+Okay
+Whether the sex is the same-- sex means the label
+Whether the label is the same or not depends on the representation
+Maybe the representation you used here is not efficient to represent
+the label
+Okay?
+So I would say the data or the point
+two points very close represent their dimension is very similar
+or their representation is very similar
+Hopefully
+this representation is highly associated with the label
+Okay?
+Hopefully
+So
+the important point is that if today we can use very useful representation
+method
+and then
+we can derive to predict the label
+Sorry, I use the Mandarin Chinese
+The representation
+So if today you want to use this weight to predict the label
+in this way
+th-this method should highly associate or highly relate on the representation
+Yep
+Yeah
+Yeah
+So a model called k-nearest neighbor
+in short KNN
+using the this way
+KNN 就是用這種方法
+我們會再教。I will teach you next week or next next week
+Yeah
+All right
+Oh, okay, I can tell you in short
+What is the KNN？K means I choose k neighborhood
+If the label I know it
+I know this label
+I know this label
+I know this label
+If today I give you a data
+which located here
+what is the label？So I choose k nearest neighbor
+If k is five，one
+two, three
+four, five
+All right，so my neighborhood is these five points
+So use the five points to decide what is the label
+How to use the five points？Use the majority vote
+If
+female, female
+female and male
+male，so the answer is female。This is a KNN。Okay，now
+you, you have learned it。Very easy。KNN 就這
+樣，我講完了
+就是這麼簡單
+喔
+可以嗎？
+可以。Okay，okay，okay，okay，all right。So this is very very important，but
+I believe all of you have already learned it。All
+right
+
+
+[44:32.6]
+another feature representations，uh
+I use this very
+very well-known dataset called Iris
+Iris Dataset。Okay，so this is a image dataset，but they
+don't use the image feature。They use
+sepal
+and petal length
+width。Okay，so that means the first two feature is
+sepal length and width。The third and fourth
+features is petal length and width。So that means
+one data, one image use four features
+with a label。All right？So the goal of the dataset
+is to train the model that based on these four feature to predict what
+kind of the iris flower is。Okay？It's
+a classification。Also
+the previous one is classification
+可以嗎？
+花萼的長度
+寬度，花瓣的長度
+寬度來決定它是哪一種花的類型，Iris。Okay
+所以這是 setosa
+然後那是不一樣的類型
+可以嗎？
+喔。All right。So this is a traditional
+way to represent the image。Yeah。Uh
+I, I remember we have talked about it before。So if the-- this is the
+uh, pen write number five。Okay？So we
+can use a matrix to represent it。Also
+uh, this is a
+a dog image，uh
+we can use a matrix to represent it。But compared to the this
+one, this is a colorful
+this is a colorful，so it would use the three
+three dimension— uh
+cannot say three di- three dimension tensor。Because the
+matrix is to represent each pixel，and this
+is the RGB color。Okay？So we call this is
+the 3D tensor or cube。This is a matrix
+喔，這個是矩陣啊
+這個叫 3D tensor
+或是我們稱它為 cube
+一個方塊的感覺
+喔
+為什麼會有多第三軸？
+就是表達它的三原--是 RGB 三原色
+因為這個是灰階的
+它沒有第三軸
+可以喔？
+好。All right。So，uh，this slide I showed
+you before，right？So the news article we want to represent it，we can
+use a dictionary。So that
+that means
+uh, Lakers in this article，uh
+two times。A c-- and the hospital don't appear in this
+news article。And key frequency is zero，Legend
+frequency is two，and so on。So that means we use a high-dimension feature
+vector，the
+the dimension equal to the size of the dictionary，all right？So to
+represent this document
+We call this is
+uh, uh, the
+the method called bag of word
+Bag
+B-A-G
+Bag of word
+In short
+BOW, B-O-W
+And we will talk more about it
+uh, when I teach the natural language processing part
+We will use two weeks to talk about
+uh, natural language processing
+and also two weeks for computer vision
+Yeah
+All right?
+
+
+[49:43.5]
+All right
+So, uh, what is tensor?
+Okay, so 1D array we call vector
+All right?
+And 2D array we call matrix
+And 3D array is tensor
+Okay, so, uh
+here I list the shape
+The shape here
+uh, because
+uh, when we implement
+uh, the deep learning model
+uh, we need to set in the shape
+Yeah
+Okay, so here
+uh, for example
+the 1D array
+the shape like this
+and 2D like this
+and 3D, the first one means the number of the data
+Yeah
+Oh, sorry
+All right
+So here also the example that show us the 1D
+uh, 1D, 2D, and 3D
+All right
+And also
+this is the scalar
+just one number
+Okay
+All right
+So NumPy, I
+I think we no need talk about here
+Okay
+
+
+[51:13.6]
+After representation
+when all of the data can be represent using
+the features
+what is the next?
+Next we can calculate the similarity
+right?
+All right
+So
+can you, uh
+let's take
+use the, the previous
+the, the gender prediction or the gender two dimension
+the height and the weight two dimension feature
+uh, space, the example
+So when we can project
+Sorry
+When we can project the data into the feature space
+how to calculate the similarity?
+You can use the distance
+right?
+Use the distance
+Okay?
+It's a very straightforward
+Okay, similarity
+We can use the Manhattan distance or
+uh, Euclidean distance
+and the last one is cosine similarity
+It's very famous and a useful method we will use
+in data science
+Okay?
+Cosine similarity
+Okay, so this is the Manhattan dis-distance
+Okay
+And, uh, I, I believe all of you can
+have already know it
+Okay?
+And this is Euclidean
+uh, distance
+Traditional distance method
+right?
+So this is the cosine similarity
+Okay, so if we have a vector
+data one vector and data two vector
+we calculate the cosine
+If the angle here is more smaller
+that means those two data is more similar
+right?
+More similar
+Okay
+Eh, cosine similarity
+All right, so the equation is here
+Okay
+So if we want to calculate the two
+two data, data one and data two
+the similarity equation is here
+All right, so here
+this is the inner product
+And this is the vector length
+Okay?
+So if the result is one
+that means two data is identical
+If zero, that means orthogonal
+好，那上面是內積
+下面是向量長度
+Okay，so here is the example for you
+All right，so this is a data one，vector one
+Okay，we use the five dimension to represent the data one。All right？
+This is the data two，we use five dimension。All right？
+So if the first dimension is certain the word，we
+call uh，the vec-but uh，the word from the vocabulary。Okay，so
+you can imagine that today we u-we do the natural language processing，okay？
+We have two document，use five words
+the, the word one
+word two, word three，and so on。All right？
+So how to calculate the similarity between two document？Okay？
+Based on this equation，inner product，the first dimension
+multiplies first dimension，plus second to second，third
+to third，and so on
+All right？
+And vector len-vector length，the uh，this
+is the vector one's length，this is the vector two length。Okay？
+And finally，the result here
+one minus the cosine
+theta。Is that okay？
+可以嗎？
+可以。Okay
+
+
+[57:02.6]
+All right，in this way，maybe you can，uh，calculate
+the similarity。Very similar
+right？Oh，this is very funny image，okay？
+But uh，uh，this is very important
+So uh，do you remember I have already mentioned in the natural language
+processing，we can train the word embedding，right？
+Word embedding that means，uh，a word can be represent using certain dimension，for
+example one hundred or three hundred dimension vector。Okay？
+And we can learn the word embedding from Mandarin
+Chinese dataset
+Also，we can learn the word embedding for English
+from the English dataset，or Thai language dataset，or Japanese dataset，and
+so on
+We learned different language from their source dataset
+separate individually，and then we use the PCA
+to reduce the dimension from three hundred to two
+dimension，and project all of them to the same feature space。This
+is the result
+All right。Four，the Mandarin Chinese
+下跌。Mandarin Chinese
+加大，English，enlarge
+Automatically，no human involved，this is a translation
+Also，you can learn the data from the medical
+and project it。Maybe you will find some very
+interesting finding。Okay？
+All right，so this is we need just use the uh，representation and
+cosine similarity
+
+
+[59:32.8]
+All right。I think uh，this is the last
+two slides in today。Uh，after preprocessing，after
+representation，uh，one more thing I want to tell you is
+about the label。Yeah。Uh，last week，uh，we
+have tried to implement the web crawler。We can collect the
+data，right？
+If today the data don't have the label，what would be happen？
+The next is we need expert or somebody to help us to annotate the data，right？
+How to annotate the data？
+So if today，uh，I annotate the data and you also annotate the data，the
+most important thing is to evaluate，t-to estimate the
+assessment，assess-assessing the relevance or the agreement
+between us，right？
+If today，uh，we
+we are labeling the X-ray，give us the chest X-ray，I
+label，"Okay，this is the lung cancer。" But you label，"This is
+not lung cancer X-ray。" And so on
+So we need to estimate the agreement between annotators
+And then
+we can know the quality of annotation
+Right?
+Before given the dataset to the model for training
+we need to estimate the quality of the data
+Okay, so this is very important point
+Okay, so how to estimate the agreement between annotator
+Here, we use the Kappa statistics
+Kappa value
+So, uh, I think most of the students have already learned how to calculate
+the Kappa value
+It's okay
+All right, so now I show you
+how to
+calculate it
+All right?
+So if today we have two annotator
+judge one and judge two
+and for
+judge one, he say yes
+and the judge two also say yes
+They agreement
+right?
+If judge one say yes
+but judge two say no
+it's here
+Also, no, yes
+no, no
+Okay
+So yes, yes means they agree
+No, no means they also agree
+So this is not agree
+Yeah
+So overall
+we have four hundred data
+And you can use this equation
+So this is the observed agreement
+This is aspe-aspect agreement by chance
+And then you can calculate the Kappa value is zero point
+seven eight
+So what does it mean?
+It's good enough
+zero point seven eight
+All right, you can see here
+If the
+the Kappa value above zero point eight
+that is good agreement
+Okay?
+And between zero point six seven to zero point eight
+is fair
+And below zero point six seven
+this is
+Okay
+好，中文講一遍
+就是你有
+你有資料之後
+你有前處理之後
+但是你今天有收集到這些資料
+可能沒辦法去做你的題目啊
+那怎麼辦？
+你就會介入到人工標註嘛
+人工標註之後呢
+譬如說我今天拿到的是這個 chest X-ray
+就是胸部的 X 光片
+然後我們今天假設要打造一個模型
+去預測說這是不是肺癌的
+或是肺癌第幾期
+第幾期、第幾期的
+好，那假設我們就標
+欸，這個是肺癌
+但是你標這不是肺癌
+那到底是還是不是呢？
+我們要有一致的共識嘛
+對不對？
+那究竟我們有多少共識
+怎麼算？
+就用 Kappa 來算。Okay
+那 Kappa 你會算出一個值啊
+那這值到底代表有多少共識
+就在這邊
+如果你是高於零點八的話
+就是，喔
+我們兩者有很好的共識
+那接著你的模型就可以用這 dataset 去學了嘛
+對不對？
+至少這個 data 標註的 quality 是蠻有共識的嘛
+那假如沒有共識呢？
+怎麼辦？
+那至少我們要先有一個共識會議啊
+喔
+那最終呢
+標籤你有兩個
+兩個人標的嘛
+最終用什麼？Majority vote 嘛
+Okay, so we have multiple annotator help us to annotate the dataset
+Eventually
+we use the majority vote to decide the label
+All right?
+So if the agreement is low
+we need, uh
+in general
+before annotation
+we need to sample some-- sample data for training
+training the annotator
+and then to make they have agreement
+All right?
+So when they have the agreement
+they can start to annotate the dataset
+喔，所以有一個教育訓練的過程
+讓 annotator 去達成--達-達成共識
+才能夠開始去標記資料
+All right
+So a platform called
+Amazon
+Mechanical Turk
+Turker
+So that is the
+like a, uh, the annotation you can outsourcing
+You can outsourcing
+So somebody there can help you to annotate
+The cost is very
+very low
+All right
+就是有一個
+有一個平台啦
+就是付費就可以有人幫你標註
+喔，那通常價錢是比較低
+蠻低的這樣子喔
+好
+
+
+[01:06:57.0]
+All right
+So this slide show you
+uh, how to calculate the cosine similarity
+Okay?
+So here you just need to use the
+uh, package from
+sklearn
+Okay?
+So you can import the cosine similarity
+and then just
+uh, input two vector
+and then you can get the cosine similarity
+All right?
+So that's it

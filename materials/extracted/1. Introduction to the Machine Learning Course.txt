@@ -1,0 +1,113 @@
+--- Page 1 ---
+Yung-Chun Chang
+Deputy Chief Data Officer, Office of Data Science
+Graduate Institute of Data Science, Taipei Medical University, Taiwan.
+Email: changyc@tmu.edu.tw
+Introduction to the 
+Machine Learning Course
+
+
+--- Page 2 ---
+Profile
+• Work Experience
+– Director, TMU, Graduate Institute of Data Science, (2025/3–present)
+– Professor, TMU, Graduate Institute of Data Science, (2023/8–present)
+– Deputy Chief Data Officer, TMU, Office of Data Science, (2020/8–2025/02)
+– Associate Professor, TMU, Graduate Institute of Data Science, (2020/8–2023/7)
+– Assistant Professor, TMU, Graduate Institute of Data Science, (2017/8–2020/7)
+– Postdoctoral Research Fellow, Academia Sinica, Institute of Information Science, (2016/8–2017/7)
+– Research Assistant, Academia Sinica, Institute of Information Science, (2008/1–2016/7)
+• Research Interests
+– Natural Language Processing
+– Information Extraction and Retrieval
+– Business Intelligence
+– Biomedical Text Mining
+– AI in EHRs
+張詠淳(Yung-Chun Chang)
+http://nlp.tmu.edu.tw/
+2
+2
+
+
+--- Page 3 ---
+You will learn
+• Basic concept of machine learning, and deep learning.
+• Basic technology of data science (e.g. preprocessing, data
+representation, performance evaluation…)
+• How to develop machine learning and deep learning models.
+• You will learn how to develop a machine learning and deep
+learning model for the applications of NLP and CV.
+3
+
+
+--- Page 4 ---
+Course Information
+• Instructor: 
+–張詠淳(Yung-Chun Chang)
+–E-mail: changyc@tmu.edu.tw
+–Office hour: after class of by appointment
+• Class time: 15:10~17:10, every Wednesday.
+• Classroom: 9703 ShuangHo Campus
+• Teaching assistants:
+–葉文照(wcyeh@proton.me)
+• Course website: 
+–IM＠TMU(https://im.tmu.edu.tw/course/19514)
+4
+
+
+--- Page 5 ---
+Why use Python for AI?
+The basic procedure of developing an ML model
+• The Data: Data collection, Data visualization, Data preprocess, Data representation….
+• Model Development: Machine learning and deep learning, performance evaluation….
+• Production and Engineering: web-based service, GUI, Unit-test…
+5
+
+
+--- Page 6 ---
+Grading Policy
+–Midterm Exam: 30% [Week 9 (11/04)]
+–Kaggle Competition: 30% [Week 6 – 14]
+–Final project: 40% [Week 16 (12/23)]
+6
+
+
+--- Page 7 ---
+Textbook
+– Christopher D. Manning, Prabhakar Raghavan, and Hinrich Sch¨utze, Introduction to Information Retrieval, 
+Cambridge University Press, 1st ed., 2008. (https://nlp.stanford.edu/IR-book/information-retrieval-book.html)
+– Ian Goodfellow, Yoshua Bengio and Aaron Courville, Deep Learning, MIT Press, 1st ed., 2016.
+– 林大貴, TensorFlow Keras深度學習人工智慧實務應用, 博碩, 2018 
+– Keras 大神歸位：深度學習全面進化！用Python 實作CNN、RNN、GRU、LSTM、GAN、VAE、
+Transformer, 旗標科技
+– tf.keras 技術者們必讀！深度學習攻略手冊, 旗標科技
+– TensorFlow 與Keras - Python 深度學習應用實務, 旗標科技
+7
+
+
+--- Page 8 ---
+Kaggle Competition
+8
+
+
+--- Page 9 ---
+AI@TMU Competition
+https://nlp.tmu.edu.tw/AITMU/
+
+
+--- Page 10 ---
+Final Project Guidelines
+• Topic: No restriction on the topic, but it must be related to Machine Learning.
+• Requirements: Your project should include:
+–A clear data source (can be publicly available or self-collected)
+–Data analysis and preprocessing
+–Model training
+–Performance evaluation
+• Team Formation: 2–3 students per group.
+• Deliverables:
+–Demo Video showcasing your project
+–Final Project Presentation: 10 minutes + 2 minutes Q&A
+10
+
+
+--- Page 11 ---

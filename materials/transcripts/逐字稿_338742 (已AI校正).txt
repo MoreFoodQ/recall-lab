@@ -1,0 +1,752 @@
+﻿[00:18.0]
+Okay, so, uh
+first of all
+uh, uh, welcome to attend a machine learning class
+And
+Oh, sorry
+Okay
+So, uh, uh, in the first part of this class
+today's class
+uh, I will introduce the class
+Okay?
+And then, uh
+I will, uh, introduce the motivations
+you need to learn machine learning
+Okay
+If we have time
+the last part
+I would like to present a slide that
+like a short talk to introduce
+uh, what machine learning or deep learning or
+uh, generative AI can be adapted in the clinical environment
+Okay
+
+
+[01:11.8]
+All right, so this is my profile
+and I'm the director in the Graduate Institute of Data Science
+And yeah, this is my research interest
+um, focus on the natural language processing
+information retrieval
+and the, the application
+uh, AI application in EHRs
+So, uh, you will learn in this class
+focus on the last part
+The, the, the first one
+uh, you will learn the basic
+uh, concept of the machine learning and deep learning
+Okay
+And maybe, uh
+if we have time
+uh, I will talk a little bit the
+about the large language model or
+uh, generative AI technique in this
+uh, class
+The, uh, in the end of the semester
+Right
+And the second part
+uh, you will learn the basic technology of data science
+including how to
+uh, pre-process the data
+how to visualize the data
+and yeah, of course
+how to, uh, develop a machine learning model
+Also, how to evaluate the model performance
+Okay
+And also you
+uh, you will learn how to
+yeah, develop them
+So this part is about the implementation of the
+uh, model
+The model can
+uh, about the natural language processing or computer
+vision model
+Okay
+So this class will cover many
+uh, research field
+Okay
+
+
+[03:11.9]
+So this is the
+uh, course
+course, uh
+informations
+Okay
+So our TA, uh
+is Ye Wen Zhao
+Okay, so if you have any problem or questions you want to
+ask, you can
+uh, contact me or TA
+Okay
+Or also you can use the i@TMU platform to
+uh, write your question
+Okay?
+
+
+[03:44.9]
+All right, so
+this slide I would like to tell you why we use the Python in
+this class
+Why?
+Does anyone can tell me why?
+Why we use Python instead of C++ or Java?
+Can anyone tell me?
+You can use Mandarin Chinese or English is okay
+Yeah
+What kind of library?
+Yeah, yeah
+yeah
+Correct
+Yeah, because nowadays everyone want to do the data science
+or, uh, want to learn the machine learnings
+All of them use the Python as the programming language
+The reason is
+uh, there are many toolkit or
+um, yeah, toolkit or existing model that you can download
+using the Python
+For example
+you can use the Pandas
+Pandas is a toolkit that can help you to do the data preprocessing or representation
+Okay?
+Also, you can use the
+uh, Plotly
+or other plot toolkit that can help you to do the visualization
+data visualization
+And then you can use the Keras or PyTorch
+to implement your model
+Okay
+So, uh, it is very useful
+Uh, they are very useful toolkit that you can use the Python
+right?
+
+
+[05:59.7]
+And by the way
+I, I think I need to point out another very
+very, uh, important toolkit called Hugging Face
+So if you want to
+uh, do lots of machine learning or deep learning
+or you want to know the state-of-the-art model
+you have to know Hugging Face
+Right
+Maybe I can show you now what is the Hugging Face
+All right
+This is the Hugging Face
+For me, Hugging Face is a
+AI Apple Store
+What is Apple Store?
+Can anyone tell me what is Apple Store?
+Yeah
+You can download or install the app in your iPhone
+Okay
+So AI Apple Store means the platform content
+lots of models
+and you just use-- you just need to use a few of Python code that
+can download the model in your laptop
+or integrate with your Python program
+Okay
+So maybe, uh
+yeah, yeah
+I think if you have time
+you can, uh
+browse this website
+And I have to state the state-of-the-art model
+maybe in the natural science journal can be found in this platform
+All right, so this is Hugging Face
+
+
+[08:13.5]
+All right, so this is the grading policy
+Yeah
+Uh, we have the midterm exam
+Uh, it
+contents, uh
+about thirty percent
+And also we have Kaggle competition
+What is Kaggle competition?
+I will talk more about it later
+So the last one is the final
+final project
+It contains forty percent
+In the last week
+So it's about one
+one month's competition time or duration
+And then we also have the
+All right, so this is the textbook
+Um, yeah
+Uh, including the Mandarin Chinese one or some of the textbook is the
+uh, English version
+Okay
+But no need to buy the textbook
+If you, you have interesting to read the
+the book, let me know
+Yeah
+All of the book I have buy
+Yeah
+Okay
+
+
+[09:51.9]
+All right, so this is the Kaggle competition
+Okay?
+So, uh, as you can see here
+uh
+for each semester
+uh, I will host the Kaggle competition
+right?
+And what is the Kaggle competition?
+We will, uh
+provide you a dataset
+and you need to
+uh, try to your best to train a very good model that can predict the test data
+All right?
+And after prediction
+you just need to upload your prediction result to the Kaggle platform
+and then you can see your ranking
+It is so exciting
+right?
+Every date
+uh, you can submit five times
+five result every day
+All right
+So, uh
+in the period
+in the previous experience
+our students
+some of the students publish their paper using the Kaggle competition
+Okay?
+And some of the thesis is from the Kaggle competition
+right?
+So in this class or in this semester
+uh, I would-- I will try to some difference
+So that means the dataset
+I think, uh
+there are some student is a senior student
+they don't
+see the data before
+We will up-- we will use the whole new dataset in this class
+Okay
+And if you
+I, I know some of the student is from the PhD student
+If you do this competition well
+I can advise you to publish paper
+Yeah
+I, I think
+the stu-- the motivation of the student is different
+For the PhD student here- The motivation is to publish paper
+The master student here is just pass this class
+right?
+
+
+[12:23.7]
+All right
+Another competition we called AI at TMU
+That is your final project
+I will invite some committee to be here to judge your final project
+It's a real hackathon
+Okay, it's a competition
+Because I also have another class
+so I will integrate two or three class student to do the competition
+All right
+And I try my best to give you award
+Award means money
+Okay
+If you can, uh
+achieve the first prize or second prize
+All right
+
+
+[13:24.2]
+Okay, so this is a final project guideline
+So, uh, I think for each team
+you can, uh
+include two or three students
+two or three members
+Okay
+So later, I will give you time to organize your team
+Okay?
+And, uh, uh
+for the final project
+each team need to provide a short video
+to demonstrate your project
+Short video
+maybe
+I, I think it's three minutes
+within three minutes videos
+Okay
+And also, the-- for each team
+uh, have to present ten minutes plus two minutes Q&A
+right?
+So maybe I will have a little bit adjusted
+uh, the time
+uh, depends on how many team finally we have
+Okay?
+Yeah, that's it
+Any question?
+Oh, okay
+This is very important
+No restricted topic
+The topic is unlimited
+You can do what you want to do
+but it should related to machine learning
+You need to demonstrate your model
+and, uh, uh
+present how good your model is
+That means you need to evaluate your model and tell everybody
+tell me or the committee how to develop your model and what is the
+difference between your model and the
+the normal model
+Okay
+Can you hear me?
+The topic is unlimited
+As long as it's related to machine learning
+it's okay
+That is, you have to show your model
+what's
+different from others
+and how good your model is
+Okay
+
+
+[15:46.5]
+All right, so
+let's take ten minutes break
+and, uh, you guys need to form a team
+Is that okay?
+Ten minutes to form a team
+Do you want me to ask you to introduce you guys?
+Do you want
+to introduce
+yourself?
+Okay
+All right
+So I, I think here we have three or four international student
+International student?
+Okay, we have four
+four international student
+Okay
+And, uh, uh
+other big data students
+raise your hand
+Oh, okay
+Okay
+And okay, good
+good, good
+Oh
+good
+Thank you
+Good
+So let's form a team
+Okay
+So, uh, for each team
+we can, uh, have two or three members
+If you want to four
+yeah, let me know
+For example
+if, uh, international student want to together
+um, no problem
+right?
+Okay, let's
+Yeah, let's take a break
+Okay
+
+
+[17:32.6]
+Okay
+So for example
+in this week
+uh, the mission is to introduce this
+this class
+And also I've
+I also put some slides here
+Okay?
+And also, uh
+I upload, I have upload the video last semester
+Okay?
+So if you want to
+uh
+watch the video
+English here and the Chinese
+or you, you can also watch the Chinese one
+Okay?
+And
+for each week
+uh, you guys can
+uh, watch the video
+the last semester video
+and also can
+uh- Review the slides
+Okay, all of the slides I have upload
+But, uh
+before the class
+I-- sometimes I will
+uh, update the slides
+So if you-- when you noted that
+uh, if the slides you download is not
+uh, the same with the slides I present
+please, uh
+download again
+Okay?
+
+
+[18:51.0]
+All right
+So, uh, in the third
+uh, week
+we will, uh
+introduce the preprocessing and the representations
+Because before model training
+we need to convert the data into certain default that machine
+readable
+We call this is the data representation
+Okay?
+And then, yeah
+as you can see
+is machine learning
+Okay
+In this part
+uh, I expect we will take three or four weeks to
+talk about the
+foundation of the machine learning
+Okay?
+And I will focus on the supervised learning and
+uh, uh, teach you five well-known or five
+classic machine learning models
+For example
+Naive Bayes
+Decision Tree
+or
+uh, or Logistic Regression
+or Support Vector Machines
+This is very
+very traditional and
+uh, well-known
+the classical
+uh, machine learning models
+Right
+
+
+[20:12.0]
+And afterwards
+uh, is the Kaggle competition
+So, uh, the Kaggle competition will host from the
+the six to the
+uh, fourteen weeks
+Okay?
+Yeah, because after machine learning
+uh, after the
+the machine learning part
+you guys can start to do the Kaggle competition
+Given your te-- given your dataset
+you need to develop a
+a very good model that can pre-predict the test data and achieve the high
+performance
+That is the competition goals
+Okay?
+And afterward
+uh, as you can see here
+uh, this is the previous task we did
+The task is
+you need to train the model to predict the ASA rating
+ASA rating
+麻，麻醉風險分級這樣子。Okay
+so the maximum daily submission is five times
+Okay?
+And this is the rule
+Okay, you can refer to it
+
+
+[21:21.5]
+And afterward
+I will introduce the deep learning
+Okay
+And
+and then is the midterm exam
+Okay
+After midterm
+uh, you need to introduce your final project
+the proposal
+what topic you want to do
+Okay?
+And, uh, what topics and what is your data
+and how to evaluate your model
+and what model you expect to adapt
+Okay?
+So in this week
+uh, you need to present your final project proposal
+And then is NLP task
+Uh, NLP, NLP will take two weeks
+Okay, afterward is computer vision
+also two weeks
+And
+then is the presentation for Kaggle
+Yeah
+So all of the student need to present
+uh, your result in the class
+Tell everybody how you can achieve so perfect performance
+or tell everybody how you can achieve so bad performance
+Okay?
+Just, uh, just is
+uh, uh, sharing or discussion about a Kaggle experience
+You just need to share it
+right
+And the last week is the final
+final project
+Right?
+
+
+[23:16.6]
+So actually
+uh, you can go to this website
+Uh, this website is the last semester to we host the Kaggl-- uh
+the AI at TMU competition here
+Right
+Actually, uh
+we invite the committee
+right?
+Some of the
+uh, committee from the
+uh, academic and some of the committee were in-- from the industry
+right?
+Right
+And also, I have already upload the video
+the demo video in the website
+You can browse it
+For example
+let me show you
+你們要看誰的？
+傅彤有欸。Okay
+好，先看別的好了。This is
+okay
+
+
+[24:40.0]
+It looks like very professional，but，but actually I don't
+know，I don't know what the video want to
+deliver to us
+你會覺得它很專業
+但我不知道它要 deliver 什麼給我們
+好，所以這有點需要那個吼。So，when，when
+you，uh，when you to make the video，uh，please use AI tool。For
+example，don't you-- don't use your voice，use AI tool。OK。Don't
+make the slides or don't make the video by yourself manually。No，just
+use the AI tool。OK。AI can help you
+to make a very professional video。OK。Right，so，uh，if
+you have more interesting about it，you can，yeah，browse this website。OK
+有沒有問題？
+
+
+[26:11.5]
+第一名，好，OK
+第一名是誰？
+我看下。OK，the first
+prize is
+欸，我好像沒有更新耶
+你們還記得誰第一嗎？
+傅彤你記得誰第一嗎？
+這個
+這個
+啊！OK
+This is the winner last semester
+
+
+[28:44.7]
+How do you think？Uh，now we have already，uh，watched two
+videos，right？So，the last one is the winner in
+last semester。So，can you
+tell me or tell everyone，uh，why is the advantage of this video？
+它有什麼優勢啊？
+你覺得比了兩個 video 之後
+為什麼它可以是贏家？
+OK，we, we，uh，we can simply focus on the video，not
+the task or the
+the topic they do。We can only focus on the quality of the video。Why？
+Why？Why informative？OK。Yeah，yeah，that's
+a，that's a point。Because，uh，the first one，we don't know what
+what, what they will do，right？But the second one，we，uh，we know the
+task very clearly。And any others？
+有沒有其他人要再提？
+中文可以
+英文也可以
+對
+這兩個 video 哪裡不一樣？
+有一個蠻微小的地方
+但是我覺得蠻重要
+字幕是一個 subtitle。Also bilingual subtitle。Yes
+good。Any others？
+分工
+嗯
+哦，maybe，maybe looks like a movie。Yeah。Yeah。She
+said in the，in the end，the actor name
+right
+畫面怎樣？
+OK，這是一個點。A very small point but
+very important。I think you need to aware that。This
+video have background music
+He said the video show my name
+No，no，not
+not is the reason。Yeah。For me a background music is very good。Yeah，very
+good，very smoothly，yeah。
+
+
+[32:04.8]
+OK，so I think
+this is the first time uh，we
+we meet，all right。So I decide don't present more slides。OK，so
+maybe we can stop here。But uh，we can discuss more about this class。All
+right，so in this class
+I know uh，most of the student don't have the computer science or
+information system background。Maybe you worry about can I implement
+the model？Let me tell you
+all of the student before uh，don't have the background
+computer science background。They from the clinical
+they from different uh，department graduate from different departments。So
+uh，they pass this class and then they have the ability，if
+you give
+anyone a data，they can implement the model and
+evaluate model，and quickly write something like a paper。All
+right。So I believe you guys will have this ability after this class。OK。No，no，during
+this class，not after the class。
+
+
+[33:34.4]
+OK，so in this class uh，this
+semester
+哦，maybe last semester，I uh，I use the vibe coding。Do
+you know the vibe coding？No？Yes？No？Yes？OK。Vibe
+coding is that
+anything you want to implement，you just ask LLM like the
+ChatGPT，and the ChatGPT will help you to generate
+the Python code。And that's it。So
+that, that will rise another issue。If to date
+we no need to learn how to programming，we just need to
+focus on what we want to do，all the process，all the step。That
+means everyone can cross the threshold
+to do machine learning。Everyone。So
+what is your advance-- uh，advantage？
+每個人都可以跨過這一個實作的門檻
+去做 machine learning
+那請問你們各位的優勢在哪裡？
+這個值得大家想一想。It is worthy to think about it
+對吧？
+以前就會覺得說我花了很多時間去實作
+我去學怎麼實作
+現在 AI 全部都可以幫你實作了
+那各位的優勢會在哪裡？
+有沒有人想要分享有什麼想法？Anyone want to say
+something or want to
+share your opinion about it？OK
+你可以用中文
+
+
+[36:50.1]
+OK，呃，I think
+呃，I wish the student here
+呃，after the class can recognize what is good and what is bad。OK
+呃，the good and bad means the ability for
+recognization，recognition。Recognize what？Recognize
+the
+I think maybe the model。For example，today，if I give you a dataset
+or give you another one，uh，the same dataset，I wish you have the
+ability that to tell me what kind of model is good for this
+dataset，and what is the step
+we can adapt for this mod-- this dataset for our goal，all right。So
+if today we want to achieve this mission or this
+uh, ability，in my opinion，I think we
+we need to practice and practice and practice and to accumulate that of
+experience
+也就是說
+我覺得從這個課程出來的學生
+我期待你們是能夠有辨別好跟壞的能力
+什麼好壞的能力？
+就是這個東西給你們了
+跟給一個其他人
+你們都有實作能力
+沒錯，都可以透過 AI 實作
+沒錯，但是你可以直接跟你的老闆或是未來
+呃，你的主管講說我覺得應該怎麼做
+對，哦，那怎麼樣達到這個地步呢？
+就是你要不斷地訓-- 意思是練習嘛
+那練習什麼？
+你要透過很多不同的 project 的練習
+你才有辦法 accumulate
+就是累積這種經驗啊
+哦，經驗
+所以我的課程或者是我的實驗室都是這樣
+就是說我希望學生可以接觸更多的 project。So
+this is a project-oriented learning。So I
+I wish student can attend many tasks or project that can accumulate
+the experience I just mentioned。OK。And then
+呃，the student can learn how to，how to recognize what
+is bad and good。All right
+有沒有什麼其他想要討論的或是問題想要問的？
+
+
+[40:02.3]
+OK，yeah，she just asked me
+呃，the video
+the model or the method or the product in the video
+呃，do they show-- uh，do they have implement it？I say yes。Yeah，they
+have implement。All of the team have implement the model or the method
+or the story。All right
+對，所以你們也會變成那樣
+你們必須得變成那樣。You have become to this。All right
+那其實這一隊啊，OK，I can talk more about it，uh，about
+this team。So as you can see，all of the team
+呃，need to provide a video。All of the team need to present the slides。All
+of the team need to deliver the code or the product。That
+means all of the competition you can
+participate，and you have high
+chance to win the competition。So finally，they
+win another competition，not in our class，also in other competition
+in Taiwan。So I encourage every teams after the class to attend
+other competition
+to win the award。OK，to
+bring the honor，to bring the honor for the TMU
+OK
+所以你可以看到
+就是這邊要的所有東西
+我們課堂上要的所有東西
+所有比賽都要這些東西啊
+甚至沒要那麼多
+所以去參加比賽通常都-都會贏
+沒有問題
+對，呀，而且外面比賽那麼多
+呀，我們
+我們的學生
+就是大數據所的學生
+有贏很多外面大的比賽的第 1 名
+那個，哦
+獎金都很優渥
+對啊
+對
+呃，包-- 呃
+這個我-我沒有
+我沒有參與任何獎金
+這樣，對
+所以大家不要擔心這樣
+對，我只是跟他們講說
+哎，請我喝一杯珍珠奶茶
+對
+還有沒有什麼問題？
+
+
+[42:47.5]
+那有些，有些同學可能會覺得說
+那這樣子就可以去開 startup 了
+有啊，可以啊
+你就去開 startup 啊
+真的啊。Yeah
+這幾個，這幾個同學是 AI 在職專班的同學
+對，他們來自於產業界
+所以他們甚至就想去做一些事情這樣子
+這沒有放
+對啊
+可以嗎？OK 囉？
+累了嗎？
+還好，好
+我們下禮拜再開始啦
+哦。OK，so if you don't have further question
+呃，yeah，we can stop here。All right
+好，謝謝

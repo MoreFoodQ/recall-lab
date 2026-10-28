@@ -1,0 +1,161 @@
+--- Page 1 ---
+Yung-Chun Chang
+Deputy Chief Data Officer, Office of Data Science
+Graduate Institute of Data Science, Taipei Medical University, Taiwan.
+Email: changyc@tmu.edu.tw
+Set Up and Start Using 
+Your Python Playground
+
+
+--- Page 2 ---
+JupyterLab & Colab
+2
+https://jupyter.org/
+
+
+--- Page 3 ---
+Colab (cont.)
+3
+
+
+--- Page 4 ---
+Colab (cont.)
+4
+Menu Bar
+File / Edit / View / Insert / Runtime / Tools / Help
+Similar to Google Docs. You can create a new notebook, download code, adjust text formatting, 
+insert code or text cells, and manage the runtime environment.
+Toolbar
+▶ Run All: Executes the entire notebook.
+⏹ Stop: Interrupts the running code.
+🔄Restart: Restarts the Python runtime.
++ Code / + Text: Insert a new code cell or a text cell (for explanations, notes, etc.).
+Left Sidebar 
+- Folder Icon: Browse or 
+upload files (you can also 
+mount Google Drive here).
+- Search Icon: Search within 
+the notebook.
+- Code Snippets Icon: Insert 
+sample snippets provided by 
+Colab.
+- Extensions/Emoji Icon: 
+Extra add-ons or plugins.
+Main Editor Area
+- This is where you write and run code.
+- Supports Code cells (Python code) and Text cells (Markdown).
+Right Panel (Release 
+Notes / Updates)
+-Shows Colab’s latest updates such 
+as Python upgrades or package 
+changes.
+-Usually not needed for students, but 
+instructors may check package 
+versions here.
+Bottom Assistant Area
+-“Need help with what to code?”: AI code suggestions.
+
+
+--- Page 5 ---
+The MT Samples Dataset
+
+
+--- Page 6 ---
+Create your iPython Notebook
+
+
+--- Page 7 ---
+The workflow for implementing ML model
+• Data Preparation
+– Load Data using Dataframe
+– Data observation
+– Identify X (data representation) and y (label)
+– Data preprocessing
+• Model Training
+– Split training data and testing data
+– Data Representation
+– Select the ML model
+– Evaluation metrics
+7
+
+
+--- Page 8 ---
+Making your first data science program through Vibe Coding
+"I would like to use the MT Samples dataset. Please download it from Hugging Face, load it into a pandas DataFrame, 
+and display the first five rows.”
+（我想要使用MT Samples資料集, 請幫我從huggingface下載, 並且載入Dataframe裡, 輸出前五筆資料）
+
+
+--- Page 9 ---
+Making your first data science program through Vibe Coding (cont.)
+"Please calculate the number of unique values in the
+（請幫我統計“medical_specialty”這個欄位有多少不同的值）
+"Please visualize the distribution of values in the 'medical_specialty' column."
+（請以視覺化的方式呈現“medical_specialty”這個欄位值的分布）
+
+
+--- Page 10 ---
+WebCrawler
+
+
+--- Page 11 ---
+BeautifulSoup
+• Beautiful Soup is a Python library designed for parsing HTML and XML 
+documents. It provides tools for navigating, searching, and modifying the parse 
+tree created from these documents, making it a popular choice for web 
+scraping and data extraction tasks.
+• Parsing HTML and XML:
+– Beautiful Soup can handle various types of web content, including "tag soup" (poorly 
+structured HTML with unclosed tags or other errors), and build a parse tree from it.
+• Navigation and Searching:
+– It offers intuitive methods to traverse the parse tree and locate specific elements based 
+on their tags, attributes, CSS selectors, or text content.
+• Data Extraction:
+– Once elements are identified, Beautiful Soup enables easy extraction of their text 
+content, attribute values, or other relevant data.
+• Integration with Parsers:
+– It works with various underlying HTML/XML parsers, such as html.parser (built-in 
+Python), lxml, or html5lib.
+• Web Scraping:
+– Beautiful Soup is frequently used in conjunction with libraries like requests (to fetch 
+web pages) to automate the process of collecting data from websites.
+1
+1
+
+
+--- Page 12 ---
+Making your first data science program through Vibe Coding
+Please use BeautifulSoup to scrape the table with class wikitable from:
+https://en.wikipedia.org/wiki/List_of_countries_by_obesity_rate
+Save the data into a DataFrame.
+1
+2
+
+
+--- Page 13 ---
+Making your first data science program through Vibe Coding
+1
+3
+
+
+--- Page 14 ---
+Making your first data science program through Vibe Coding
+1
+4
+Please use the data from the DataFrame to generate a map visualization showing the 
+distribution across countries.
+
+
+--- Page 15 ---
+Discussion
+1
+5
+Which regions cluster at the high end 
+of obesity? Which at the low end?
+How might income level, urbanization, 
+or diet patterns relate to obesity rates?
+
+
+--- Page 16 ---
+Thanks for your listening 
+Q & A

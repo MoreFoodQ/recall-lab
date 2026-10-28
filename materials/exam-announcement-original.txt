@@ -1,0 +1,33 @@
+Week 09
+
+Date：2026/11/04
+Time：15:10 ~ 17:00 (Total: 100 minutes)
+Classroom: 9703 (In-person attendance, online exam)
+Language：English
+closed-book exam
+
+Only students officially enrolled in this course are required to take the midterm exam. Auditors should not participate.
+
+考試規則：
+
+- 線上考卷需完成填答交卷且有出席紀錄者才算完成考試。
+- 登入 I'm@TMU 期中考試區作答。
+- 除保留考試所需滑鼠、鍵盤，淨空桌面，移除其他物品。
+- 考試期間，禁止參閱、觀看、聽取任何資料，不能收發任何訊息，也禁止開啟通訊軟體，不可開啟任何程式開發軟體實做問題求解，建議暫時關閉防毒軟體及桌面通知等。也就是未完成交卷離場前，皆不可離開 I'm@TMU 的考卷頁面。（系統有禁止切換至其他視窗的限制作為，違規 2 次後，自動繳卷結束作答，部分防毒軟體可能干擾考試頁面，請審慎了解。）
+- 可使用計算機做數學計算，譬如取 log 等。前述計算機單指只可以做數學運算的計算機，不包含其他以軟體開發之裝置，例如：iphone, android phone, watch, etc. 可使用白紙做手寫計算或程式演算草稿。
+- 嚴禁代人登入作答。在測驗過程中，登出或重複登入，將導致此次作答成績無法紀錄。
+- 開始測驗後，任何離開測驗內容的方式(如「回上一頁」或「關閉瀏覽器」等)都視同繳卷。
+- 確認送出試卷（交卷）後，無法回頭修改答案。
+- 所有試題都是英文出題，單選題及問答題，每題分數可能不同，答對才給分，總分 100 分。
+
+Exam Rules:
+
+- Log in to the midterm exam section on I'm@TMU to take the exam.
+- You must complete and submit the online exam and have a record of attendance for the exam to be considered complete.
+- Clear your desk of all items except the mouse and keyboard needed for the exam.
+- During the exam, you may not consult, view, or listen to any materials; send or receive any messages; or open any messaging software. You may not open any software development programs to solve problems. We recommend temporarily disabling antivirus software and desktop notifications. In other words, you may not leave the I'm@TMU exam page until you have submitted your exam and left. (The system prevents you from switching to other windows. After two violations, your exam will be submitted automatically and your session will end. Some antivirus software may interfere with the exam page, so please take this into account.)
+- You may use a calculator for mathematical calculations, such as taking logarithms. Here, “calculator” means a device that can only perform mathematical calculations; it does not include other software-based devices such as iPhones, Android phones, watches, etc. You may use blank paper for handwritten calculations or drafts of program algorithms.
+- Logging in and taking the exam on someone else’s behalf is strictly prohibited. Logging out or logging in repeatedly during the exam will prevent your score for this attempt from being recorded.
+- Once you start the exam, any action that takes you away from the exam content (such as clicking “Back” or closing the browser) will be treated as submitting your exam.
+- After you confirm and submit your exam, you will not be able to go back and change your answers.
+- All questions are in English. The points assigned to each question may vary. Points are awarded only for correct answers, and the total score is 100.
