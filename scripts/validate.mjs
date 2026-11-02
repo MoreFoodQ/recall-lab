@@ -1,15 +1,15 @@
 import {readFile,access} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import {TOPICS} from '../site/engine.js';
-export async function validateBank({images=true}={}) {
-  const bank=JSON.parse(await readFile('public/questions.json','utf8'));
-  assert.equal(bank.length,100,'Question bank must have exactly 100 items');
-  assert.equal(new Set(bank.map(q=>q.id)).size,100,'IDs must be unique');
-  assert.equal(new Set(bank.map(q=>q.en.trim().toLowerCase())).size,100,'English questions must be unique');
-  assert.equal(new Set(bank.map(q=>q.zh.trim())).size,100,'Chinese questions must be unique');
+export async function validateBank({images=true,file='questions.json',count=100,minDiagrams=6}={}) {
+  const bank=JSON.parse(await readFile('public/'+file,'utf8'));
+  assert.equal(bank.length,count,`${file} must have exactly ${count} items`);
+  assert.equal(new Set(bank.map(q=>q.id)).size,count,'IDs must be unique');
+  assert.equal(new Set(bank.map(q=>q.en.trim().toLowerCase())).size,count,'English questions must be unique');
+  assert.equal(new Set(bank.map(q=>q.zh.trim())).size,count,'Chinese questions must be unique');
   const distribution=[0,0,0,0];
   for(const q of bank){
-    assert.ok(Number.isInteger(q.id)&&q.id>=1&&q.id<=100,`Invalid ID: ${q.id}`);
+    assert.ok(Number.isInteger(q.id)&&q.id>=1&&q.id<=count,`Invalid ID: ${q.id}`);
     assert.ok(TOPICS[q.topic],`Unknown topic at ${q.id}`);
     assert.ok(['basic','applied'].includes(q.difficulty),`Unknown difficulty at ${q.id}`);
     for(const key of ['en','zh'])assert.ok(typeof q[key]==='string'&&q[key].trim().length>8,`Missing ${key}: ${q.id}`);
@@ -30,9 +30,35 @@ export async function validateBank({images=true}={}) {
     }
     if(q.diagram){assert.equal(q.diagram.type,'confusion');for(const key of ['tp','fp','fn','tn'])assert.ok(Number.isInteger(q.diagram[key])&&q.diagram[key]>=0);}
   }
-  assert.ok(bank.filter(q=>q.diagram).length>=6,'At least six visual evaluation questions are required');
-  assert.ok(distribution.every(n=>n>=15&&n<=35),`Unbalanced answer positions: ${distribution}`);
-  console.log(`Validated 100 bilingual questions; answer distribution ${distribution.join('/')}; ${bank.filter(q=>q.diagram).length} diagrams.`);
+  assert.ok(bank.filter(q=>q.diagram).length>=minDiagrams,'Insufficient visual evaluation questions');
+  assert.ok(distribution.every(n=>n>=Math.floor(count*.15)&&n<=Math.ceil(count*.35)),`Unbalanced answer positions: ${distribution}`);
+  console.log(`Validated ${file}: ${count} bilingual questions; answer distribution ${distribution.join('/')}; ${bank.filter(q=>q.diagram).length} diagrams.`);
   return bank;
+}
+export async function validateAdditionalBanks(){
+  const extra=await validateBank({file:'extra-questions.json',count:50,minDiagrams:8});
+  const original=JSON.parse(await readFile('public/questions.json','utf8'));
+  const existing=new Set(original.map(q=>q.en.trim().toLowerCase()));
+  for(const q of extra)assert.ok(!existing.has(q.en.trim().toLowerCase()),`Extra question repeats original stem: ${q.id}`);
+  const short=JSON.parse(await readFile('public/short-questions.json','utf8'));
+  assert.equal(short.length,20);
+  assert.equal(new Set(short.map(q=>q.id)).size,20);
+  assert.equal(new Set(short.map(q=>q.en)).size,20);
+  for(const q of short){
+    assert.ok(Number.isInteger(q.id)&&q.id>=1&&q.id<=20&&TOPICS[q.topic]);
+    assert.ok(q.en?.length>10&&q.zh?.length>10);
+    assert.ok(q.answer.en?.length>60&&q.answer.zh?.length>30);
+    assert.ok(q.keyPoints.length>=2&&q.keyPoints.every(p=>p.en&&p.zh));
+    assert.ok(q.commonMistakes.en&&q.commonMistakes.zh);
+    assert.ok(q.source.file&&q.source.locator&&q.source.note);
+    await access(q.source.file);
+    if(q.source.supplemental)assert.match(q.source.url||'',/^https:\/\/(scikit-learn\.org|developers\.google\.com)\//);
+    for(const figure of [q.source.image&&{image:q.source.image},q.source.related,q.source.illustration].filter(Boolean)){
+      const relative=figure.image.replace(/^\.\//,'');try{await access('public/'+relative);}catch{await access('site/'+relative);}
+    }
+    if(q.diagram)for(const key of ['tp','fp','fn','tn'])assert.ok(Number.isInteger(q.diagram[key])&&q.diagram[key]>=0);
+  }
+  console.log('Validated short-questions.json: 20 bilingual reference answers and key-point lists.');
+  return {extra,short};
 }
 if(process.argv[1]?.endsWith('validate.mjs'))await validateBank();

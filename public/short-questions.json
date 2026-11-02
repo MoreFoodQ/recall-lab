@@ -1,0 +1,757 @@
+[
+  {
+    "id": 1,
+    "topic": "foundations",
+    "en": "Explain how to distinguish binary classification, multiclass classification and regression. Give one example of each.",
+    "zh": "說明如何區分二元分類、多類別分類與回歸，各舉一例。",
+    "answer": {
+      "en": "Binary classification chooses between two categorical outcomes, such as spam or not spam. Single-label multiclass classification chooses one of more than two categories, such as positive, neutral or negative sentiment. Regression estimates a numeric amount, such as delivery time in minutes. The target meaning, not sample count or the appearance of digits, determines the task.",
+      "zh": "二元分類在兩種類別結果間選擇，例如垃圾或非垃圾郵件。單標籤多類別分類在超過兩類中選一類，例如正面、中立、負面情緒。回歸估計數值量，例如送達所需分鐘。判斷依目標意義，不是樣本數或是否寫成數字。"
+    },
+    "keyPoints": [
+      {
+        "en": "Count possible categorical targets",
+        "zh": "辨認可選類別數"
+      },
+      {
+        "en": "Distinguish categories from numeric quantities",
+        "zh": "區分類別和數值量"
+      },
+      {
+        "en": "Give a matching example for each",
+        "zh": "各給一個符合定義的例子"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not call a problem regression just because category labels are encoded as integers.",
+      "zh": "不要因類別以整數編碼就把它稱為回歸。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "ED chief complaint → CT yes/no described as 'two class… binary classification'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 2,
+    "topic": "foundations",
+    "en": "A text model must assign exactly one of happy, sad, angry or amused to each article. Explain the task type and why the single-label condition matters.",
+    "zh": "文字模型須替每篇文章指定開心、難過、生氣、有趣其中一類。說明任務類型，以及「只選一類」條件為何重要。",
+    "answer": {
+      "en": "This is single-label multiclass classification because four possible categories exist and each article receives exactly one. If several emotions could be assigned simultaneously, that would require a different target design. The categories are not a continuous emotional score.",
+      "zh": "這是單標籤多類別分類，因有四種可能類別，每篇只得一種。如果允許同時給多種情緒，就需要不同的目標設計。這些類別也不是連續的情緒分數。"
+    },
+    "keyPoints": [
+      {
+        "en": "Four possible categories",
+        "zh": "有四種可能類別"
+      },
+      {
+        "en": "Exactly one output label per article",
+        "zh": "每篇恰好輸出一種標籤"
+      },
+      {
+        "en": "Not a continuous numeric target",
+        "zh": "不是連續數值目標"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Having one assigned label does not make a task binary; binary means two possible classes.",
+      "zh": "只有一個被指派的標籤不等於二元分類；二元指的是有兩種可能類別。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "News article → reader emotion (happy, sad, angry) given as a label-prediction example",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 3,
+    "topic": "foundations",
+    "en": "For a subscription-renewal prediction project, explain what X and y represent and why defining them should happen before model training.",
+    "zh": "以續訂預測專案說明 X、y 代表什麼，以及為何要在訓練前先定義。",
+    "answer": {
+      "en": "X contains the input features, such as prior usage and subscription history. y is the observed renewal outcome the model should predict. Defining both clarifies the task, guides preprocessing, and prevents accidentally feeding the exact outcome into the inputs.",
+      "zh": "X 是輸入特徵，例如先前使用情形及訂閱紀錄；y 是模型要預測的已觀察續訂結果。先定義兩者能釐清任務、安排前處理，並避免把結果本身誤放進輸入。"
+    },
+    "keyPoints": [
+      {
+        "en": "X is input information",
+        "zh": "X 是輸入資訊"
+      },
+      {
+        "en": "y is the prediction target",
+        "zh": "y 是預測目標"
+      },
+      {
+        "en": "Keep the outcome itself out of the inputs",
+        "zh": "不要把目標結果本身當作輸入"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not confuse the number of feature columns with the number of possible classes.",
+      "zh": "不要把特徵欄位數和可能類別數混為一談。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[14:30.1]",
+      "note": "'X is data representation… features or feature set… Y, small Y, Y is label'",
+      "supplemental": false,
+      "related": {
+        "file": "3. Set Up and Start Using Your Python Playground.pdf",
+        "locator": "p. 7",
+        "image": "./images/slides/lecture-3-p07.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "topic": "foundations",
+    "en": "A house-price project first predicts exact prices, then switches to low, medium or high price bands. Explain how and why the task type changes.",
+    "zh": "房價專案原本預測具體價格，後來改成低、中、高價位帶，說明任務類型如何改變及理由。",
+    "answer": {
+      "en": "Predicting the exact price is regression because the target is a numeric quantity. Predicting one of three predefined price bands is single-label multiclass classification. The same input features can be used, but a different target changes what the model is trained to output.",
+      "zh": "預測具體價格是回歸，因目標為數值量；預測三種預設價位帶之一是單標籤多類別分類。即使沿用相同輸入特徵，目標改變仍會改變模型要學習的輸出。"
+    },
+    "keyPoints": [
+      {
+        "en": "Exact price is a quantity",
+        "zh": "具體價格是數值量"
+      },
+      {
+        "en": "Bands are discrete categories",
+        "zh": "價位帶是離散類別"
+      },
+      {
+        "en": "Output definition determines task type",
+        "zh": "輸出定義決定任務類型"
+      }
+    ],
+    "commonMistakes": {
+      "en": "The fact that price bands were formed from numbers does not make the band labels continuous predictions.",
+      "zh": "價位帶由數字劃分而來，不代表價位帶標籤本身就是連續數值預測。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_341595 (已AI校正).txt",
+      "locator": "[21:18.7]–[33:55.4]",
+      "note": "'Another is the scalar… output a value. So it's a regression task… the score of the thesis'",
+      "supplemental": false
+    }
+  },
+  {
+    "id": 5,
+    "topic": "models",
+    "en": "Explain the maximum-margin idea of a linear SVM using a simple separable two-class example.",
+    "zh": "用簡單線性可分的兩類範例說明線性 SVM 的最大間隔概念。",
+    "answer": {
+      "en": "A linear SVM chooses a separating boundary between two classes. In a separable hard-margin example, it prefers the boundary with the widest minimum gap to the nearest class points. This is more specific than merely finding any line with zero training errors, and it does not guarantee perfect predictions on future data.",
+      "zh": "線性 SVM 選擇兩類之間的分隔邊界。在可分的硬間隔範例中，偏好距離最近類別點的最小間隔最寬的邊界，並非只找任意一條訓練零錯誤的線；這也不保證未來資料全部預測正確。"
+    },
+    "keyPoints": [
+      {
+        "en": "Separating decision boundary",
+        "zh": "有分隔決策邊界"
+      },
+      {
+        "en": "Maximize the minimum margin in the stated simple case",
+        "zh": "在指定簡化情況最大化最小間隔"
+      },
+      {
+        "en": "Training separation is not a generalization guarantee",
+        "zh": "訓練可分不保證泛化完美"
+      }
+    ],
+    "commonMistakes": {
+      "en": "The visible thickness of a plotted line is not the SVM margin.",
+      "zh": "圖上畫線的粗細不是 SVM 的間隔。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:36 entry",
+      "note": "Exam note: questions on how models such as SVM work, conceptually; margin concept from scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 6,
+    "topic": "models",
+    "en": "What are support vectors, and why can they matter more directly than points far inside a class in a simple separable example?",
+    "zh": "什麼是支援向量？為何在簡單可分範例中，它們比深入類別內部的點更直接影響邊界？",
+    "answer": {
+      "en": "Support vectors are training examples that constrain the SVM decision. In a simple hard-margin separable case, they are the points at the class margins nearest to the boundary. They limit how wide the separating margin can be, while moving a distant non-support point need not change the boundary if the constraints remain unchanged.",
+      "zh": "支援向量是對 SVM 決策構成限制的訓練樣本。在簡化的硬間隔可分情況，它們位於接近邊界的類別間隔上，限制可取得的分隔寬度；若限制不變，移動遠處的非支援點不一定改變邊界。"
+    },
+    "keyPoints": [
+      {
+        "en": "They are training examples, not a separate class",
+        "zh": "它們是訓練樣本，不是額外類別"
+      },
+      {
+        "en": "They constrain the separating solution",
+        "zh": "它們限制分隔解"
+      },
+      {
+        "en": "State the separable hard-margin assumption",
+        "zh": "說明可分硬間隔的範例前提"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not claim that every point farthest from the boundary is a support vector.",
+      "zh": "不要說離邊界最遠的點就是支援向量。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:36 entry",
+      "note": "Exam note on SVM working principle; support vectors per scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 7,
+    "topic": "models",
+    "en": "Explain what a kernel contributes to SVM and why a nonlinear kernel may help when a straight line fails in the original feature space.",
+    "zh": "說明 kernel 對 SVM 的作用，以及原特徵空間無法用直線分隔時，非線性 kernel 為何可能有幫助。",
+    "answer": {
+      "en": "A kernel defines a way of comparing samples corresponding to a feature-space inner product. A nonlinear kernel can support a separating rule that appears nonlinear in the original space. It changes the model's representation of relationships, not the true class labels, and an appropriate choice still needs evaluation.",
+      "zh": "Kernel 定義對應特徵空間內積的樣本比較方式。非線性 kernel 可支援在原空間看來是非線性的分隔規則。它改變模型如何表示關係，不會改變真實類別標籤；選擇是否合適仍須評估。"
+    },
+    "keyPoints": [
+      {
+        "en": "Kernel specifies feature-space comparison",
+        "zh": "Kernel 指定特徵空間的比較方式"
+      },
+      {
+        "en": "Can enable nonlinear separation in the original space",
+        "zh": "可在原空間形成非線性分隔"
+      },
+      {
+        "en": "No guarantee for every dataset",
+        "zh": "不保證適用所有資料集"
+      }
+    ],
+    "commonMistakes": {
+      "en": "A kernel is not an instruction to discard labels or a promise of perfect test accuracy.",
+      "zh": "Kernel 不是刪除標籤的指令，也不是測試正確率完美的保證。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:39 entry",
+      "note": "Exam note asks about SVM kernel; kernel concept per scikit-learn SVM guide",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 8,
+    "topic": "models",
+    "en": "Someone says \"SVM has one main kernel that is always the right choice.\" Respond and describe a sensible way to choose between linear and nonlinear candidates.",
+    "zh": "有人說「SVM 有一種主要 kernel，而且永遠是正確選擇」。請回應，並說明如何合理比較線性與非線性候選。",
+    "answer": {
+      "en": "SVM does not have one universally best kernel. A linear kernel can be suitable when a simple boundary fits the data, while a nonlinear candidate can model more complex relationships. Compare candidates using an appropriate evaluation procedure instead of equating software defaults or complexity with guaranteed quality.",
+      "zh": "SVM 沒有對所有問題都最佳的 kernel。當簡單邊界符合資料時，可考慮線性 kernel；非線性候選則可表達更複雜關係。應以合適評估程序比較，不能把軟體預設或複雜度當成品質保證。"
+    },
+    "keyPoints": [
+      {
+        "en": "No universal best kernel",
+        "zh": "不存在通用最佳 kernel"
+      },
+      {
+        "en": "Relate model complexity to data relationships",
+        "zh": "讓模型複雜度對應資料關係"
+      },
+      {
+        "en": "Evaluate rather than rely on defaults",
+        "zh": "經過評估，而非只看預設值"
+      }
+    ],
+    "commonMistakes": {
+      "en": "A library's default kernel is not a statement that the teacher or theory requires that kernel.",
+      "zh": "函式庫的預設 kernel 不等於老師或理論指定必須使用它。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:39 entry",
+      "note": "'What is the main kernel of the SVM?' recorded verbatim; kernel list and SVC default from scikit-learn",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/svm.html",
+      "illustration": {
+        "image": "./images/concepts/svm.svg",
+        "caption": "自製 SVM 概念圖：線性可分範例，決策邊界、間隔與支援向量。Kernel 的詳細說明請見官方來源。"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "topic": "models",
+    "en": "After a large increase in learning rate, training loss oscillates instead of settling. Explain a possible cause and a reasonable next check.",
+    "zh": "大幅提高學習率後，訓練損失持續震盪而不穩定。說明一個可能原因與合理的接續檢查。",
+    "answer": {
+      "en": "The update steps may be too large, repeatedly overshooting a lower-loss region. Trying a smaller learning rate and comparing the loss behavior is a reasonable check. This observation does not prove that learning rate is the only possible cause, and a larger step is not always faster convergence.",
+      "zh": "更新步幅可能太大，反覆越過較低損失區域。可嘗試較小學習率，再比較損失變化；這不證明學習率是唯一可能原因，更大步幅也不一定更快收斂。"
+    },
+    "keyPoints": [
+      {
+        "en": "Overshooting can cause oscillation",
+        "zh": "越過低點可能造成震盪"
+      },
+      {
+        "en": "Compare behavior after a reasonable adjustment",
+        "zh": "合理調整後比較變化"
+      },
+      {
+        "en": "Treat the diagnosis as a hypothesis",
+        "zh": "把診斷當成假設"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not claim that any oscillating curve conclusively proves one specific learning-rate value is wrong.",
+      "zh": "不要把任何震盪曲線都當成足以證明某個特定學習率必然錯誤。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:38 entry",
+      "note": "'如果把learning rate設定的很大會怎樣'; answer per Google ML Crash Course hyperparameters page",
+      "supplemental": true,
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "illustration": {
+        "image": "./images/concepts/learning-rate.svg",
+        "caption": "自製學習率示意圖：較大步幅可能跨過低點；示意路徑並非數值訓練結果。"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "topic": "models",
+    "en": "Why is choosing the smallest possible learning rate not automatically the best training strategy?",
+    "zh": "為何把學習率設成越小越好，不是自動最佳的訓練策略？",
+    "answer": {
+      "en": "Learning rate controls the scale of parameter updates. Extremely small updates may make progress very slow, while excessively large updates can destabilize training. The goal is a suitable setting for the problem, based on observed training behavior, rather than simply minimizing or maximizing the learning rate.",
+      "zh": "學習率控制參數更新尺度。極小更新可能進展很慢，過大更新可能使訓練不穩定；應依問題與觀察到的訓練變化找合適設定，而不是單純追求最小或最大。"
+    },
+    "keyPoints": [
+      {
+        "en": "Learning rate controls update size",
+        "zh": "學習率控制步幅"
+      },
+      {
+        "en": "Too small may be slow; too large may be unstable",
+        "zh": "太小可能慢，太大可能不穩"
+      },
+      {
+        "en": "Choose according to training behavior",
+        "zh": "依訓練變化選擇"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Learning rate is not the same as classification accuracy or the number of target classes.",
+      "zh": "學習率不等於分類正確率或目標類別數。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:38 entry",
+      "note": "Learning-rate question in exam note; definition per Google ML Crash Course",
+      "supplemental": true,
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "illustration": {
+        "image": "./images/concepts/learning-rate.svg",
+        "caption": "自製學習率示意圖：較大步幅可能跨過低點；示意路徑並非數值訓練結果。"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "topic": "evaluation",
+    "en": "Using the matrix, explain precision and recall in words. Identify the reference group of each without a lengthy calculation.",
+    "zh": "依混淆矩陣用文字說明 precision 與 recall，指出兩者的參照族群，不需繁複計算。",
+    "answer": {
+      "en": "Precision asks what fraction of predicted positives are truly positive, using TP and FP. Recall asks what fraction of actual positives are detected, using TP and FN. In this matrix the reference groups are 12 predicted positives and 10 actual positives; both metrics count the 8 true positives as successes.",
+      "zh": "Precision 問預測正類中有多少真的為正類，參照 TP 與 FP；recall 問實際正類中有多少被抓到，參照 TP 與 FN。圖中分別以 12 個預測正類及 10 個實際正類為基準，兩者都以 8 個 TP 作為成功數。"
+    },
+    "keyPoints": [
+      {
+        "en": "Precision refers to predicted positives",
+        "zh": "Precision 參照預測正類"
+      },
+      {
+        "en": "Recall refers to actual positives",
+        "zh": "Recall 參照實際正類"
+      },
+      {
+        "en": "Both use TP as successes",
+        "zh": "兩者都以 TP 為成功數"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not swap FP and FN or use all four cells as recall's denominator.",
+      "zh": "不要顛倒 FP、FN，也不要把全部四格當 recall 的分母。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "'好像說會有些圖片讓你選recall'; recall definition per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    "diagram": {
+      "type": "confusion",
+      "tp": 8,
+      "fp": 4,
+      "fn": 2,
+      "tn": 6
+    }
+  },
+  {
+    "id": 12,
+    "topic": "evaluation",
+    "en": "Positive means a document is relevant. Explain the practical difference between a false positive and a false negative.",
+    "zh": "以文件相關為正類，說明 false positive 與 false negative 的實際差別。",
+    "answer": {
+      "en": "A false positive is an irrelevant document that the system retrieves as relevant, creating unnecessary review. A false negative is a relevant document the system misses. False alarms reduce precision, while missed relevant documents reduce recall; the positive class must be defined before these terms are interpreted.",
+      "zh": "False positive 是不相關文件被當相關取回，增加無謂檢閱；false negative 是相關文件卻被漏掉。誤報會影響 precision，漏取會影響 recall；解讀前須先定義正類。"
+    },
+    "keyPoints": [
+      {
+        "en": "FP is a false alarm",
+        "zh": "FP 是誤報"
+      },
+      {
+        "en": "FN is a missed positive",
+        "zh": "FN 是漏掉正類"
+      },
+      {
+        "en": "Connect each error to its interpretation",
+        "zh": "連結各種錯誤的實際意義"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Positive and negative refer to the designated class, not whether a document's wording sounds optimistic.",
+      "zh": "正負類是指定的目標類別，不是文件語氣樂觀與否。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; FN definition per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 13,
+    "topic": "evaluation",
+    "en": "A dataset contains 95 negatives and 5 positives. A model predicts everything negative. Explain why accuracy alone is misleading.",
+    "zh": "資料集有 95 個負類及 5 個正類，模型全部預測負類。說明只看準確率為何容易誤導。",
+    "answer": {
+      "en": "The model gets the 95 negative cases right, so accuracy is 95%. However, TP is zero and all five positives are missed, giving recall zero. A high overall accuracy can therefore hide complete failure to detect a minority class, so the confusion matrix and task-relevant metrics should also be inspected.",
+      "zh": "模型答對 95 個負類，準確率為 95%；但 TP 為零，五個正類全漏掉，召回率為零。高整體準確率因此可能掩蓋對少數類別完全失敗，還應查看混淆矩陣及符合任務的指標。"
+    },
+    "keyPoints": [
+      {
+        "en": "Majority-class success can dominate accuracy",
+        "zh": "多數類別成功可主導準確率"
+      },
+      {
+        "en": "All actual positives are missed",
+        "zh": "實際正類全部漏掉"
+      },
+      {
+        "en": "Use task-relevant evaluation beyond accuracy",
+        "zh": "除了準確率也看任務相關評估"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not call recall 95% or claim precision is perfect when there are no positive predictions.",
+      "zh": "不要說 recall 是 95%，也不要在沒有正類預測時宣稱 precision 完美。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "'好像說會有些圖片讓你選recall'; recall definition per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    },
+    "diagram": {
+      "type": "confusion",
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "tn": 95
+    }
+  },
+  {
+    "id": 14,
+    "topic": "evaluation",
+    "en": "Two models detect the same 8 of 10 actual positives. Model A raises 2 false alarms and B raises 12. Compare their recall and precision.",
+    "zh": "兩模型都抓到 10 個實際正類中的 8 個；A 誤報 2 個，B 誤報 12 個。比較其 recall 與 precision。",
+    "answer": {
+      "en": "Both models have the same recall because they detect the same number of the same actual positives. Model A has higher precision because it makes fewer false positive predictions for the same TP count. Choosing a model should also consider the application cost of misses and false alarms, rather than declaring one metric sufficient for all settings.",
+      "zh": "兩者對同一實際正類抓到的數量相同，因此 recall 相同。TP 固定而 A 的 FP 較少，所以 A 的 precision 較高。選模型仍要考量漏掉與誤報的應用代價，不能認為單一指標適用所有情境。"
+    },
+    "keyPoints": [
+      {
+        "en": "Recall matches because TP and FN match",
+        "zh": "TP、FN 相同，所以 recall 相同"
+      },
+      {
+        "en": "Fewer FP gives A higher precision",
+        "zh": "A 的 FP 較少，所以 precision 較高"
+      },
+      {
+        "en": "Relate interpretation to the task",
+        "zh": "依任務解讀"
+      }
+    ],
+    "commonMistakes": {
+      "en": "The total number of alarms does not equal the number of actual positive cases.",
+      "zh": "警報總數不等於實際正類總數。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_343400 (已AI校正).txt",
+      "locator": "[07:33.9]–[11:56.1]",
+      "note": "課堂列出 precision 作為分類評估指標；本題定義與自製矩陣依 scikit-learn 官方說明。",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 15,
+    "topic": "evaluation",
+    "en": "An inspection task places high cost on missing a defective product, but false alarms also require manual work. Explain why both recall and precision should be reported.",
+    "zh": "檢驗任務很重視不要漏掉瑕疵品，但誤報也會增加人工工作。說明為何應同時報告 recall 與 precision。",
+    "answer": {
+      "en": "Recall measures how many actual defective products are detected, so it describes the missed-defect concern. Precision measures how many flagged products are truly defective, reflecting unnecessary review from false alarms. Reporting both reveals the trade-off; flagging everything may avoid misses while burdening reviewers with many false alarms.",
+      "zh": "Recall 衡量真正瑕疵品有多少被抓到，對應漏檢問題；precision 衡量被標記產品中有多少真為瑕疵，反映誤報帶來的無謂檢閱。同時報告能看出取捨；全部都標記可能少漏檢，卻使人工承受大量誤報。"
+    },
+    "keyPoints": [
+      {
+        "en": "Recall describes detection of actual defects",
+        "zh": "Recall 描述真正瑕疵的偵測"
+      },
+      {
+        "en": "Precision describes reliability of alerts",
+        "zh": "Precision 描述警報可信度"
+      },
+      {
+        "en": "Describe the cost trade-off",
+        "zh": "描述成本取捨"
+      }
+    ],
+    "commonMistakes": {
+      "en": "A high recall does not by itself prove that false alarms are rare.",
+      "zh": "高 recall 本身不能證明誤報很少。"
+    },
+    "source": {
+      "file": "materials/exam-notes-original.txt",
+      "locator": "15:32 entry",
+      "note": "Recall picture question anticipated; recall per scikit-learn model evaluation",
+      "supplemental": true,
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+    }
+  },
+  {
+    "id": 16,
+    "topic": "preprocessing",
+    "en": "Describe a basic preprocessing plan for Titanic age, fare and embarked, following the classroom example.",
+    "zh": "依課堂例子，描述 Titanic 的 age、fare、embarked 基本前處理方案。",
+    "answer": {
+      "en": "First inspect the columns and missingness. In the classroom example, fill age and fare with their respective means and embarked with its mode. One-hot encode embarked, then apply the specified min-max scaling to age and fare. Keep survived as the target rather than an input feature.",
+      "zh": "先查看欄位與缺失情況。課堂範例以各自平均填 age、fare，以眾數填 embarked，再對 embarked 做 one-hot，並按指定對 age、fare 做 min-max。survived 保留作為目標，不是輸入特徵。"
+    },
+    "keyPoints": [
+      {
+        "en": "Match imputation to column meaning",
+        "zh": "讓填補方法符合欄位意義"
+      },
+      {
+        "en": "Encode the categorical input",
+        "zh": "編碼類別輸入"
+      },
+      {
+        "en": "Scale numeric inputs and keep y separate",
+        "zh": "縮放數值輸入並區分 y"
+      }
+    ],
+    "commonMistakes": {
+      "en": "The example's imputation choices are not universal best rules for every dataset.",
+      "zh": "範例的填補選擇不是每個資料集都適用的通用最佳規則。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "pp. 31, 33",
+      "note": "'Age' and 'Fare' are numerical data, filled using the mean",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p31.webp"
+    }
+  },
+  {
+    "id": 17,
+    "topic": "preprocessing",
+    "en": "Compare label encoding and one-hot encoding for nominal arrival modes such as walk-in, ambulance and transfer.",
+    "zh": "以自行到院、救護車、轉院等名目到院方式，比較 label encoding 與 one-hot encoding。",
+    "answer": {
+      "en": "Label encoding assigns a distinct integer to each category, but a model may interpret the codes as an order or distance that the categories do not possess. One-hot encoding uses a separate indicator for each category and avoids that artificial ranking. The representation should match whether an order is genuinely meaningful for the task.",
+      "zh": "Label encoding 為每種類別指定不同整數，但模型可能把代碼當成原類別沒有的順序或距離。One-hot 為每個類別建立獨立指示欄，避免暗示排名。表示方法應符合此任務是否真的有順序意義。"
+    },
+    "keyPoints": [
+      {
+        "en": "Integer code versus indicator columns",
+        "zh": "整數代碼與指示欄的差異"
+      },
+      {
+        "en": "Nominal categories have no inherent ranking",
+        "zh": "名目類別沒有內在排名"
+      },
+      {
+        "en": "Encoding is not a change of target",
+        "zh": "編碼不是改變預測目標"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not assume code 2 is twice as much of a category as code 1.",
+      "zh": "不要認為代碼 2 代表某個類別是代碼 1 的兩倍。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[14:49.9]–[20:08.8]",
+      "note": "'the code zero, one, two means the order… But originally they don't have the order'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 21",
+        "image": "./images/slides/lecture-4-p21.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 18,
+    "topic": "preprocessing",
+    "en": "Why might age and fare be scaled before comparing feature vectors? Explain how standard min-max scaling differs conceptually from z-score standardization.",
+    "zh": "比較特徵向量前，為何可能要縮放 age、fare？概念上說明標準 min-max 與 z-score 的差異。",
+    "answer": {
+      "en": "Different units and numeric ranges can make a larger-scale feature dominate a scale-sensitive comparison. Standard min-max maps the fitted nonconstant column into a chosen range, commonly zero to one. Z-score expresses values relative to the mean and standard deviation; it does not force every value into zero to one.",
+      "zh": "不同單位與數值範圍，可能讓較大尺度特徵主導對尺度敏感的比較。標準 min-max 將用來擬合的非固定值欄位映到指定範圍，常用零到一；z-score 則依平均與標準差表示相對位置，不會強制所有值都在零到一。"
+    },
+    "keyPoints": [
+      {
+        "en": "Explain scale dominance",
+        "zh": "說明尺度主導問題"
+      },
+      {
+        "en": "Min-max uses a target range",
+        "zh": "Min-max 使用目標範圍"
+      },
+      {
+        "en": "Z-score is centered/scaled, not range-bounded",
+        "zh": "Z-score 是置中縮放，不保證範圍"
+      }
+    ],
+    "commonMistakes": {
+      "en": "New values beyond the fitted min or max may fall outside the original min-max target range.",
+      "zh": "超出擬合時最小或最大值的新資料，轉換後可能超出原目標範圍。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[03:12.1]–[06:06.3]",
+      "note": "'column A, the scale is between zero to ten or column B… one hundred to thousand… transfer… to the same scale'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 17",
+        "image": "./images/slides/lecture-4-p17.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  },
+  {
+    "id": 19,
+    "topic": "representation",
+    "en": "Compare Manhattan distance, Euclidean distance and cosine similarity in words. Why can cosine be useful for documents with different lengths?",
+    "zh": "以文字比較曼哈頓距離、歐氏距離及餘弦相似度，並說明餘弦為何適合長度不同的文件。",
+    "answer": {
+      "en": "Manhattan distance adds differences along coordinate directions, like following grid streets. Euclidean distance measures straight-line separation. Cosine similarity compares the orientation of nonzero vectors, so a change of overall length alone does not change it. This can help compare word-count proportions across documents of different lengths.",
+      "zh": "曼哈頓距離加總各座標方向差距，像沿格狀街道前進；歐氏距離量測直線間隔。餘弦相似度比較非零向量方向，因此只改變整體長度不會改變它，適合比較不同長度文件的詞頻比例。"
+    },
+    "keyPoints": [
+      {
+        "en": "Street-route versus straight-line distance",
+        "zh": "街道路徑與直線距離的差別"
+      },
+      {
+        "en": "Cosine compares orientation of nonzero vectors",
+        "zh": "餘弦比較非零向量方向"
+      },
+      {
+        "en": "Connect magnitude invariance to document length",
+        "zh": "把尺度不變性連結到文件長度"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Cosine similarity still depends on which features are present; it does not ignore word identity.",
+      "zh": "餘弦仍取決於出現哪些特徵，不是完全忽略字詞身分。"
+    },
+    "source": {
+      "file": "materials/lectures/4. Preprocessing and Representation.pdf",
+      "locator": "p. 55",
+      "note": "'Cosine distance is sometimes very good for text-related data. Often texts are of very different lengths…'",
+      "supplemental": false,
+      "image": "./images/slides/lecture-4-p55.webp"
+    }
+  },
+  {
+    "id": 20,
+    "topic": "representation",
+    "en": "Explain the role of PCA when visualizing high-dimensional representations, and state two things that a two-dimensional PCA plot cannot guarantee.",
+    "zh": "說明 PCA 在高維資料表示視覺化中的角色，並指出二維 PCA 圖不能保證的兩件事。",
+    "answer": {
+      "en": "PCA can project high-dimensional feature vectors into a lower-dimensional view such as a two-dimensional plot. That view cannot guarantee that all original information or distances are preserved, and visually separated groups do not guarantee strong predictions on unseen data. PCA also does not automatically align independently trained language spaces.",
+      "zh": "PCA 可把高維特徵向量投影成低維視圖，例如二維散點圖。但不能保證保留全部原始資訊或距離；圖上看似分開的群組，也不保證對未見資料預測良好。PCA 亦不會自動對齊獨立訓練的語言空間。"
+    },
+    "keyPoints": [
+      {
+        "en": "Dimensionality reduction for viewing",
+        "zh": "為觀察而降維"
+      },
+      {
+        "en": "Projection can lose information",
+        "zh": "投影可能損失資訊"
+      },
+      {
+        "en": "Appearance is not a predictive-performance guarantee",
+        "zh": "圖形外觀不保證預測表現"
+      }
+    ],
+    "commonMistakes": {
+      "en": "Do not interpret a visualization algorithm as an automatic answer-label generator.",
+      "zh": "不要把視覺化演算法當成自動產生正確標籤的工具。"
+    },
+    "source": {
+      "file": "materials/transcripts/逐字稿_344615 (已AI校正).txt",
+      "locator": "[10:47.3]–[14:49.9]",
+      "note": "'a figure only can draw two dimension or three dimension… reduce high dimension to two or three dimension… we usually use the PCA'",
+      "supplemental": false,
+      "related": {
+        "file": "4. Preprocessing and Representation.pdf",
+        "locator": "p. 19",
+        "image": "./images/slides/lecture-4-p19.webp",
+        "note": "相關講義頁面，輔助理解；本題口述依據仍以上方逐字稿為準。"
+      }
+    }
+  }
+]

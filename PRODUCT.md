@@ -10,7 +10,7 @@ TMU machine learning students preparing for the English midterm on 2026-11-04. T
 
 ## Product Purpose
 
-100 source-traceable bilingual multiple choice questions; full-bank practice, random quizzes, immediate feedback, wrong-answer review, local progress. Success means students can explain their mistakes and return to the course source.
+Three separate source-traceable bilingual banks: original 100 multiple-choice questions, 50 supplemental multiple-choice questions, and 20 short-answer prompts. Multiple-choice banks have independent random pools, feedback, review, and local progress. Short-answer prompts have local drafts and collapsed model answers for self-review. Success means students can explain mistakes and return to the course source.
 
 ## Brand Personality
 

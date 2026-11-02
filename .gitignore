@@ -12,4 +12,5 @@ __pycache__/
 Thumbs.db
 docs/claude-run.json
 docs/claude-review-run.json
+docs/claude-expansion-run.json
 qa/
